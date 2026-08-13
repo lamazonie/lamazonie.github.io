@@ -3,135 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Criativo Referência — L'Amazonie Studio</title>
+<title>Referência #01 — L'Amazonie Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg:#081511; --panel:rgba(255,255,255,.035); --line:rgba(212,175,95,.18);
+    --cream:#f2ecdd; --muted:#9db8a9; --gold:#d4af5f; --mint:#8fe0b0; --red:#e08b8b;
+  }
   * { margin:0; padding:0; box-sizing:border-box; -webkit-text-size-adjust:100%; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background:#0e2419; color:#f2f7f4; line-height:1.55; }
-  .wrap { max-width:520px; margin:0 auto; padding:20px 16px 60px; }
-  .tag { display:inline-block; background:#c9a227; color:#0e2419; font-weight:800; font-size:11px; letter-spacing:1.5px; padding:4px 10px; border-radius:20px; text-transform:uppercase; }
-  h1 { font-size:26px; margin:12px 0 6px; line-height:1.2; }
-  .sub { color:#a8c5b5; font-size:15px; margin-bottom:22px; }
-  h2 { font-size:19px; margin:34px 0 4px; color:#7ed6a7; }
-  .h2sub { color:#a8c5b5; font-size:13.5px; margin-bottom:14px; }
-  .videobox { background:#143020; border:1px solid #23503a; border-radius:16px; padding:12px; margin-top:8px; }
-  .videobox iframe { width:100%; border:none; border-radius:10px; min-height:420px; background:#000; }
-  .btn { display:block; text-align:center; background:#7ed6a7; color:#0e2419; font-weight:800; text-decoration:none; padding:14px; border-radius:12px; margin-top:10px; font-size:15px; }
-  .metrics { display:block; }
-  .mcard { background:#143020; border:1px solid #23503a; border-radius:14px; padding:16px; margin-bottom:12px; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Instrument Sans',-apple-system,sans-serif; background:var(--bg); color:var(--cream); line-height:1.6; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background: radial-gradient(60% 40% at 80% -5%, rgba(212,175,95,.07), transparent 60%),
+                radial-gradient(50% 35% at 0% 30%, rgba(143,224,176,.05), transparent 60%); }
+  body::after { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E"); }
+  #prog { position:fixed; top:0; left:0; height:2px; width:0%; background:linear-gradient(90deg,var(--gold),var(--mint)); z-index:50; transition:width .12s linear; }
+  .wrap { position:relative; z-index:1; max-width:560px; margin:0 auto; padding:30px 20px 70px; }
+
+  .back { color:var(--mint); text-decoration:none; font-size:12.5px; font-weight:600; letter-spacing:.06em; }
+  .tag { display:inline-block; margin-top:16px; font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--bg); background:var(--gold); padding:5px 12px; border-radius:20px; font-weight:700; }
+  h1 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(36px,10vw,50px); line-height:1.05; margin:14px 0 14px; }
+  h1 .it { font-style:italic; color:var(--gold); font-weight:400; }
+  .sub { color:var(--muted); font-size:15px; }
+  .sub b { color:var(--cream); font-weight:600; }
+  .gold { color:var(--gold); font-weight:600; }
+
+  .sec { margin-top:46px; }
+  .kicker { display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+  .kicker .num { font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:15px; }
+  .kicker .t { font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .kicker .ln { flex:1; height:1px; background:var(--line); }
+  h2 { font-family:'Fraunces',serif; font-weight:600; font-size:26px; margin:6px 0 6px; }
+  .h2sub { color:var(--muted); font-size:13.5px; margin-bottom:16px; }
+
+  .videobox { background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:12px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  video { width:100%; border-radius:12px; background:#000; display:block; max-height:70vh; }
+
+  .mcard { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:20px; margin-bottom:14px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
   .mtop { display:flex; align-items:baseline; justify-content:space-between; }
-  .mname { font-weight:800; font-size:15px; }
-  .mval { font-size:24px; font-weight:800; color:#7ed6a7; }
-  .mref { font-size:12px; color:#c9a227; font-weight:700; margin-top:2px; }
-  .mexp { font-size:13.5px; color:#cfe3d8; margin-top:8px; }
-  .beat { background:#143020; border-left:4px solid #7ed6a7; border-radius:0 12px 12px 0; padding:12px 14px; margin-bottom:10px; }
-  .beat .t { color:#c9a227; font-weight:800; font-size:12px; letter-spacing:1px; }
-  .beat .n { font-weight:800; font-size:15px; margin:2px 0 4px; }
-  .beat p { font-size:13.5px; color:#cfe3d8; }
-  .win { display:flex; gap:10px; background:#143020; border:1px solid #23503a; border-radius:12px; padding:13px 14px; margin-bottom:10px; }
+  .mname { font-weight:700; font-size:14.5px; letter-spacing:.02em; }
+  .mval { font-family:'Fraunces',serif; font-size:34px; font-weight:600; color:var(--mint); }
+  .mval small { font-size:18px; }
+  .barwrap { position:relative; height:8px; background:rgba(255,255,255,.07); border-radius:6px; margin:14px 0 6px; }
+  .bar { position:absolute; left:0; top:0; height:100%; width:0; border-radius:6px; background:linear-gradient(90deg,var(--gold),var(--mint)); transition:width 1.4s cubic-bezier(.2,.7,.2,1); }
+  .mark { position:absolute; top:-4px; width:2px; height:16px; background:rgba(242,236,221,.5); }
+  .mark i { position:absolute; top:18px; left:50%; transform:translateX(-50%); font-style:normal; font-size:9.5px; color:var(--muted); white-space:nowrap; letter-spacing:.05em; }
+  .mexp { font-size:13.5px; color:var(--muted); margin-top:26px; }
+  .mexp b { color:var(--cream); }
+
+  .beat { position:relative; padding:18px 0 18px 34px; border-left:1px solid var(--line); margin-left:8px; }
+  .beat::before { content:""; position:absolute; left:-5px; top:26px; width:9px; height:9px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px rgba(212,175,95,.6); }
+  .beat .t { font-size:10.5px; letter-spacing:.24em; color:var(--gold); font-weight:700; text-transform:uppercase; }
+  .beat .n { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin:4px 0 6px; }
+  .beat p { font-size:13.5px; color:var(--muted); }
+  .beat p b { color:var(--cream); }
+
+  .win { display:flex; gap:14px; background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:10px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
   .win .ic { font-size:18px; }
-  .win p { font-size:13.5px; color:#cfe3d8; }
-  .win b { color:#f2f7f4; }
-  .no { border-color:#5a2323; background:#241414; }
-  .rule { background:#143020; border:1px solid #23503a; border-radius:12px; padding:14px; margin-bottom:10px; font-size:13.5px; color:#cfe3d8; }
-  .rule b { color:#7ed6a7; }
-  .check { background:#1a3a28; border:1px dashed #7ed6a7; border-radius:14px; padding:16px; margin-top:14px; }
-  .check p { font-size:14px; margin-bottom:8px; }
-  .foot { text-align:center; color:#6d8f7d; font-size:12px; margin-top:40px; }
-  .gold { color:#c9a227; font-weight:700; }
+  .win p { font-size:13.5px; color:var(--muted); }
+  .win b { color:var(--cream); }
+  .win.no { border-color:rgba(224,139,139,.35); }
+  .win.no b { color:var(--red); }
+
+  .rule { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:10px; font-size:13.5px; color:var(--muted); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  .rule b { color:var(--mint); }
+  .rule.no { border-color:rgba(224,139,139,.35); color:#dcc0c0; }
+  .rule.no b { color:var(--red); }
+
+  .check { border:1px dashed var(--gold); border-radius:18px; padding:20px; margin-top:16px; background:rgba(212,175,95,.05); }
+  .check .ct { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin-bottom:10px; }
+  .check p { font-size:14px; margin-bottom:8px; color:var(--muted); }
+
+  .foot { text-align:center; margin-top:60px; }
+  .foot .fm { font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:15px; }
+  .foot .fs { font-size:11px; letter-spacing:.3em; color:var(--muted); text-transform:uppercase; margin-top:6px; }
+
+  .rv { opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .rv.on { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity:1; transform:none; transition:none; } .bar { transition:none; } html{scroll-behavior:auto;} }
 </style>
 </head>
 <body>
+<div id="prog"></div>
 <div class="wrap">
 
-  <a href="index.html" style="color:#7ed6a7; text-decoration:none; font-size:13px; font-weight:700;">← Voltar pro Studio</a>
-  <div style="height:10px"></div>
-  <span class="tag">Criativo referência #01</span>
-  <h1>Modele esse vídeo. 🎯</h1>
-  <p class="sub">Esse é o anúncio nº 1 da L'Amazonie hoje — ângulo <b>"tirei demais na pinça"</b>. Essa página mostra <b>por que ele funciona</b> e <b>como criar a sua versão</b>. Não é pra copiar: é pra modelar — mesma estrutura, <span class="gold">seu rosto, sua história, seu cenário</span>.</p>
+  <a class="back" href="index.html">← Studio</a>
+  <div><span class="tag">Referência #01 · Campeão atual</span></div>
+  <h1>Modele<br>esse vídeo<span class="it">.</span></h1>
+  <p class="sub">O anúncio nº 1 da L'Amazonie hoje — ângulo <b>"tirei demais na pinça"</b>. Essa página mostra <b>por que ele funciona</b> e <b>como criar a sua versão</b>. Não é pra copiar: é pra modelar — mesma estrutura, <span class="gold">seu rosto, sua história, seu cenário</span>.</p>
 
-  <h2>▶ O vídeo</h2>
-  <p class="h2sub">Assiste 2x: primeiro como espectadora, depois olhando a estrutura.</p>
-  <div class="videobox">
-    <video src="video-referencia-pinca.mp4" controls playsinline preload="metadata" style="width:100%; border-radius:10px; background:#000; max-height:70vh;"></video>
+  <div class="sec rv">
+    <div class="kicker"><span class="num">01</span><span class="t">O vídeo</span><span class="ln"></span></div>
+    <p class="h2sub">Assista 2x: primeiro como espectadora, depois olhando a estrutura.</p>
+    <div class="videobox"><video src="video-referencia-pinca.mp4" controls playsinline preload="metadata"></video></div>
   </div>
 
-  <h2>📊 Os números dele (e o que significam)</h2>
-  <p class="h2sub">Métricas de comportamento dos últimos 7 dias. É assim que a gente mede se um vídeo é bom — antes de qualquer venda.</p>
+  <div class="sec rv">
+    <div class="kicker"><span class="num">02</span><span class="t">Os números dele</span><span class="ln"></span></div>
+    <h2>E o que cada um significa</h2>
+    <p class="h2sub">Métricas de comportamento. É assim que a gente mede se um vídeo é bom — antes de qualquer venda. As barras mostram onde ele está em relação à média e à meta.</p>
 
-  <div class="metrics">
-    <div class="mcard">
-      <div class="mtop"><span class="mname">🪝 Hook Rate</span><span class="mval">33%</span></div>
-      <div class="mref">Meta: acima de 35% • Média da conta: ~20%</div>
-      <p class="mexp"><b>O que é:</b> de cada 100 pessoas que o vídeo apareceu, quantas pararam pra assistir os 3 primeiros segundos.<br><b>Por que importa:</b> é a métrica mais importante de todas. Se o começo não prende, o resto do vídeo nem existe — a pessoa já rolou o feed. O hook é decidido no <b>primeiro 1,5 segundo</b>.</p>
+    <div class="mcard rv">
+      <div class="mtop"><span class="mname">🪝 Hook Rate</span><span class="mval count" data-v="33">0<small>%</small></span></div>
+      <div class="barwrap"><div class="bar" data-w="66"></div><span class="mark" style="left:40%"><i>média 20%</i></span><span class="mark" style="left:70%"><i>meta 35%</i></span></div>
+      <p class="mexp"><b>O que é:</b> de cada 100 pessoas que o vídeo apareceu, quantas pararam pra assistir os 3 primeiros segundos.<br><b>Por que importa:</b> é a métrica mais importante de todas. Se o começo não prende, o resto do vídeo nem existe. O hook é decidido no <b>primeiro 1,5 segundo</b>.</p>
     </div>
-    <div class="mcard">
-      <div class="mtop"><span class="mname">⏱️ Hold Rate</span><span class="mval">8,6%</span></div>
-      <div class="mref">Meta: acima de 12% • Bom: 8-12%</div>
-      <p class="mexp"><b>O que é:</b> quantas pessoas assistiram o vídeo até quase o fim (15s+).<br><b>Por que importa:</b> mostra se a história segura depois do hook. Vídeo que prende no início mas perde no meio tem buraco no roteiro — geralmente enrolação antes da prova.</p>
+    <div class="mcard rv">
+      <div class="mtop"><span class="mname">⏱️ Hold Rate</span><span class="mval count" data-v="8,6">0<small>%</small></span></div>
+      <div class="barwrap"><div class="bar" data-w="43"></div><span class="mark" style="left:60%"><i>meta 12%</i></span></div>
+      <p class="mexp"><b>O que é:</b> quantas pessoas assistiram até quase o fim (15s+).<br><b>Por que importa:</b> mostra se a história segura depois do hook. Vídeo que prende no início mas perde no meio tem buraco no roteiro — geralmente enrolação antes da prova.</p>
     </div>
-    <div class="mcard">
-      <div class="mtop"><span class="mname">👆 CTR</span><span class="mval">3,2%</span></div>
-      <div class="mref">Meta: acima de 1,5% • Esse vídeo: mais que o dobro</div>
-      <p class="mexp"><b>O que é:</b> de cada 100 pessoas que viram, quantas clicaram pra conhecer o produto.<br><b>Por que importa:</b> é a prova de que o vídeo gera <b>desejo</b>, não só entretenimento. Views sem clique = vídeo bonito que não vende.</p>
+    <div class="mcard rv">
+      <div class="mtop"><span class="mname">👆 CTR</span><span class="mval count" data-v="3,2">0<small>%</small></span></div>
+      <div class="barwrap"><div class="bar" data-w="80"></div><span class="mark" style="left:37%"><i>meta 1,5%</i></span></div>
+      <p class="mexp"><b>O que é:</b> de cada 100 pessoas que viram, quantas clicaram pra conhecer o produto.<br><b>Por que importa:</b> é a prova de que o vídeo gera <b>desejo</b>, não só entretenimento. Esse aqui faz mais que o dobro da meta.</p>
     </div>
   </div>
 
-  <h2>🎬 O roteiro — beat a beat</h2>
-  <p class="h2sub">A estrutura que faz esses números. Sua versão precisa ter os 5 beats — o conteúdo de cada um é seu.</p>
-
-  <div class="beat"><span class="t">ABERTURA (0–3s)</span><div class="n">1. Hook visual + dor nomeada</div><p>O vídeo abre já com o <b>antes/depois em close</b> na tela — a prova aparece ANTES da explicação. Junto, a dor com cena específica: "tirei demais na pinça". Sem "oi gente", sem logo, sem introdução. O primeiro frame já é o motivo de parar.</p></div>
-  <div class="beat"><span class="t">EM SEGUIDA</span><div class="n">2. Absolvição</div><p>"A culpa não é sua — a moda era essa." Quem assiste se reconhece e se sente entendida, não julgada. Isso cria conexão instantânea e é o que segura o hold.</p></div>
-  <div class="beat"><span class="t">MEIO</span><div class="n">3. Mecanismo</div><p>Por que o fio não voltou sozinho e como o sérum resolve: estímulo na raiz, uso diário, fio real nascendo. Uma frase de ciência simples — não é aula, é um "ahhh, faz sentido".</p></div>
-  <div class="beat"><span class="t">RETA FINAL</span><div class="n">4. Prova</div><p>De novo o resultado, agora com calma: close na sobrancelha preenchida, aplicação real do produto. A câmera mostra, a fala confirma. Prova visual &gt; promessa falada, sempre.</p></div>
-  <div class="beat"><span class="t">FECHO</span><div class="n">5. Fecho suave</div><p>Sem gritaria de "COMPRE AGORA". Um "vale demais", "queria ter começado antes" converte mais nesse formato — porque mantém o tom de amiga recomendando, não de comercial.</p></div>
-
-  <h2>✅ O que deu certo (repita)</h2>
-  <div class="win"><span class="ic">📱</span><p><b>Cara de story, não de comercial.</b> Celular na mão, luz natural, cenário real. A pessoa sente que é uma amiga contando — anúncio "produzido demais" é ignorado no feed.</p></div>
-  <div class="win"><span class="ic">👁️</span><p><b>Prova no primeiro segundo.</b> O antes/depois abre o vídeo. Quem tem a dor se reconhece na hora e para o dedo.</p></div>
-  <div class="win"><span class="ic">🎯</span><p><b>Dor específica com época.</b> Não é "sobrancelha rala" genérico — é "a pinça dos anos 2000 destruiu e nunca mais voltou". Especificidade = identificação.</p></div>
-  <div class="win"><span class="ic">💚</span><p><b>Tom de confissão, não de venda.</b> Ela conta a própria história. Vulnerabilidade real converte mais que perfeição ensaiada.</p></div>
-  <div class="win no"><span class="ic">🚫</span><p><b>O que NÃO fazer:</b> intro longa ("oi gente, hoje vim falar..."), logo abrindo o vídeo, texto demais na tela, música alta por cima da fala, promessa médica ("cura", "trata queda") e cara de estúdio.</p></div>
-
-  <h2>🪝 Banco de hooks — escolha (ou grave vários)</h2>
-  <p class="h2sub">Ganchos prontos pro ângulo pinça. Cada hook gravado vira um anúncio diferente — se puder, grave a abertura com 2 ou 3 deles e o resto do vídeo uma vez só. Pode adaptar as palavras pro seu jeito de falar.</p>
-  <div class="beat"><span class="t">HOOK 1 — CONFISSÃO</span><p>"Eu destruí minha sobrancelha nos anos 2000... e descobri como trazer ela de volta."</p></div>
-  <div class="beat"><span class="t">HOOK 2 — IDENTIFICAÇÃO</span><p>"Se você tirava a sobrancelha fininha porque era moda, esse vídeo é pra você."</p></div>
-  <div class="beat"><span class="t">HOOK 3 — CURIOSIDADE</span><p>"Minha sobrancelha não nascia há mais de 10 anos. Aí eu testei isso aqui."</p></div>
-  <div class="beat"><span class="t">HOOK 4 — DOR DIRETA</span><p>"A pinça foi embora... mas a falha ficou, né?"</p></div>
-  <div class="beat"><span class="t">HOOK 5 — VISUAL</span><p>Sem fala: abre direto no seu antes/depois com o texto "3 meses de diferença" na tela — e aí você entra contando.</p></div>
-
-  <h2>🎬 Shot list — takes obrigatórios</h2>
-  <p class="h2sub">Todo envio precisa ter esses takes (grave cada um 2x, sempre na vertical). É o que garante que a edição tenha matéria-prima.</p>
-  <div class="rule"><b>Take 1 — Antes/depois:</b> foto antiga da sua sobrancelha (ou close da falha) parada 2-3 segundos + close de como tá hoje.</div>
-  <div class="rule"><b>Take 2 — Você falando:</b> câmera frontal, luz de janela, contando sua história completa (do hook ao fecho).</div>
-  <div class="rule"><b>Take 3 — Aplicação:</b> close aplicando o sérum na sobrancelha, com o rótulo L'Amazonie aparecendo.</div>
-  <div class="rule"><b>Take 4 — Resultado:</b> close da sobrancelha hoje, penteadinha, boa luz. Esse take vende sozinho.</div>
-  <div class="rule"><b>Take 5 (bônus):</b> reação espontânea — sorriso, olhando no espelho, "gente, olha isso". Naturalidade vale ouro.</div>
-
-  <h2>📦 Como enviar & o que acontece depois</h2>
-  <div class="rule"><b>Envio:</b> vídeo BRUTO, sem legenda, sem música e sem corte — a edição é nossa. Takes separados + a fala inteira. Envie pelo link/pasta combinado no convite (não mande pelo WhatsApp — ele comprime e estraga a qualidade).</div>
-  <div class="rule"><b>Depois do envio:</b> seu vídeo entra em teste no ar, com verba real, por 5 a 7 dias. A gente volta pra você com os números dele (aquelas métricas lá de cima) e o veredito. <b>Vídeo que vira campeão = mais pedidos daquele estilo pra você.</b> Seu resultado nunca fica no escuro.</div>
-
-  <h2>🚫 Palavras que NÃO podem</h2>
-  <p class="h2sub">Pra proteger a conta de anúncios (e você). Fale de história e resultado SEU — a promessa pesada é problema nosso na edição.</p>
-  <div class="rule no" style="border:1px solid #5a2323; background:#241414;">Nunca diga: <b>"cura"</b>, <b>"trata queda/alopecia"</b>, <b>"remédio"</b>, <b>"resultado garantido"</b>, <b>"funciona em 100% das pessoas"</b>, <b>"recomendado por dermatologistas"</b>. Pode dizer: fortalece, nutre, estimula, preencheu, "no meu caso resolveu", "olha a diferença".</div>
-
-  <h2>🎥 Regras de produção</h2>
-  <div class="rule"><b>Formato:</b> vertical (9:16), gravado no celular — qualidade de câmera frontal tá ótimo. Duração: 20 a 40 segundos é o alvo das variações (a referência tem 1:14 — vídeo longo funciona quando a história segura, mas comece treinando curto).</div>
-  <div class="rule"><b>Luz e som:</b> luz natural (janela) e voz limpa — fala perto do celular, sem música competindo.</div>
-  <div class="rule"><b>Varie:</b> seu rosto, sua idade, seu cenário, suas palavras. <b>Não varie:</b> a estrutura dos 5 beats. Mulher 40+ contando a mesma história é território aberto e muito bem-vindo.</div>
-  <div class="rule"><b>Prova:</b> se você usa o produto, mostre SEU antes/depois — mesmo tímido. Prova real pequena vale mais que promessa grande.</div>
-
-  <div class="check">
-    <p><b>Checklist antes de enviar o vídeo:</b></p>
-    <p>1️⃣ O primeiro 1,5s pararia VOCÊ rolando o feed?</p>
-    <p>2️⃣ A dor tá nomeada com cena específica?</p>
-    <p>3️⃣ Tem prova visual (antes/depois ou close)?</p>
-    <p>4️⃣ Parece conversa de amiga, não comercial?</p>
-    <p>5️⃣ Tá vertical, com fala limpa e sem enrolação?</p>
+  <div class="sec rv">
+    <div class="kicker"><span class="num">03</span><span class="t">O roteiro</span><span class="ln"></span></div>
+    <h2>Beat a beat</h2>
+    <p class="h2sub">A estrutura que faz esses números. Sua versão precisa ter os 5 beats — o conteúdo de cada um é seu.</p>
+    <div class="beat rv"><span class="t">Abertura · 0–3s</span><div class="n">1. Hook visual + dor nomeada</div><p>O vídeo abre já com o <b>antes/depois em close</b> — a prova aparece ANTES da explicação. Junto, a dor com cena específica: "tirei demais na pinça". Sem "oi gente", sem logo, sem introdução. O primeiro frame já é o motivo de parar.</p></div>
+    <div class="beat rv"><span class="t">Em seguida</span><div class="n">2. Absolvição</div><p>"A culpa não é sua — a moda era essa." Quem assiste se reconhece e se sente entendida, não julgada. Isso cria conexão instantânea e é o que segura o hold.</p></div>
+    <div class="beat rv"><span class="t">Meio</span><div class="n">3. Mecanismo</div><p>Por que o fio não voltou sozinho e como o sérum resolve: estímulo na raiz, uso diário, fio real nascendo. Uma frase de ciência simples — não é aula, é um "ahhh, faz sentido".</p></div>
+    <div class="beat rv"><span class="t">Reta final</span><div class="n">4. Prova</div><p>De novo o resultado, agora com calma: close na sobrancelha preenchida, aplicação real do produto. A câmera mostra, a fala confirma. <b>Prova visual &gt; promessa falada, sempre.</b></p></div>
+    <div class="beat rv"><span class="t">Fecho</span><div class="n">5. Fecho suave</div><p>Sem gritaria de "COMPRE AGORA". Um "vale demais", "queria ter começado antes" converte mais nesse formato — porque mantém o tom de amiga recomendando, não de comercial.</p></div>
   </div>
 
-  <p class="foot">L'Amazonie Studio 💚</p>
+  <div class="sec rv">
+    <div class="kicker"><span class="num">04</span><span class="t">O que deu certo</span><span class="ln"></span></div>
+    <h2>Repita isso</h2>
+    <div style="height:10px"></div>
+    <div class="win rv"><span class="ic">📱</span><p><b>Cara de story, não de comercial.</b> Celular na mão, luz natural, cenário real. A pessoa sente que é uma amiga contando — anúncio "produzido demais" é ignorado no feed.</p></div>
+    <div class="win rv"><span class="ic">👁️</span><p><b>Prova no primeiro segundo.</b> O antes/depois abre o vídeo. Quem tem a dor se reconhece na hora e para o dedo.</p></div>
+    <div class="win rv"><span class="ic">🎯</span><p><b>Dor específica com época.</b> Não é "sobrancelha rala" genérico — é "a pinça dos anos 2000 destruiu e nunca mais voltou". Especificidade = identificação.</p></div>
+    <div class="win rv"><span class="ic">💚</span><p><b>Tom de confissão, não de venda.</b> Ela conta a própria história. Vulnerabilidade real converte mais que perfeição ensaiada.</p></div>
+    <div class="win no rv"><span class="ic">🚫</span><p><b>O que NÃO fazer:</b> intro longa ("oi gente, hoje vim falar..."), logo abrindo o vídeo, texto demais na tela, música alta por cima da fala, promessa médica e cara de estúdio.</p></div>
+  </div>
+
+  <div class="sec rv">
+    <div class="kicker"><span class="num">05</span><span class="t">Banco de hooks</span><span class="ln"></span></div>
+    <h2>Escolha — ou grave vários</h2>
+    <p class="h2sub">Cada hook gravado vira um anúncio diferente. Se puder, grave a abertura com 2 ou 3 deles e o resto do vídeo uma vez só. Pode adaptar as palavras pro seu jeito.</p>
+    <div class="beat rv"><span class="t">Hook 1 · Confissão</span><p>"Eu destruí minha sobrancelha nos anos 2000... e descobri como trazer ela de volta."</p></div>
+    <div class="beat rv"><span class="t">Hook 2 · Identificação</span><p>"Se você tirava a sobrancelha fininha porque era moda, esse vídeo é pra você."</p></div>
+    <div class="beat rv"><span class="t">Hook 3 · Curiosidade</span><p>"Minha sobrancelha não nascia há mais de 10 anos. Aí eu testei isso aqui."</p></div>
+    <div class="beat rv"><span class="t">Hook 4 · Dor direta</span><p>"A pinça foi embora... mas a falha ficou, né?"</p></div>
+    <div class="beat rv"><span class="t">Hook 5 · Visual</span><p>Sem fala: abre direto no seu antes/depois com o texto "3 meses de diferença" na tela — e aí você entra contando.</p></div>
+  </div>
+
+  <div class="sec rv">
+    <div class="kicker"><span class="num">06</span><span class="t">Shot list</span><span class="ln"></span></div>
+    <h2>Takes obrigatórios</h2>
+    <p class="h2sub">Todo envio precisa ter esses takes (grave cada um 2x, sempre na vertical). É o que garante que a edição tenha matéria-prima.</p>
+    <div class="rule rv"><b>Take 1 — Antes/depois:</b> foto antiga da sua sobrancelha (ou close da falha) parada 2-3 segundos + close de como tá hoje.</div>
+    <div class="rule rv"><b>Take 2 — Você falando:</b> câmera frontal, luz de janela, contando sua história completa (do hook ao fecho).</div>
+    <div class="rule rv"><b>Take 3 — Aplicação:</b> close aplicando o sérum na sobrancelha, com o rótulo L'Amazonie aparecendo.</div>
+    <div class="rule rv"><b>Take 4 — Resultado:</b> close da sobrancelha hoje, penteadinha, boa luz. Esse take vende sozinho.</div>
+    <div class="rule rv"><b>Take 5 (bônus):</b> reação espontânea — sorriso, olhando no espelho, "gente, olha isso". Naturalidade vale ouro.</div>
+  </div>
+
+  <div class="sec rv">
+    <div class="kicker"><span class="num">07</span><span class="t">Envio & retorno</span><span class="ln"></span></div>
+    <div class="rule rv"><b>Envio:</b> vídeo BRUTO, sem legenda, sem música e sem corte — a edição é nossa. Takes separados + a fala inteira. Envie pelo link/pasta combinado no convite (não mande pelo WhatsApp — ele comprime e estraga a qualidade).</div>
+    <div class="rule rv"><b>Depois do envio:</b> seu vídeo entra em teste no ar, com verba real, por 5 a 7 dias. A gente volta pra você com os números dele e o veredito. <b>Vídeo que vira campeão = mais pedidos daquele estilo pra você.</b> Seu resultado nunca fica no escuro.</div>
+    <div class="rule no rv">Nunca diga: <b>"cura"</b>, <b>"trata queda/alopecia"</b>, <b>"remédio"</b>, <b>"resultado garantido"</b>, <b>"funciona em 100% das pessoas"</b>, <b>"recomendado por dermatologistas"</b>. Pode dizer: fortalece, nutre, estimula, preencheu, "no meu caso resolveu", "olha a diferença". A promessa pesada é problema nosso na edição — você foca na SUA história.</div>
+  </div>
+
+  <div class="sec rv">
+    <div class="kicker"><span class="num">08</span><span class="t">Produção</span><span class="ln"></span></div>
+    <div class="rule rv"><b>Formato:</b> vertical (9:16), gravado no celular — câmera frontal tá ótimo. Duração: 20 a 40 segundos é o alvo das variações (a referência tem 1:14 — vídeo longo funciona quando a história segura, mas comece treinando curto).</div>
+    <div class="rule rv"><b>Luz e som:</b> luz natural (janela) e voz limpa — fala perto do celular, sem música competindo.</div>
+    <div class="rule rv"><b>Varie:</b> seu rosto, sua idade, seu cenário, suas palavras. <b>Não varie:</b> a estrutura dos 5 beats. Mulher 40+ contando a mesma história é território aberto e muito bem-vindo.</div>
+    <div class="rule rv"><b>Prova:</b> se você usa o produto, mostre SEU antes/depois — mesmo tímido. Prova real pequena vale mais que promessa grande.</div>
+    <div class="check rv">
+      <div class="ct">Checklist antes de enviar</div>
+      <p>1 — O primeiro 1,5s pararia VOCÊ rolando o feed?</p>
+      <p>2 — A dor tá nomeada com cena específica?</p>
+      <p>3 — Tem prova visual (antes/depois ou close)?</p>
+      <p>4 — Parece conversa de amiga, não comercial?</p>
+      <p>5 — Tá vertical, com fala limpa e sem enrolação?</p>
+    </div>
+  </div>
+
+  <div class="foot rv">
+    <div class="fm">quem estuda os campeões, vira campeã</div>
+    <div class="fs">L'Amazonie Studio</div>
+  </div>
 </div>
+<script>
+(function(){
+  var p=document.getElementById('prog');
+  function sp(){var h=document.documentElement;var s=h.scrollTop/(h.scrollHeight-h.clientHeight);p.style.width=(s*100)+'%';}
+  window.addEventListener('scroll',sp,{passive:true}); sp();
+  function animCount(el){
+    var raw=el.getAttribute('data-v'); var dec=raw.indexOf(',')>-1; var target=parseFloat(raw.replace(',','.'));
+    var t0=null, dur=1300;
+    function step(ts){ if(!t0)t0=ts; var k=Math.min((ts-t0)/dur,1); k=1-Math.pow(1-k,3);
+      var val=target*k; var txt=dec?val.toFixed(1).replace('.',','):String(Math.round(val));
+      el.childNodes[0].nodeValue=txt; if(k<1)requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduced){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on');
+        var bars=e.target.querySelectorAll('.bar');
+        for(var b=0;b<bars.length;b++){(function(bar){setTimeout(function(){bar.style.width=bar.getAttribute('data-w')+'%';},150);})(bars[b]);}
+        var cs=e.target.querySelectorAll('.count');
+        for(var c=0;c<cs.length;c++){animCount(cs[c]);}
+        io.unobserve(e.target);} });},{threshold:.15});
+    var els=document.querySelectorAll('.rv'); for(var i=0;i<els.length;i++){io.observe(els[i]);}
+  } else {
+    var els2=document.querySelectorAll('.rv'); for(var j=0;j<els2.length;j++){els2[j].classList.add('on');}
+    var bars2=document.querySelectorAll('.bar'); for(var k=0;k<bars2.length;k++){bars2[k].style.width=bars2[k].getAttribute('data-w')+'%';}
+    var cs2=document.querySelectorAll('.count'); for(var m=0;m<cs2.length;m++){cs2[m].childNodes[0].nodeValue=cs2[m].getAttribute('data-v');}
+  }
+})();
+</script>
 </body>
 </html>

@@ -4,92 +4,181 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anatomia do Hook — L'Amazonie Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg:#081511; --panel:rgba(255,255,255,.035); --line:rgba(212,175,95,.18);
+    --cream:#f2ecdd; --muted:#9db8a9; --gold:#d4af5f; --mint:#8fe0b0; --red:#e08b8b;
+  }
   * { margin:0; padding:0; box-sizing:border-box; -webkit-text-size-adjust:100%; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background:#0e2419; color:#f2f7f4; line-height:1.55; }
-  .wrap { max-width:520px; margin:0 auto; padding:20px 16px 60px; }
-  .back { color:#7ed6a7; text-decoration:none; font-size:13px; font-weight:700; }
-  .tag { display:inline-block; background:#c9a227; color:#0e2419; font-weight:800; font-size:11px; letter-spacing:1.5px; padding:4px 10px; border-radius:20px; text-transform:uppercase; margin-top:10px; }
-  h1 { font-size:26px; margin:12px 0 6px; line-height:1.2; }
-  .sub { color:#a8c5b5; font-size:15px; margin-bottom:22px; }
-  h2 { font-size:19px; margin:32px 0 4px; color:#7ed6a7; }
-  .h2sub { color:#a8c5b5; font-size:13.5px; margin-bottom:14px; }
-  .big { background:#1a3a28; border:1px dashed #7ed6a7; border-radius:14px; padding:16px; font-size:15px; margin-bottom:6px; }
-  .big b { color:#c9a227; }
-  .layer { background:#143020; border-left:4px solid #7ed6a7; border-radius:0 12px 12px 0; padding:13px 14px; margin-bottom:10px; }
-  .layer .n { font-weight:800; font-size:15px; }
-  .layer p { font-size:13.5px; color:#cfe3d8; margin-top:4px; }
-  .layer .ex { color:#c9a227; font-size:12.5px; font-weight:700; margin-top:6px; display:block; }
-  .rank { background:#143020; border:1px solid #23503a; border-radius:14px; padding:15px 16px; margin-bottom:10px; }
-  .rank .top { display:flex; justify-content:space-between; align-items:baseline; }
-  .rank .nm { font-weight:800; font-size:14.5px; }
-  .rank .hr { font-size:22px; font-weight:800; color:#7ed6a7; }
-  .rank p { font-size:13px; color:#cfe3d8; margin-top:6px; }
-  .rank .why { color:#c9a227; font-weight:700; }
-  .no { background:#241414; border:1px solid #5a2323; border-radius:12px; padding:14px; margin-bottom:10px; font-size:13.5px; color:#e8caca; }
-  .check { background:#1a3a28; border:1px dashed #7ed6a7; border-radius:14px; padding:16px; margin-top:14px; }
-  .check p { font-size:14px; margin-bottom:8px; }
-  .foot { text-align:center; color:#6d8f7d; font-size:12px; margin-top:40px; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Instrument Sans',-apple-system,sans-serif; background:var(--bg); color:var(--cream); line-height:1.6; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background: radial-gradient(60% 40% at 80% -5%, rgba(212,175,95,.07), transparent 60%),
+                radial-gradient(50% 35% at 0% 30%, rgba(143,224,176,.05), transparent 60%); }
+  body::after { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E"); }
+  #prog { position:fixed; top:0; left:0; height:2px; width:0%; background:linear-gradient(90deg,var(--gold),var(--mint)); z-index:50; transition:width .12s linear; }
+  .wrap { position:relative; z-index:1; max-width:560px; margin:0 auto; padding:30px 20px 70px; }
+
+  .back { color:var(--mint); text-decoration:none; font-size:12.5px; font-weight:600; letter-spacing:.06em; }
+  .tag { display:inline-block; margin-top:16px; font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--bg); background:var(--gold); padding:5px 12px; border-radius:20px; font-weight:700; }
+  h1 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(36px,10vw,50px); line-height:1.05; margin:14px 0 14px; }
+  h1 .it { font-style:italic; color:var(--gold); font-weight:400; }
+  .sub { color:var(--muted); font-size:15px; }
+  .sub b { color:var(--cream); font-weight:600; }
+
+  .sec { margin-top:46px; }
+  .kicker { display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+  .kicker .num { font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:15px; }
+  .kicker .t { font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .kicker .ln { flex:1; height:1px; background:var(--line); }
+  h2 { font-family:'Fraunces',serif; font-weight:600; font-size:26px; margin:6px 0 6px; }
+  .h2sub { color:var(--muted); font-size:13.5px; margin-bottom:16px; }
+
+  .big { border:1px dashed var(--gold); background:rgba(212,175,95,.05); border-radius:18px; padding:20px; font-size:15px; color:var(--muted); }
+  .big b { color:var(--gold); }
+  .big em { font-family:'Fraunces',serif; color:var(--cream); }
+
+  .layer { position:relative; padding:18px 0 18px 34px; border-left:1px solid var(--line); margin-left:8px; }
+  .layer::before { content:""; position:absolute; left:-5px; top:26px; width:9px; height:9px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px rgba(212,175,95,.6); }
+  .layer .n { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin-bottom:6px; }
+  .layer p { font-size:13.5px; color:var(--muted); }
+  .layer p b { color:var(--cream); }
+  .layer .ex { display:block; margin-top:8px; color:var(--gold); font-size:12.5px; font-weight:600; }
+
+  .rank { background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:20px; margin-bottom:16px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+  .rank .top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
+  .rank .nm { font-family:'Fraunces',serif; font-weight:600; font-size:19px; }
+  .rank .hr { font-family:'Fraunces',serif; font-size:32px; font-weight:600; color:var(--mint); }
+  .rank .hr small { font-size:17px; }
+  .barwrap { position:relative; height:8px; background:rgba(255,255,255,.07); border-radius:6px; margin:10px 0 22px; }
+  .bar { position:absolute; left:0; top:0; height:100%; width:0; border-radius:6px; background:linear-gradient(90deg,var(--gold),var(--mint)); transition:width 1.4s cubic-bezier(.2,.7,.2,1); }
+  .mark { position:absolute; top:-4px; width:2px; height:16px; background:rgba(242,236,221,.5); }
+  .mark i { position:absolute; top:18px; left:50%; transform:translateX(-50%); font-style:normal; font-size:9.5px; color:var(--muted); white-space:nowrap; letter-spacing:.05em; }
+  .rank video { width:100%; border-radius:12px; background:#000; display:block; max-height:52vh; }
+  .rank p.why { font-size:13.5px; color:var(--muted); margin-top:12px; }
+  .rank p.why b { color:var(--gold); }
+  .rank p.why strong { color:var(--cream); }
+
+  .no { background:rgba(224,139,139,.05); border:1px solid rgba(224,139,139,.3); border-radius:16px; padding:16px; margin-bottom:10px; font-size:13.5px; color:#dcc0c0; }
+
+  .check { border:1px dashed var(--gold); border-radius:18px; padding:20px; margin-top:16px; background:rgba(212,175,95,.05); }
+  .check .ct { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin-bottom:10px; }
+  .check p { font-size:14px; margin-bottom:8px; color:var(--muted); }
+
+  .foot { text-align:center; margin-top:60px; }
+  .foot .fm { font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:15px; }
+  .foot .fs { font-size:11px; letter-spacing:.3em; color:var(--muted); text-transform:uppercase; margin-top:6px; }
+
+  .rv { opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .rv.on { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity:1; transform:none; transition:none; } .bar { transition:none; } html{scroll-behavior:auto;} }
 </style>
 </head>
 <body>
+<div id="prog"></div>
 <div class="wrap">
-  <a class="back" href="index.html">← Voltar pro Studio</a>
+
+  <a class="back" href="index.html">← Studio</a>
   <div><span class="tag">Aula rápida</span></div>
-  <h1>Anatomia do Hook 🪝</h1>
+  <h1>Anatomia<br>do Hook<span class="it">.</span></h1>
   <p class="sub">Hook não é a frase de abertura. Hook é <b>tudo que acontece no primeiro 1,5 segundo</b> — e a maior parte é decidida antes de você terminar a primeira palavra.</p>
 
-  <div class="big">A pessoa rolando o feed decide em <b>1,5 segundo</b> se fica ou passa. Nesse tempo, ela ainda nem processou sua frase inteira — ela processou <b>o que viu</b>. Por isso os melhores hooks empilham camadas: o olho para primeiro, o ouvido segura depois.</div>
-
-  <h2>🧅 As 5 camadas de um hook</h2>
-  <p class="h2sub">Um hook forte tem pelo menos 3 dessas 5 trabalhando juntas.</p>
-
-  <div class="layer"><div class="n">1. 👁️ Visual — o que aparece no primeiro frame</div><p>É a camada mais poderosa. Antes/depois na tela, close de uma falha real, um rosto ocupando a tela inteira, algo "estranho" que o cérebro precisa entender. Se o primeiro frame parece anúncio (logo, produto posado, fundo limpo demais), o dedo já passou.</p><span class="ex">→ Regra: o primeiro frame precisa funcionar MUDO e parado, como uma foto que pararia você.</span></div>
-
-  <div class="layer"><div class="n">2. 🏃 Movimento — algo em ação desde o frame zero</div><p>O olho humano é fisgado por movimento. Mão entrando no quadro, câmera se aproximando, você já andando ou virando pra câmera, um zoom rápido. Vídeo que abre parado com pessoa "se preparando pra falar" perde a janela.</p><span class="ex">→ Regra: nada de respirar antes de começar — o vídeo abre já acontecendo.</span></div>
-
-  <div class="layer"><div class="n">3. 🗣️ Fala — a frase que segura quem o visual fisgou</div><p>A frase entra pra dar contexto ao que o olho já viu: dor com cena específica ("tirei demais na pinça"), confissão, pergunta direta. Primeira palavra forte — nada de "oi gente, tudo bem?".</p><span class="ex">→ Regra: se a frase funciona sem o visual, o visual tá fraco. Os dois se completam.</span></div>
-
-  <div class="layer"><div class="n">4. 📝 Texto na tela — pra quem assiste sem som</div><p>Grande parte do feed roda MUDO. Um texto curto no primeiro segundo ("3 meses de diferença", "a pinça foi embora, a falha ficou") garante que quem tá sem som também seja fisgada.</p><span class="ex">→ Regra: máximo 6-8 palavras, fonte grande, na zona central da tela.</span></div>
-
-  <div class="layer"><div class="n">5. 🔊 Som — voz limpa e natural</div><p>Voz perto do celular, tom de conversa (não de locutora). Música alta competindo com a fala mata o hook de quem tá com som ligado.</p><span class="ex">→ Regra: sua voz é o som principal. Música é problema da edição, não seu.</span></div>
-
-  <h2>🏆 Os melhores hooks da conta (dados reais)</h2>
-  <p class="h2sub">Hook rate = de cada 100 pessoas impactadas, quantas assistiram os 3 primeiros segundos. Média das marcas: ~20%. Aperte o play em cada um — é <b>só o corte do hook</b>, exatamente o que a pessoa vê antes de decidir ficar:</p>
-
-  <div class="rank">
-    <div class="top"><span class="nm">🥇 Vídeo Nat</span><span class="hr">46%</span></div>
-    <video src="hook_nat.mp4" controls playsinline preload="metadata" style="width:100%; border-radius:10px; background:#000; margin-top:10px; max-height:52vh;"></video>
-    <p><span class="why">Por quê:</span> identificação imediata de quem "nasceu assim" — uma dor que a pessoa carrega a vida inteira e ninguém nomeia. Fala + rosto ocupando a tela desde o frame zero.</p>
-  </div>
-  <div class="rank">
-    <div class="top"><span class="nm">🥈 Gabi Dorow</span><span class="hr">38%</span></div>
-    <video src="hook_gabi-dorow.mp4" controls playsinline preload="metadata" style="width:100%; border-radius:10px; background:#000; margin-top:10px; max-height:52vh;"></video>
-    <p>E o melhor "segurador" da conta: 13% assistem até o fim. <span class="why">Por quê:</span> três camadas juntas — movimento real (a pinça em ação), texto na tela ("se você tirou...") e a memória visual das sobrancelhas finas dos anos 2000. Nostalgia + dor no mesmo segundo.</p>
-  </div>
-  <div class="rank">
-    <div class="top"><span class="nm">🥉 Insta Pinça — o campeão de vendas</span><span class="hr">33%</span></div>
-    <video src="hook_insta-pinca.mp4" controls playsinline preload="metadata" style="width:100%; border-radius:10px; background:#000; margin-top:10px; max-height:52vh;"></video>
-    <p><span class="why">Por quê:</span> antes/depois em close abrindo o vídeo — prova visual ANTES de qualquer explicação. Hook 100% visual: funciona até no mudo. Hook um pouco menor que os outros, mas é o que mais vende — porque quem para, para já convencida.</p>
+  <div class="sec rv">
+    <div class="big">A pessoa rolando o feed decide em <b>1,5 segundo</b> se fica ou passa. Nesse tempo, ela ainda nem processou sua frase inteira — ela processou <em>o que viu</em>. Por isso os melhores hooks empilham camadas: <b>o olho para primeiro, o ouvido segura depois.</b></div>
   </div>
 
-  <div class="big" style="margin-top:14px;">O padrão dos 3: <b>nenhum abre com apresentação.</b> Todos abrem com dor reconhecível, movimento ou prova visual — nos primeiros frames, não depois da introdução.</div>
-
-  <h2>🚫 Assassinos de hook</h2>
-  <div class="no">❌ "Oi gente, tudo bem? Hoje eu vim falar de um produto..." — a pessoa foi embora no "oi gente".</div>
-  <div class="no">❌ Logo ou embalagem abrindo o vídeo — primeiro frame com cara de anúncio = dedo passa.</div>
-  <div class="no">❌ Cena parada esperando você "entrar no clima" — o vídeo precisa abrir já em movimento.</div>
-  <div class="no">❌ Primeiro segundo escuro, tremido ou de costas — o olho não encontra nada pra segurar.</div>
-
-  <div class="check">
-    <p><b>Teste do hook antes de enviar:</b></p>
-    <p>1️⃣ Assista SÓ o primeiro 1,5s, no mudo. Pararia você?</p>
-    <p>2️⃣ Tem pelo menos 3 das 5 camadas trabalhando?</p>
-    <p>3️⃣ A primeira palavra é forte (não é "oi")?</p>
-    <p>4️⃣ Alguma coisa se move desde o frame zero?</p>
+  <div class="sec rv">
+    <div class="kicker"><span class="num">01</span><span class="t">As 5 camadas</span><span class="ln"></span></div>
+    <h2>Um hook forte tem 3+ dessas trabalhando juntas</h2>
+    <div style="height:8px"></div>
+    <div class="layer rv"><div class="n">👁️ Visual — o primeiro frame</div><p>É a camada mais poderosa. Antes/depois na tela, close de uma falha real, um rosto ocupando a tela inteira. Se o primeiro frame parece anúncio (logo, produto posado, fundo limpo demais), o dedo já passou.</p><span class="ex">→ O primeiro frame precisa funcionar MUDO e parado, como uma foto que pararia você.</span></div>
+    <div class="layer rv"><div class="n">🏃 Movimento — ação desde o frame zero</div><p>O olho humano é fisgado por movimento. Mão entrando no quadro, câmera se aproximando, você já virando pra câmera. Vídeo que abre parado com pessoa "se preparando pra falar" perde a janela.</p><span class="ex">→ Nada de respirar antes de começar — o vídeo abre já acontecendo.</span></div>
+    <div class="layer rv"><div class="n">🗣️ Fala — a frase que segura</div><p>A frase entra pra dar contexto ao que o olho já viu: dor com cena específica ("tirei demais na pinça"), confissão, pergunta direta. Primeira palavra forte — nada de "oi gente, tudo bem?".</p><span class="ex">→ Se a frase funciona sem o visual, o visual tá fraco. Os dois se completam.</span></div>
+    <div class="layer rv"><div class="n">📝 Texto na tela — pra quem tá no mudo</div><p>Grande parte do feed roda SEM SOM. Um texto curto no primeiro segundo ("3 meses de diferença", "a pinça foi embora, a falha ficou") fisga quem tá com o som desligado.</p><span class="ex">→ Máximo 6-8 palavras, fonte grande, na zona central da tela.</span></div>
+    <div class="layer rv"><div class="n">🔊 Som — voz limpa e natural</div><p>Voz perto do celular, tom de conversa (não de locutora). Música alta competindo com a fala mata o hook de quem tá com som ligado.</p><span class="ex">→ Sua voz é o som principal. Música é problema da edição, não seu.</span></div>
   </div>
 
-  <p class="foot">L'Amazonie Studio 💚</p>
+  <div class="sec rv">
+    <div class="kicker"><span class="num">02</span><span class="t">Os campeões</span><span class="ln"></span></div>
+    <h2>Assista só o corte do hook</h2>
+    <p class="h2sub">Hook rate = de cada 100 pessoas impactadas, quantas assistiram os 3 primeiros segundos. A marca nas barras é a média do mercado (~20%). Aperte o play — é exatamente o que a pessoa vê antes de decidir ficar.</p>
+
+    <div class="rank rv">
+      <div class="top"><span class="nm">🥇 Vídeo Nat</span><span class="hr count" data-v="46">0<small>%</small></span></div>
+      <div class="barwrap"><div class="bar" data-w="92"></div><span class="mark" style="left:40%"><i>média 20%</i></span></div>
+      <video src="hook_nat.mp4" controls playsinline preload="metadata"></video>
+      <p class="why"><b>Por quê:</b> identificação imediata de quem <strong>"nasceu assim"</strong> — uma dor que a pessoa carrega a vida inteira e ninguém nomeia. Fala + rosto ocupando a tela desde o frame zero.</p>
+    </div>
+    <div class="rank rv">
+      <div class="top"><span class="nm">🥈 Gabi Dorow</span><span class="hr count" data-v="38">0<small>%</small></span></div>
+      <div class="barwrap"><div class="bar" data-w="76"></div><span class="mark" style="left:40%"><i>média 20%</i></span></div>
+      <video src="hook_gabi-dorow.mp4" controls playsinline preload="metadata"></video>
+      <p class="why">E o melhor "segurador" da conta: 13% assistem até o fim. <b>Por quê:</b> três camadas juntas — <strong>movimento real</strong> (a pinça em ação), <strong>texto na tela</strong> ("se você tirou...") e a <strong>memória visual</strong> das sobrancelhas finas dos anos 2000. Nostalgia + dor no mesmo segundo.</p>
+    </div>
+    <div class="rank rv">
+      <div class="top"><span class="nm">🥉 Insta Pinça</span><span class="hr count" data-v="33">0<small>%</small></span></div>
+      <div class="barwrap"><div class="bar" data-w="66"></div><span class="mark" style="left:40%"><i>média 20%</i></span></div>
+      <video src="hook_insta-pinca.mp4" controls playsinline preload="metadata"></video>
+      <p class="why"><b>Por quê:</b> antes/depois em close abrindo o vídeo — <strong>prova visual antes de qualquer explicação</strong>. Hook 100% visual: funciona até no mudo. Hook um pouco menor que os outros, mas é <strong>o que mais vende</strong> — porque quem para, para já convencida.</p>
+    </div>
+    <div class="big rv" style="margin-top:6px;">O padrão dos 3: <b>nenhum abre com apresentação.</b> Todos abrem com dor reconhecível, movimento ou prova visual — <em>nos primeiros frames, não depois da introdução.</em></div>
+  </div>
+
+  <div class="sec rv">
+    <div class="kicker"><span class="num">03</span><span class="t">Assassinos de hook</span><span class="ln"></span></div>
+    <h2>O que mata em 1 segundo</h2>
+    <div style="height:8px"></div>
+    <div class="no rv">❌ "Oi gente, tudo bem? Hoje eu vim falar de um produto..." — a pessoa foi embora no "oi gente".</div>
+    <div class="no rv">❌ Logo ou embalagem abrindo o vídeo — primeiro frame com cara de anúncio = dedo passa.</div>
+    <div class="no rv">❌ Cena parada esperando você "entrar no clima" — o vídeo precisa abrir já em movimento.</div>
+    <div class="no rv">❌ Primeiro segundo escuro, tremido ou de costas — o olho não encontra nada pra segurar.</div>
+    <div class="check rv">
+      <div class="ct">Teste do hook antes de enviar</div>
+      <p>1 — Assista SÓ o primeiro 1,5s, no mudo. Pararia você?</p>
+      <p>2 — Tem pelo menos 3 das 5 camadas trabalhando?</p>
+      <p>3 — A primeira palavra é forte (não é "oi")?</p>
+      <p>4 — Alguma coisa se move desde o frame zero?</p>
+    </div>
+  </div>
+
+  <div class="foot rv">
+    <div class="fm">o olho para primeiro, o ouvido segura depois</div>
+    <div class="fs">L'Amazonie Studio</div>
+  </div>
 </div>
+<script>
+(function(){
+  var p=document.getElementById('prog');
+  function sp(){var h=document.documentElement;var s=h.scrollTop/(h.scrollHeight-h.clientHeight);p.style.width=(s*100)+'%';}
+  window.addEventListener('scroll',sp,{passive:true}); sp();
+  function animCount(el){
+    var raw=el.getAttribute('data-v'); var dec=raw.indexOf(',')>-1; var target=parseFloat(raw.replace(',','.'));
+    var t0=null, dur=1300;
+    function step(ts){ if(!t0)t0=ts; var k=Math.min((ts-t0)/dur,1); k=1-Math.pow(1-k,3);
+      var val=target*k; var txt=dec?val.toFixed(1).replace('.',','):String(Math.round(val));
+      el.childNodes[0].nodeValue=txt; if(k<1)requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduced){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on');
+        var bars=e.target.querySelectorAll('.bar');
+        for(var b=0;b<bars.length;b++){(function(bar){setTimeout(function(){bar.style.width=bar.getAttribute('data-w')+'%';},150);})(bars[b]);}
+        var cs=e.target.querySelectorAll('.count');
+        for(var c=0;c<cs.length;c++){animCount(cs[c]);}
+        io.unobserve(e.target);} });},{threshold:.15});
+    var els=document.querySelectorAll('.rv'); for(var i=0;i<els.length;i++){io.observe(els[i]);}
+  } else {
+    var els2=document.querySelectorAll('.rv'); for(var j=0;j<els2.length;j++){els2[j].classList.add('on');}
+    var bars2=document.querySelectorAll('.bar'); for(var k=0;k<bars2.length;k++){bars2[k].style.width=bars2[k].getAttribute('data-w')+'%';}
+    var cs2=document.querySelectorAll('.count'); for(var m=0;m<cs2.length;m++){cs2[m].childNodes[0].nodeValue=cs2[m].getAttribute('data-v');}
+  }
+})();
+</script>
 </body>
 </html>
