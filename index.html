@@ -41,11 +41,14 @@
     backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
     transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, background .35s; }
   a.card:active, a.card:hover { transform:translateY(-3px); border-color:rgba(212,175,95,.45); background:rgba(255,255,255,.055); }
-  .card .k { font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:700; }
-  .card .t { font-family:'Fraunces',serif; font-weight:600; font-size:23px; line-height:1.15; margin:10px 0 8px; }
-  .card .d { font-size:14px; color:var(--muted); }
-  .card .go { display:inline-flex; align-items:center; gap:8px; margin-top:16px; color:var(--mint); font-weight:600; font-size:13.5px; }
+  .card .k { display:block; font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:700; padding-right:110px; }
+  .card .t { display:block; font-family:'Fraunces',serif; font-weight:600; font-size:23px; line-height:1.15; margin:10px 0 8px; }
+  .card .d { display:block; font-size:14px; color:var(--muted); }
+  .card .go { display:inline-flex; align-items:center; gap:10px; margin-top:18px; padding:12px 24px; border-radius:999px;
+    background:linear-gradient(135deg, #e3c47a, var(--gold)); color:#0a1a12; font-weight:700; font-size:13.5px; letter-spacing:.04em;
+    box-shadow:0 6px 18px rgba(212,175,95,.22); transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s; }
   .card .go .ar { transition:transform .3s; }
+  a.card:hover .go, a.card:active .go { transform:translateY(-2px); box-shadow:0 10px 24px rgba(212,175,95,.35); }
   a.card:hover .go .ar { transform:translateX(5px); }
   .soon { opacity:.5; }
   .badge { position:absolute; top:20px; right:20px; font-size:10px; letter-spacing:.14em; color:var(--bg); background:var(--gold); padding:4px 9px; border-radius:20px; font-weight:700; text-transform:uppercase; }
@@ -84,13 +87,13 @@
   <div class="hr"></div>
 
   <div class="sec rv">
-    <div class="kicker"><span class="num">01</span><span class="t">Referências campeãs</span><span class="ln"></span></div>
+    <div class="kicker"><span class="num">01</span><span class="t">Criativos campeões</span><span class="ln"></span></div>
     <a class="card" href="referencia-pinca.html">
       <span class="badge">Campeão atual</span>
       <span class="k">Referência #01</span>
       <span class="t">Ângulo Pinça:<br>"tirei demais e não voltou"</span>
       <span class="d">O anúncio nº 1 da conta: vídeo completo, métricas explicadas com barras, roteiro beat a beat, banco de hooks e shot list.</span>
-      <span class="go">Estudar o campeão <span class="ar">→</span></span>
+      <span class="go">Saiba mais <span class="ar">→</span></span>
     </a>
     <div class="card soon">
       <span class="k">Referência #02</span>
@@ -100,10 +103,11 @@
   </div>
 
   <div class="sec rv">
-    <div class="kicker"><span class="num">02</span><span class="t">Aprenda</span><span class="ln"></span></div>
+    <div class="kicker"><span class="num">02</span><span class="t">L'Amazonie Academy</span><span class="ln"></span></div>
     <a class="card" href="hooks.html">
       <span class="k">Aula rápida</span>
       <span class="t">Anatomia do Hook</span>
+      <span style="display:block; font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:15px; margin:-2px 0 8px;">aprenda a produzir hooks campeões</span>
       <span class="d">Hook não é só a fala: é visual, movimento, texto e som nos primeiros 1,5 segundos. As 5 camadas + os melhores hooks da conta, assistíveis e com dados reais.</span>
       <span class="go">Abrir aula <span class="ar">→</span></span>
     </a>
