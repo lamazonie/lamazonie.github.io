@@ -132,7 +132,7 @@ section > *,.panel{min-width:0}
 .row .go svg{width:16px;height:16px}
 
 /* pedidos */
-.ped .top2{display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:start}
+.ped .top2{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start}
 .ped .big{position:relative;display:block;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--na-bg);box-shadow:0 1px 0 var(--line)}
 .ped .big img{width:100%;height:100%;object-fit:cover}
 .ped .big i{position:absolute;right:8px;bottom:8px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#111}
@@ -147,12 +147,20 @@ section > *,.panel{min-width:0}
 .seg button{flex:1;min-height:44px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted)}
 .seg button[aria-selected=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
 .panel[hidden]{display:none}
-.rowh{font:600 14px var(--sans);color:var(--ink);margin:6px 0 -6px}
+.rowh{font:600 14px var(--sans);color:var(--ink);margin:0}
+.panel{display:grid;gap:12px}
+section > .rowh + .reels{margin-top:-8px}
 .reels{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px}
 .reels::-webkit-scrollbar{display:none}
-.reel{flex:none;width:148px;scroll-snap-align:start;display:grid;gap:8px;text-align:left}
+.reel{flex:none;width:124px;scroll-snap-align:start;display:grid;gap:8px;text-align:left}
 .reel .tv{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#111}
-.reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
+.reel .ph0{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(165deg,#24342f 0%,#0b0f0d 75%);color:#fff}
+.reel .ph0 i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16)}
+.reel .ph0 i svg{width:13px;height:13px;margin-left:2px}
+.reel .ph0 em{position:absolute;left:10px;bottom:10px;font:600 13px var(--sans);font-style:normal;display:flex;align-items:center;gap:5px}
+.reel .ph0 em svg{width:12px;height:12px}
+.reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;opacity:0;transition:opacity .3s var(--ease)}
+.reel iframe.on{opacity:1}
 .reel .tap{position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(0,0,0,.35))}
 .reel .sv{position:absolute;left:8px;bottom:8px;width:28px;height:28px;border-radius:50%;display:none;place-items:center;background:rgba(255,255,255,.95);color:var(--brand)}
 .reel .sv svg{width:13px;height:13px}
@@ -354,7 +362,7 @@ function card(it, tone){
       ${c.tipo==='video'?`<span class="play" aria-hidden="true">${ICON.play}</span>`:''}</div>
     <div class="who"><b>${esc(who(it.code))}</b>${VIEW==='time'?`<span>${it.code}</span>`:''}</div>
     ${dots(it)}
-    ${VIEW==='time'?`<span class="offer">${esc(c.oferta)}</span>`:''}
+    ${VIEW==='time'&&c.oferta&&!/^[?—–-]$/.test(c.oferta.trim())?`<span class="offer">${esc(c.oferta)}</span>`:''}
   </button>`;
 }
 function row(it, tone, keep){
@@ -378,11 +386,12 @@ function render(){
     : `<ol>${E.recado.map(r=>`<li><span>${esc(r)}</span></li>`).join('')}</ol><p class="lesson">${esc(E.aprendizado)}</p>`;
 
   let h = '';
-  const thumb = c => poster(c)?`<img src="${poster(c)}" alt="" width="112" height="140" loading="lazy" decoding="async">`:'';
+  const thumb = c => poster(c)?`<img src="${poster(c)}" alt="" width="96" height="120" loading="lazy" decoding="async">`:'';
   h += sec('pedidos','Pedidos da semana', E.pedidosSub||'O que gravar agora.','',
     `<div class="peds">${E.pedidos.map(p=>{ const [b0,...bs]=p.base; return `<article class="ped">
+      <h3>${esc(p.titulo)}</h3>
       <div class="top2"><button class="big" data-code="${b0}" aria-label="Ver vídeo de referência">${thumb(b0)}<i>${ICON.play}</i></button>
-        <div class="pt"><h3>${esc(p.titulo)}</h3>${p.resumo?`<p class="one">${esc(p.resumo)}</p>`:''}<span class="ref1">Referência: ${VIEW==='time'?b0:esc(who(b0))}</span></div></div>
+        <div class="pt">${p.resumo?`<p class="one">${esc(p.resumo)}</p>`:''}<span class="ref1">Referência: ${VIEW==='time'?b0:esc(who(b0))}</span></div></div>
       ${bs.length?`<div class="more-refs">${bs.map(c=>`<button data-code="${c}">${poster(c)?`<img src="${poster(c)}" alt="" width="32" height="32" loading="lazy">`:''}${VIEW==='time'?c:esc(who(c))}</button>`).join('')}</div>`:''}
       <details class="more"><summary>Como fazer</summary><div><dl><div><dt>Quem</dt><dd>${esc(p.quem)}</dd></div><div><dt>Manter</dt><dd>${esc(p.manter)}</dd></div><div><dt>Trocar</dt><dd>${esc(p.trocar)}</dd></div></dl></div></details></article>`}).join('')}</div>`);
 
@@ -390,7 +399,7 @@ function render(){
   if (M?.tiktok?.length || M?.tiktokBR?.length || M?.anuncios?.length){
     MK = M;
     const row = (list, pre) => `<div class="reels">${(list||[]).map((t,i)=>`<button class="reel${isSaved(t)?' saved':''}" data-mk="${pre}${i}" aria-label="${esc(t.titulo)}: ver o vídeo e as ideias">
-      <span class="tv"><iframe src="https://www.tiktok.com/player/v1/${ttId(t.url)}?controls=0&progress_bar=0&play_button=0&volume_control=0&fullscreen_button=0&timestamp=0&music_info=0&description=0&rel=0&native_context_menu=0&closed_caption=0&autoplay=0" loading="lazy" tabindex="-1" aria-hidden="true" title=""></iframe><span class="tap"></span><span class="sv">${ICON.bm}</span></span>
+      <span class="tv"><span class="ph0" aria-hidden="true"><i>${ICON.play}</i></span><iframe onload="setTimeout(()=>this.classList.add('on'),400)" src="https://www.tiktok.com/player/v1/${ttId(t.url)}?controls=0&progress_bar=0&play_button=0&volume_control=0&fullscreen_button=0&timestamp=0&music_info=0&description=0&rel=0&native_context_menu=0&closed_caption=0&autoplay=0" loading="lazy" tabindex="-1" aria-hidden="true" title=""></iframe><span class="tap"></span><span class="sv">${ICON.bm}</span></span>
       <b>${esc(t.titulo)}</b><small>${esc(t.numero)} curtidas</small></button>`).join('')}</div>`;
     const reels = `${M.tiktok?.length?`<h4 class="rowh">Em alta no mundo</h4>${row(M.tiktok,'t')}`:''}${M.tiktokBR?.length?`<h4 class="rowh">Em alta no Brasil</h4>${row(M.tiktokBR,'b')}`:''}`;
     const ad = (x,i) => `<button class="ad" data-mk="a${i}"><span class="hd"><span class="av">${esc(x.marca[0])}</span><span><b>${esc(x.marca)}</b><small>Patrocinado · ${esc(x.pais)}${x.versoes?` · ${x.versoes} versões`:''}</small></span></span>
@@ -416,15 +425,17 @@ function render(){
     `<div class="rows">${E.remarketing.map(it=>row(it,'rmkt')).join('')}</div>`);
 
   const mes = E.mesAnterior;
-  h += sec('arquivo', mes ? 'Arquivo' : 'Como ler', mes ? `Venceram no mês anterior (${mes.periodo}). As edições passadas ficam no seletor do topo.` : '','',
-    `${mes?`<div class="rows">${mes.codes.map(c=>row({code:c,recado:`${C[c].formato} · ${C[c].angulo}`},'ok',true)).join('')}</div>`:''}
-     <details class="legend"><summary>Como ler as notas</summary><div class="lg">
+  const legenda = `<details class="legend"><summary>Como ler as notas</summary><div class="lg">
        <div><b>Gancho</b><span>Parou o scroll? Ótimo ≥ 35% · Bom 25–35% · Fraco &lt; 25%</span></div>
        <div><b>História</b><span>Assistiu até o fim? Ótimo ≥ 40% · Bom 25–40% · Fraco &lt; 25%</span></div>
        <div><b>Chamada</b><span>Clicou? Ótimo ≥ 1,5% · Bom 1–1,5% · Fraco &lt; 1%</span></div>
        ${VIEW==='time'?`<div><b>CPM</b><span>Custo de mil impressões, já com imposto. Ótimo ≤ R$ 30 · Bom R$ 30–50 · Fraco &gt; R$ 50</span></div><div><b>Frequência</b><span>Vezes que a mesma pessoa viu na semana. Ótimo &lt; 2 · Bom 2–3 · Fraco &gt; 3</span></div>`:''}
        ${VIEW==='time'?`<div><b>Bolinhas</b><span>Embaixo de cada capa: G gancho, H história, C chamada. Verde ótimo · amarelo bom · vermelho fraco · cinza sem dado (imagem)</span></div>`:''}
-       ${VIEW==='time'?`<div><b>Categoria</b><span>Vem da venda real de cada anúncio (Solomon). Imagem não tem gancho nem história.</span></div>`:''}</div></details>`);
+       ${VIEW==='time'?`<div><b>Categoria</b><span>Vem da venda real de cada anúncio (Solomon). Imagem não tem gancho nem história.</span></div>`:''}</div></details>`;
+  h += mes
+    ? sec('arquivo','Arquivo',`Venceram no mês anterior (${mes.periodo}). As edições passadas ficam no seletor do topo.`,'',
+        `<div class="rows">${mes.codes.map(c=>row({code:c,recado:`${C[c].formato} · ${C[c].angulo}`},'ok',true)).join('')}</div>${legenda}`)
+    : `<div class="foot-legend">${legenda}</div>`;
 
   document.getElementById('app').innerHTML = h;
   document.getElementById('nav').innerHTML = [...document.querySelectorAll('section[data-nav]')].filter(s=>!(s.id==='arquivo'&&!E.mesAnterior)).map(s=>{
@@ -497,7 +508,10 @@ document.getElementById('dlg').addEventListener('cancel', e=>{ e.preventDefault(
 function spy(){
   const links = [...document.querySelectorAll('#nav a')];
   const bar = document.getElementById('nav'); let cur = '';
-  const io = new IntersectionObserver(es=>{ es.forEach(x=>{ if(!x.isIntersecting || x.target.id===cur) return; cur = x.target.id;
+  const first = document.querySelector('section[data-nav]');
+  const io = new IntersectionObserver(es=>{
+    if (first && scrollY + innerHeight*0.3 < first.offsetTop){ if (cur){ cur=''; links.forEach(l=>l.classList.remove('on')); requestAnimationFrame(()=>bar.scrollTo({left:0})); } return; }
+    es.forEach(x=>{ if(!x.isIntersecting || x.target.id===cur) return; cur = x.target.id;
     links.forEach(l=>l.classList.toggle('on', l.dataset.id===cur));
     const a = links.find(l=>l.dataset.id===cur); if (!a) return;
     requestAnimationFrame(()=>bar.scrollTo({left: a.offsetLeft - (bar.clientWidth - a.offsetWidth)/2, behavior:'smooth'})); }); },{rootMargin:'-30% 0px -60% 0px'});
