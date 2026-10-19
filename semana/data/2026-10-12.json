@@ -127,7 +127,7 @@
  ],
  "remarketing": [],
  "mercado": {
-  "sub": "Virais do TikTok. Toque pra assistir e ver 3 ideias de roteiro.",
+  "sub": "Em alta no TikTok, no mundo e no Brasil. Toque pra assistir e ver 3 ideias de roteiro.",
   "tiktok": [
    {
     "titulo": "A fase feia de crescer",
@@ -222,6 +222,104 @@
       "tela": "Respondendo: “como passa esse sérum?”",
       "cena": "Aplicação bem de perto, 10 segundos.",
       "final": "“É só isso, antes de dormir.”"
+     }
+    ]
+   }
+  ],
+  "tiktokBR": [
+   {
+    "titulo": "A sobrancelha fina chegou aqui",
+    "numero": "110 mil",
+    "url": "https://www.tiktok.com/@borntodiee_zz/video/7695796513158565128",
+    "outro": "https://www.tiktok.com/@rubyvsworld/video/7642757929656995092",
+    "porque": "A trend da sobrancelha fina já chegou no Brasil. Quem viveu os anos 2000 sabe como essa história termina.",
+    "ideias": [
+     {
+      "tela": "Sobrancelha fina voltou e eu já sei como essa história termina",
+      "cena": "Foto sua dos anos 2000 com a sobrancelha fina, corta pra hoje.",
+      "final": "“Levei anos pra recuperar.” e mostra o sérum."
+     },
+     {
+      "tela": "Mãe, a sobrancelha fina voltou",
+      "cena": "Mostra pra mãe ou tia, ela faz careta e conta a experiência dela.",
+      "final": "“Pra você não passar pelo que eu passei.”"
+     },
+     {
+      "tela": "Antes de pinçar tudo, salva esse vídeo",
+      "cena": "Mostra a pinça e guarda na gaveta.",
+      "final": "“Se arrependeu? O sérum tá aqui.”"
+     }
+    ]
+   },
+   {
+    "titulo": "Falha também é charme",
+    "numero": "53 mil",
+    "url": "https://www.tiktok.com/@borntodiee_zz/video/7666186084685991186",
+    "outro": null,
+    "porque": "Vídeo que trata a falha como parte do rosto foi salvo quase 5 mil vezes. Acolher a falha gera identificação.",
+    "ideias": [
+     {
+      "tela": "Eu escondia essa falha desde os 12 anos",
+      "cena": "Tira a maquiagem da sobrancelha devagar, sem pressa.",
+      "final": "“Hoje eu cuido dela em vez de esconder.”"
+     },
+     {
+      "tela": "Coisas que eu fazia pra esconder minha falha",
+      "cena": "Cortes rápidos: lápis, franja, sombra.",
+      "final": "“Agora eu só passo o sérum.”"
+     },
+     {
+      "tela": "Minha falha, minha história",
+      "cena": "Conta de onde veio a falha (pinça, cicatriz, fase difícil).",
+      "final": "“E o que eu faço por ela hoje.”"
+     }
+    ]
+   },
+   {
+    "titulo": "O sonho de muita gente",
+    "numero": "45 mil",
+    "url": "https://www.tiktok.com/@lorrani.ayala/video/7279446688404688134",
+    "outro": null,
+    "porque": "Sobrancelha cheia e natural é o desejo. Mostrar o resultado bonito já é o gancho.",
+    "ideias": [
+     {
+      "tela": "O sonho de muita gente: sobrancelha cheia sem lápis",
+      "cena": "Close penteando a sobrancelha com a escovinha.",
+      "final": "“Sem maquiagem. Só cuidado.”"
+     },
+     {
+      "tela": "Quando perguntam se é micro",
+      "cena": "Ri e penteia os fios bem de perto pra mostrar que é fio.",
+      "final": "“É fio, amiga.”"
+     },
+     {
+      "tela": "Escovando a sobrancelha que eu sonhei a vida toda",
+      "cena": "Som da escovinha bem alto, estilo ASMR.",
+      "final": "O sérum aparece na bancada."
+     }
+    ]
+   },
+   {
+    "titulo": "Dica de amiga",
+    "numero": "15,6 mil",
+    "url": "https://www.tiktok.com/@dailynikrib/video/7676552424760331528",
+    "outro": null,
+    "porque": "Dica no tom de amiga, com #garotasapoiamgarotas, engaja sem parecer propaganda.",
+    "ideias": [
+     {
+      "tela": "Garotas apoiam garotas: o que eu faço pra engrossar a sobrancelha",
+      "cena": "Rotina da noite em 3 passos, bem rápida.",
+      "final": "O sérum é o último passo."
+     },
+     {
+      "tela": "A dica que eu queria ter recebido aos 15",
+      "cena": "Fala pra câmera, tom de conversa.",
+      "final": "“Manda pra tua amiga.”"
+     },
+     {
+      "tela": "3 erros que deixam a sobrancelha rala",
+      "cena": "Pinçar demais, lápis com força, esfregar ao lavar o rosto.",
+      "final": "“E o que eu passo todo dia.”"
      }
     ]
    }
