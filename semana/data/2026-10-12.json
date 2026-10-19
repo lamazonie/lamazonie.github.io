@@ -127,61 +127,103 @@
  ],
  "remarketing": [],
  "mercado": {
-  "sub": "Bombando lá fora. A gente grava a nossa versão.",
-  "itens": [
+  "sub": "Virais do TikTok. Toque pra ver 3 ideias de roteiro.",
+  "tiktok": [
    {
     "titulo": "A fase feia de crescer",
-    "porque": "O vídeo de sobrancelha mais curtido do TikTok nos últimos meses tem 10 segundos e 1,7 milhão de curtidas: uma menina rindo da própria sobrancelha crescendo. Quem está na fase feia se reconhece e manda pra amiga.",
-    "como": "10 segundos, tom de meme. Mostra a sobrancelha no pior momento com uma frase na tela tipo “crescer sobrancelha é humilhante”. Fecha mostrando o sérum. É o mesmo jeito dos nossos vídeos de 11 segundos que mais vendem.",
-    "refs": [
+    "numero": "1,7 mi",
+    "url": "https://www.tiktok.com/@livelife69_hello/video/7669664147734301982",
+    "outro": "https://www.tiktok.com/@mariselaspammy/video/7695102990511918367",
+    "porque": "Humor com a própria sobrancelha. Quem está na fase feia se reconhece e manda pra amiga.",
+    "ideias": [
      {
-      "rotulo": "Ver o viral",
-      "numero": "1,7 mi curtidas",
-      "url": "https://www.tiktok.com/@livelife69_hello/video/7669664147734301982"
+      "tela": "Ninguém avisa que deixar a sobrancelha crescer é humilhante",
+      "cena": "Close na sobrancelha falhada, cara de deboche, uns 5 segundos.",
+      "final": "Mostra o sérum: “por isso eu não paro de passar”."
      },
      {
-      "rotulo": "Ver outro",
-      "numero": "107 mil",
-      "url": "https://www.tiktok.com/@mariselaspammy/video/7695102990511918367"
+      "tela": "POV: você tá deixando a sobrancelha crescer e tem festa hoje",
+      "cena": "Tenta disfarçar com lápis e desiste rindo.",
+      "final": "“Dia 20 de sérum. Falta pouco.”"
+     },
+     {
+      "tela": "Minha sobrancelha em cada fase",
+      "cena": "3 cortes rápidos: falhada, bagunçada, cheia. Música em alta.",
+      "final": "O sérum aparece no último corte."
      }
-    ],
-    "curto": "10 segundos rindo da sobrancelha crescendo. Fecha no sérum."
+    ]
    },
    {
     "titulo": "Antes de afinar a sobrancelha",
-    "porque": "A trend da sobrancelha fina explodiu lá fora e já chegou aqui: vídeos com 1,1 milhão, 625 mil e 480 mil curtidas. Daqui a uns meses muita gente vai querer o fio de volta.",
-    "como": "Começa no assunto da sobrancelha fina, pode ser com o filtro. Corta pra você contando quanto tempo levou pra sua voltar, ou mostrando a sua cheia hoje. Tom de amiga avisando, sem sermão.",
-    "refs": [
+    "numero": "1,1 mi",
+    "url": "https://www.tiktok.com/@svetlaaaaaaaaaaana/video/7631117741348408596",
+    "outro": "https://www.tiktok.com/@carlaswan15/video/7643753142420573447",
+    "porque": "A trend da sobrancelha fina está explodindo. Quem afina hoje vai querer o fio de volta amanhã.",
+    "ideias": [
      {
-      "rotulo": "Ver o viral",
-      "numero": "1,1 mi curtidas",
-      "url": "https://www.tiktok.com/@svetlaaaaaaaaaaana/video/7631117741348408596"
+      "tela": "Vai afinar pela trend? Eu afinei em 2010",
+      "cena": "Foto antiga com a sobrancelha fina, corta pra hoje.",
+      "final": "“Levei anos pra recuperar. Hoje uso o sérum.”"
      },
      {
-      "rotulo": "Ver outro",
-      "numero": "480 mil",
-      "url": "https://www.tiktok.com/@carlaswan15/video/7643753142420573447"
+      "tela": "Testei o filtro da sobrancelha fina",
+      "cena": "Liga o filtro, faz careta, tira o filtro.",
+      "final": "“Fico com a minha, obrigada.” e mostra o sérum."
+     },
+     {
+      "tela": "3 coisas que ninguém conta antes de afinar a sobrancelha",
+      "cena": "Fala pra câmera contando nos dedos.",
+      "final": "A terceira: “pode não voltar igual”."
      }
-    ],
-    "curto": "Entra no assunto da sobrancelha fina e mostra quanto tempo a sua levou pra voltar."
+    ]
    },
    {
     "titulo": "Série com o dia na tela",
-    "porque": "Vídeo de “vou testar e mostro o resultado” prende a pessoa por semanas: 202 mil curtidas no “olha o progresso”, 96 mil no “aguardem”. Os anúncios gringos que mais estão testando agora também falam em dia 1 contra dia 90.",
-    "como": "Mesma luz, mesmo ângulo e “Dia 1”, “Dia 15”, “Dia 30” escrito na tela. Posta como partes de uma série e conta o que mudou em cada uma. Sem filtro.",
-    "refs": [
+    "numero": "202 mil",
+    "url": "https://www.tiktok.com/@thainadoitbest/video/7574561658023005454",
+    "outro": "https://www.tiktok.com/@fuzzylumpagus/video/7516586018754104619",
+    "porque": "Série com o dia escrito na tela faz a pessoa voltar pra ver o próximo capítulo.",
+    "ideias": [
      {
-      "rotulo": "Ver o viral",
-      "numero": "202 mil curtidas",
-      "url": "https://www.tiktok.com/@thainadoitbest/video/7574561658023005454"
+      "tela": "Dia 1 de sérum na sobrancelha. Me cobra no dia 30",
+      "cena": "Close sem maquiagem, sempre na mesma luz.",
+      "final": "“Salva pra acompanhar.”"
      },
      {
-      "rotulo": "Ver outro",
-      "numero": "96 mil",
-      "url": "https://www.tiktok.com/@fuzzylumpagus/video/7516586018754104619"
+      "tela": "Dia 15: olha esse fiozinho aqui",
+      "cena": "Aponta com o pincel o fio novo.",
+      "final": "“Parte 3 no dia 30.”"
+     },
+     {
+      "tela": "Dia 30: lado a lado",
+      "cena": "Tela dividida, dia 1 × dia 30.",
+      "final": "Mostra o sérum: “foi isso que eu passei”."
      }
-    ],
-    "curto": "Dia 1, Dia 15, Dia 30 escrito na tela. Mesma luz, mesmo ângulo."
+    ]
+   },
+   {
+    "titulo": "Respondendo um comentário",
+    "numero": "101 mil",
+    "url": "https://www.tiktok.com/@bishuwish/video/7535519534866795806",
+    "outro": null,
+    "porque": "Responder uma dúvida real em vídeo passa confiança e puxa mais comentário.",
+    "ideias": [
+     {
+      "tela": "Respondendo: “funciona em sobrancelha que foi muito tirada?”",
+      "cena": "Fala pra câmera mostrando a própria sobrancelha.",
+      "final": "“Manda tua dúvida que eu respondo.”"
+     },
+     {
+      "tela": "Respondendo: “quanto tempo pra ver diferença?”",
+      "cena": "Mostra suas fotos com a data.",
+      "final": "Conta quando VOCÊ começou a notar."
+     },
+     {
+      "tela": "Respondendo: “como passa esse sérum?”",
+      "cena": "Aplicação bem de perto, 10 segundos.",
+      "final": "“É só isso, antes de dormir.”"
+     }
+    ]
    }
   ]
  },

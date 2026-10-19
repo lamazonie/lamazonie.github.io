@@ -89,7 +89,8 @@ nav.chips a.on{color:var(--bg);background:var(--ink);border-color:var(--ink)}
 nav.chips a i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
 
 main .wrap{display:grid;gap:48px;padding-block:24px 72px}
-section{display:grid;gap:18px;scroll-margin-top:72px}
+section{display:grid;gap:18px;scroll-margin-top:72px;min-width:0}
+section > *,.panel{min-width:0}
 .sh{display:grid;gap:4px}
 .sh h2{font:500 20px/1.15 var(--display);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:12px}
 .sh h2 i{width:10px;height:10px;border-radius:50%;flex:none}
@@ -136,6 +137,50 @@ section{display:grid;gap:18px;scroll-margin-top:72px}
 .ped .more-refs{display:flex;gap:8px;flex-wrap:wrap}
 .ped .more-refs button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px 0 6px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;background:var(--bg)}
 .ped .more-refs img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+/* mercado: abas, reels do TikTok, anúncios estilo feed, folha de baixo */
+.seg{display:flex;padding:4px;border-radius:12px;background:var(--na-bg)}
+.seg button{flex:1;min-height:44px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted)}
+.seg button[aria-selected=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.panel[hidden]{display:none}
+.reels{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px}
+.reels::-webkit-scrollbar{display:none}
+.reel{flex:none;width:136px;aspect-ratio:9/16;scroll-snap-align:start;border-radius:14px;overflow:hidden;position:relative;text-align:left;color:#fff;
+  background:linear-gradient(165deg,#1d2b27 0%,#0b0f0d 70%);display:flex;flex-direction:column;justify-content:space-between;padding:12px}
+.reel .pf{align-self:flex-start;font:500 12px var(--sans);background:rgba(255,255,255,.14);padding:4px 9px;border-radius:999px}
+.reel b{font:400 20px/1.15 var(--display)}
+.reel .likes{font:600 14px var(--sans);display:flex;align-items:center;gap:6px}
+.reel .likes svg{width:14px;height:14px}
+.ads{display:grid;gap:10px}
+.ads h4{font:500 12px var(--sans);color:var(--faint);text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+.ad{display:grid;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.ad .hd{display:flex;gap:10px;align-items:center}
+.ad .av{width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;font:600 14px var(--sans);background:var(--na-bg);color:var(--brand)}
+.ad .hd b{display:block;font-weight:600;font-size:14px}
+.ad .hd small{display:block;font-size:12px;color:var(--faint)}
+.ad q{font-size:16px;font-weight:500}
+.ad .st{font-size:14px;color:var(--muted)}
+.ad .ftr{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--faint)}
+.ad .ftr span:last-child{color:var(--ink);font-weight:500}
+dialog.sheet{margin:auto auto 0;width:100%;max-width:560px;height:auto;max-height:90dvh;border-radius:20px 20px 0 0;padding:0 20px calc(20px + env(safe-area-inset-bottom));overflow:auto;overscroll-behavior:contain}
+@starting-style{dialog.sheet[open]{transform:translateY(100%);opacity:1}}
+@media (min-width:701px){dialog.sheet{margin:auto;border-radius:20px}}
+.sheet .grab{position:sticky;top:0;display:grid;place-items:center;height:28px;background:var(--bg);z-index:1;cursor:grab}
+.sheet .grab span{width:40px;height:5px;border-radius:3px;background:var(--line)}
+.sheet .sx{position:absolute;right:12px;top:10px;background:var(--na-bg);color:var(--ink);border-color:transparent;z-index:2}
+.sheet .sh2{display:grid;gap:6px;margin-bottom:16px;padding-right:44px}
+.sheet .sh2 h3{font:400 28px/1.05 var(--display)}
+.sheet .why{color:var(--muted);font-size:16px}
+.sheet ol{list-style:none;padding:0;display:grid;gap:10px;counter-reset:i;margin:8px 0 16px}
+.sheet ol li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 14px 14px 48px;position:relative;display:grid;gap:4px;font-size:14px}
+.sheet ol li::before{counter-increment:i;content:counter(i);position:absolute;left:14px;top:14px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font:600 12px var(--sans)}
+.sheet ol li b{font-size:16px;font-weight:600}
+.sheet ol li span{color:var(--muted)}
+.sheet .kv{display:grid;gap:12px;margin:4px 0 16px}
+.sheet .kv div{display:grid;gap:2px}
+.sheet .kv dt{font-size:12px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.sheet .kv dd{margin:0;font-size:16px}
+.sheet .emb{border:0;width:100%;height:min(740px,78dvh);border-radius:14px;margin-bottom:12px;background:#000}
+.sheet h4{font:500 12px var(--sans);color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
 /* mercado em lista (time) */
 .mkl{display:grid;border-top:1px solid var(--line)}
 .mkl details{border-bottom:1px solid var(--line)}
@@ -258,12 +303,14 @@ dialog::backdrop{background:rgba(5,8,6,.72);backdrop-filter:blur(10px);-webkit-b
 <footer><div class="wrap"><span>Atualizado toda segunda pelo Daniel · Meta Ads</span><a href="../">Ver a página das creators</a></div></footer>
 
 <dialog id="dlg" aria-label="Criativo"></dialog>
+<dialog id="sheet" class="sheet" aria-label="Ideias do mercado"></dialog>
 
 <script>
 const ICON = {
   play:'<svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0l12 7-12 7z"/></svg>',
   x:'<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l12 12M13 1L1 13"/></svg>',
   dl:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1v10M3.5 6.5L8 11l4.5-4.5M2 14.5h12"/></svg>',
+  heart:'<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 14.5S1.5 10.6 1.5 5.8A3.3 3.3 0 0 1 8 4.3a3.3 3.3 0 0 1 6.5 1.5c0 4.8-6.5 8.7-6.5 8.7z"/></svg>',
   go:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg>'
 };
 const TONE = {ok:['c-ok','p-ok','Campeão'],door:['c-door','p-door','Abre-porta'],warn:['c-warn','p-warn','Cansando'],bad:['c-bad','p-bad','Não repetir'],neutral:['c-neutral','p-neutral','Abaixo do ideal'],rmkt:['c-neutral','p-neutral','Remarketing'],ref:['c-neutral','p-neutral','Referência']};
@@ -271,7 +318,7 @@ const RANGES = {gancho:[35,25],historia:[40,25],chamada:[1.5,1]};
 const LBL = {otimo:'Ótimo',bom:'Bom',fraco:'Fraco'};
 const tier = (k,v)=> v==null ? null : k==='cpm' ? (v<=30?'otimo':v<=50?'bom':'fraco') : k==='freq' ? (v<2?'otimo':v<=3?'bom':'fraco') : v>=RANGES[k][0] ? 'otimo' : v>=RANGES[k][1] ? 'bom' : 'fraco';
 const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let C = {}, E = null, INDEX = {};
+let C = {}, E = null, INDEX = {}, MK = null;
 const VIEW = document.documentElement.dataset.view || 'creators', BASE = document.documentElement.dataset.base || '';
 const fmt = (k,v)=> v==null ? '' : k==='cpm' ? 'R$ '+v.toFixed(2).replace('.',',') : k==='freq' ? v.toFixed(2).replace('.',',') : k==='chamada' ? v.toFixed(2).replace('.',',')+'%' : v.toFixed(1).replace('.',',')+'%';
 
@@ -321,19 +368,17 @@ function render(){
       <details class="more"><summary>Como fazer</summary><div><dl><div><dt>Quem</dt><dd>${esc(p.quem)}</dd></div><div><dt>Manter</dt><dd>${esc(p.manter)}</dd></div><div><dt>Trocar</dt><dd>${esc(p.trocar)}</dd></div></dl></div></details></article>`}).join('')}</div>`);
 
   const M = E.mercado;
-  if (M?.itens?.length){
-    const sig = s => `<a href="${esc(s.url)}" target="_blank" rel="noopener"><span><b>${esc(s.marca)}</b>${esc(s.titulo)}</span><em>${esc(s.quando)}</em></a>`;
-    const badge = m => m.refs?.[0]?.numero ? `${m.refs[0].numero} no TikTok` : (m.sinais?.length ? `${m.sinais.length} anúncio${m.sinais.length>1?'s':''} lá fora` : '');
-    const links = m => m.refs?.length?`<div class="lk">${m.refs.map(r=>`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.rotulo)}</a>`).join('')}</div>`:'';
-    const body = VIEW==='time'
-      ? `<div class="mkl">${M.itens.map(m=>`<details><summary><b>${esc(m.titulo)}</b><small>${esc([m.para,badge(m)].filter(Boolean).join(' · '))}</small></summary>
-          <div class="body"><p>${esc(m.curto||m.como)}</p>${links(m)}<p class="why">${esc(m.porque)}</p><p><strong>${esc(m.acaoRotulo||'Como gravar')}:</strong> ${esc(m.como)}</p>
-          ${m.sinais?.length?`<div class="sig">${m.sinais.map(sig).join('')}</div>`:''}</div></details>`).join('')}
-          ${M.longos?.length?`<details><summary><b>No ar há mais tempo</b><small>Pra abrir e assistir · ${M.longos.length} anúncios</small></summary><div class="body"><p class="why">${esc(M.longosNota||'')}</p><div class="sig">${M.longos.map(sig).join('')}</div></div></details>`:''}</div>`
-      : `<div class="mk">${M.itens.map(m=>`<article><h3>${esc(m.titulo)}</h3>
-          ${badge(m)?`<span class="badge">${esc(badge(m))}</span>`:''}
-          <p class="one">${esc(m.curto||m.como)}</p>${links(m)}
-          <details class="more"><summary>Por quê</summary><div><p>${esc(m.porque)}</p><p><strong>${esc(m.acaoRotulo||'Como gravar')}:</strong> ${esc(m.como)}</p></div></details></article>`).join('')}</div>`;
+  if (M?.tiktok?.length || M?.anuncios?.length){
+    MK = M;
+    const reels = `<div class="reels">${(M.tiktok||[]).map((t,i)=>`<button class="reel" data-mk="t${i}"><span class="pf">TikTok</span><b>${esc(t.titulo)}</b><span class="likes">${ICON.heart}${esc(t.numero)}</span></button>`).join('')}</div>`;
+    const ad = (x,i) => `<button class="ad" data-mk="a${i}"><span class="hd"><span class="av">${esc(x.marca[0])}</span><span><b>${esc(x.marca)}</b><small>Patrocinado · ${esc(x.pais)}${x.versoes?` · ${x.versoes} versões`:''}</small></span></span>
+      ${x.semTitulo?`<span class="st"><b>${esc(x.titulo)}</b></span>`:`<q>${esc(x.titulo)}</q>`}<span class="st">${esc(x.estrutura)}</span><span class="ftr"><span>No ar ${esc(x.ha)}</span><span>Ver ideia</span></span></button>`;
+    const A = (M.anuncios||[]).map((x,i)=>[x,i]);
+    const ads = `<div class="ads"><h4>No ar há mais de 30 dias</h4>${A.filter(([x])=>x.dias>=30).map(([x,i])=>ad(x,i)).join('')}<h4>Novos (marcas testando)</h4>${A.filter(([x])=>x.dias<30).map(([x,i])=>ad(x,i)).join('')}</div>`;
+    const body = VIEW==='time' && M.anuncios?.length
+      ? `<div class="seg" role="tablist"><button role="tab" aria-selected="true" data-tab="tt">TikTok · virais</button><button role="tab" aria-selected="false" data-tab="ad">Anúncios lá fora</button></div>
+         <div class="panel" data-panel="tt">${reels}</div><div class="panel" data-panel="ad" hidden>${ads}</div>`
+      : reels;
     h += sec('mercado','O que o mercado pede', M.sub, '', body, 'Mercado');
   }
 
@@ -392,7 +437,31 @@ function open(code){
   dlg.showModal();
   history.replaceState(null,'',`#${code}`);
 }
+const ttId = u => (u||'').match(/video\/(\d+)/)?.[1];
+function openMk(key){
+  const sh = document.getElementById('sheet'); const top = `<div class="grab" data-grab><span></span></div><button class="x sx" data-close aria-label="Fechar">${ICON.x}</button>`;
+  if (key[0]==='t'){ const t = MK.tiktok[+key.slice(1)];
+    sh.innerHTML = `${top}<div class="sh2"><span class="pill p-neutral">TikTok · ${esc(t.numero)} curtidas</span><h3>${esc(t.titulo)}</h3><p class="why">${esc(t.porque)}</p></div>
+      <h4>3 ideias pra gravar</h4><ol>${t.ideias.map(i=>`<li><b>“${esc(i.tela)}”</b><span>${esc(i.cena)}</span><span>Final: ${esc(i.final)}</span></li>`).join('')}</ol>
+      <div class="actions"><button class="btn primary" data-emb="${ttId(t.url)}">${ICON.play}Assistir o viral aqui</button><a class="btn" href="${esc(t.url)}" target="_blank" rel="noopener">Abrir no TikTok</a>${t.outro?`<a class="btn" href="${esc(t.outro)}" target="_blank" rel="noopener">Ver outro</a>`:''}</div><div data-embbox></div>`;
+  } else { const x = MK.anuncios[+key.slice(1)];
+    sh.innerHTML = `${top}<div class="sh2"><span class="pill p-neutral">Anúncio · ${esc(x.marca)} · no ar ${esc(x.ha)}</span><h3>${x.semTitulo?esc(x.titulo):`“${esc(x.titulo)}”`}</h3></div>
+      <dl class="kv"><div><dt>O que eles fazem</dt><dd>${esc(x.estrutura)}</dd></div><div><dt>A nossa versão</dt><dd>${esc(x.nossa)}</dd></div><div><dt>Pra quem</dt><dd>${esc(x.para)}</dd></div><div><dt>Desde</dt><dd>${esc(x.desde)}${x.versoes?` · ${x.versoes} versões no ar`:''}</dd></div></dl>
+      <div class="actions"><a class="btn primary" href="${esc(x.url)}" target="_blank" rel="noopener">Abrir na Biblioteca de Anúncios</a></div>`; }
+  sh.scrollTop = 0; sh.showModal();
+}
+function closeSheet(){ const sh=document.getElementById('sheet'); sh.style.transform=''; sh.innerHTML=''; sh.close(); }
+(()=>{ const sh=document.getElementById('sheet'); let y0=null, dy=0;
+  sh.addEventListener('touchstart',e=>{ if(e.target.closest('[data-grab]')||sh.scrollTop<=0){ y0=e.touches[0].clientY; dy=0; } },{passive:true});
+  sh.addEventListener('touchmove',e=>{ if(y0==null) return; dy=e.touches[0].clientY-y0; if(dy>0 && sh.scrollTop<=0){ sh.style.transform=`translateY(${dy}px)`; } },{passive:true});
+  sh.addEventListener('touchend',()=>{ if(y0==null) return; y0=null; if(dy>110) closeSheet(); else sh.style.transform=''; });
+  sh.addEventListener('cancel',e=>{ e.preventDefault(); closeSheet(); });
+})();
 document.addEventListener('click', e=>{
+  const t = e.target.closest('[data-tab]'); if (t){ const box=t.closest('section'); box.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected', b===t)); box.querySelectorAll('[data-panel]').forEach(p=>p.hidden = p.dataset.panel!==t.dataset.tab); return; }
+  const m = e.target.closest('[data-mk]'); if (m){ openMk(m.dataset.mk); return; }
+  const em = e.target.closest('[data-emb]'); if (em){ const box=document.querySelector('[data-embbox]'); box.innerHTML=`<iframe class="emb" src="https://www.tiktok.com/embed/v2/${em.dataset.emb}?lang=pt-BR" allow="encrypted-media; fullscreen; autoplay" allowfullscreen title="Vídeo do TikTok"></iframe>`; em.remove(); box.scrollIntoView({behavior:'smooth',block:'start'}); return; }
+  const sh = document.getElementById('sheet'); if (sh.open && (e.target===sh || e.target.closest('#sheet [data-close]'))){ closeSheet(); return; }
   const b = e.target.closest('[data-code]'); if (b){ open(b.dataset.code); return; }
   if (e.target.closest('[data-close]') || e.target.id==='dlg') close();
 });
