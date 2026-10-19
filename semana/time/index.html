@@ -179,7 +179,7 @@ dialog.sheet{margin:auto auto 0;width:100%;max-width:560px;height:auto;max-heigh
 .sheet .kv div{display:grid;gap:2px}
 .sheet .kv dt{font-size:12px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
 .sheet .kv dd{margin:0;font-size:16px}
-.sheet .emb{border:0;width:100%;height:min(740px,78dvh);border-radius:14px;margin-bottom:12px;background:#000}
+.sheet .emb{display:block;border:0;width:100%;aspect-ratio:9/16;max-height:78dvh;border-radius:14px;margin:4px 0 12px;background:#000}
 .sheet h4{font:500 12px var(--sans);color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
 /* mercado em lista (time) */
 .mkl{display:grid;border-top:1px solid var(--line)}
@@ -460,7 +460,7 @@ function closeSheet(){ const sh=document.getElementById('sheet'); sh.style.trans
 document.addEventListener('click', e=>{
   const t = e.target.closest('[data-tab]'); if (t){ const box=t.closest('section'); box.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-selected', b===t)); box.querySelectorAll('[data-panel]').forEach(p=>p.hidden = p.dataset.panel!==t.dataset.tab); return; }
   const m = e.target.closest('[data-mk]'); if (m){ openMk(m.dataset.mk); return; }
-  const em = e.target.closest('[data-emb]'); if (em){ const box=document.querySelector('[data-embbox]'); box.innerHTML=`<iframe class="emb" src="https://www.tiktok.com/embed/v2/${em.dataset.emb}?lang=pt-BR" allow="encrypted-media; fullscreen; autoplay" allowfullscreen title="Vídeo do TikTok"></iframe>`; em.remove(); box.scrollIntoView({behavior:'smooth',block:'start'}); return; }
+  const em = e.target.closest('[data-emb]'); if (em){ const box=document.querySelector('[data-embbox]'); box.innerHTML=`<iframe class="emb" src="https://www.tiktok.com/player/v1/${em.dataset.emb}?description=1&music_info=1&rel=0&autoplay=1" allow="encrypted-media; fullscreen; autoplay" allowfullscreen title="Vídeo do TikTok"></iframe>`; em.remove(); box.scrollIntoView({behavior:'smooth',block:'start'}); return; }
   const sh = document.getElementById('sheet'); if (sh.open && (e.target===sh || e.target.closest('#sheet [data-close]'))){ closeSheet(); return; }
   const b = e.target.closest('[data-code]'); if (b){ open(b.dataset.code); return; }
   if (e.target.closest('[data-close]') || e.target.id==='dlg') close();
