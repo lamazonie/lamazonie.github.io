@@ -311,5 +311,163 @@
    "LA0007"
   ]
  },
- "visao": "time"
+ "visao": "time",
+ "mercado": {
+  "sub": "Lido na Biblioteca de Anúncios do Meta em 19/10. Copiamos só a estrutura, nunca o vídeo, o texto ou a marca.",
+  "itens": [
+   {
+    "titulo": "Diário do tratamento",
+    "porque": "As marcas que mais anunciam estão vendendo tempo: “4 a 6 semanas”, “3 meses de constância”, “tratamento de 6 meses”. Quem pensa em comprar quer saber quando vai ver diferença.",
+    "como": "A mesma sobrancelha em 3 momentos ou mais, com a mesma luz e o mesmo ângulo. Fala a semana em voz alta em cada corte e conta o que percebeu. Sem filtro.",
+    "sinais": [
+     {
+      "marca": "Lagai",
+      "titulo": "“Tratamento completo de 6 meses” (4 versões)",
+      "quando": "desde 14/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1927552911539666"
+     },
+     {
+      "marca": "Lagai",
+      "titulo": "“3 meses de constância”",
+      "quando": "desde 14/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1089729583904610"
+     },
+     {
+      "marca": "Grande (EUA)",
+      "titulo": "“Real Results in 4-6 Weeks”",
+      "quando": "desde 16/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1979342713184615"
+     },
+     {
+      "marca": "AIAMI",
+      "titulo": "“Resultados em menos de 30 dias!”",
+      "quando": "desde 14/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1804129027510335"
+     }
+    ],
+    "para": "Creators"
+   },
+   {
+    "titulo": "Primeira vez com sérum",
+    "porque": "A maior marca de sérum dos EUA abriu anúncio novo falando com quem nunca usou. Quem nunca usou tem medo de não funcionar e não sabe como passar.",
+    "como": "Fala direto pra câmera, como se respondesse uma amiga: como passa, quanto tempo leva por dia, quando começou a ver. Mostra a aplicação bem de perto. Até 30 segundos.",
+    "sinais": [
+     {
+      "marca": "Grande (EUA)",
+      "titulo": "“New to Lash Serums?”",
+      "quando": "desde 19/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2721792148266648"
+     },
+     {
+      "marca": "Grande (EUA)",
+      "titulo": "“Like Clear Mascara, But Better”",
+      "quando": "desde 20/09/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2143937226519724"
+     }
+    ],
+    "para": "Creators"
+   },
+   {
+    "titulo": "Eu já tinha desistido",
+    "porque": "Uma marca americana está com 8 versões no ar do mesmo começo: “achei que minha sobrancelha não tinha mais jeito”. Tanta versão ao mesmo tempo é sinal de que está vendendo.",
+    "como": "Abre contando o que você já tentou e não resolveu: lápis, henna, design. Depois mostra a sobrancelha hoje. A virada aparece antes dos 5 segundos.",
+    "sinais": [
+     {
+      "marca": "Nelux (EUA)",
+      "titulo": "“I Thought My Brows Were Gone for Good” (8 versões)",
+      "quando": "desde 10/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1403327655201979"
+     }
+    ],
+    "para": "Creators"
+   },
+   {
+    "titulo": "Garantia no título",
+    "para": "Pedro + Daniel Design",
+    "acaoRotulo": "O que fazer",
+    "porque": "Duas marcas estão usando garantia como argumento principal, uma no Brasil e uma nos EUA.",
+    "como": "Se a gente oferece garantia, testar um estático e um título com ela na semana que vem. Se não oferece, fica a decisão com o Pedro.",
+    "sinais": [
+     {
+      "marca": "Lagai",
+      "titulo": "“30 dias de garantia ou seu dinheiro de volta”",
+      "quando": "desde 30/09/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2142106079753442"
+     },
+     {
+      "marca": "Nelux (EUA)",
+      "titulo": "“100% results guarantee” (9 versões)",
+      "quando": "desde 10/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1789599122072524"
+     }
+    ]
+   },
+   {
+    "titulo": "Cílios + sobrancelha juntos",
+    "para": "Pedro",
+    "acaoRotulo": "O que fazer",
+    "porque": "AIAMI, Femme9 e Grande vendem cílios e sobrancelha no mesmo anúncio ou em kit. A mais antiga desse tema está no ar desde agosto.",
+    "como": "Só vale se a gente tiver produto pra cílios. Se não tiver, ignorar.",
+    "sinais": [
+     {
+      "marca": "Grande (EUA)",
+      "titulo": "“Transform your lashes and brows”",
+      "quando": "desde 26/08/2026",
+      "url": "https://www.facebook.com/ads/library/?id=4611896749021818"
+     },
+     {
+      "marca": "AIAMI",
+      "titulo": "“Cílios e sobrancelhas fortes” (4 versões)",
+      "quando": "desde 14/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2201560690394327"
+     },
+     {
+      "marca": "Femme9",
+      "titulo": "Kit Therapy Brows + Therapy Lashes",
+      "quando": "desde 14/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1444465884310307"
+     }
+    ]
+   }
+  ],
+  "longos": [
+   {
+    "marca": "Lagai",
+    "titulo": "Anúncio sem título",
+    "quando": "desde 27/09/2025",
+    "url": "https://www.facebook.com/ads/library/?id=1333367235086278"
+   },
+   {
+    "marca": "Lagai",
+    "titulo": "Anúncio sem título",
+    "quando": "desde 12/10/2025",
+    "url": "https://www.facebook.com/ads/library/?id=736643206095870"
+   },
+   {
+    "marca": "Grande (EUA)",
+    "titulo": "Anúncio sem título",
+    "quando": "desde 15/05/2026",
+    "url": "https://www.facebook.com/ads/library/?id=2491839237938307"
+   },
+   {
+    "marca": "AIAMI",
+    "titulo": "Anúncio sem título (4 no ar desde a mesma data)",
+    "quando": "desde 06/07/2026",
+    "url": "https://www.facebook.com/ads/library/?id=1046822237684606"
+   },
+   {
+    "marca": "Femme9",
+    "titulo": "Anúncio sem título",
+    "quando": "desde 06/08/2026",
+    "url": "https://www.facebook.com/ads/library/?id=1973104293646694"
+   },
+   {
+    "marca": "AIAMI",
+    "titulo": "Anúncio sem título",
+    "quando": "desde 12/08/2026",
+    "url": "https://www.facebook.com/ads/library/?id=1593265692200631"
+   }
+  ],
+  "longosNota": "Anúncio que fica meses no ar quase sempre está vendendo. A biblioteca não mostra o vídeo por aqui: Daniel Design, abre cada um e me diz o formato pra eu colocar na próxima edição."
+ }
 }

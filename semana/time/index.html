@@ -115,6 +115,20 @@ section{display:grid;gap:18px;scroll-margin-top:72px}
 .ped dl div{display:grid;grid-template-columns:72px 1fr;gap:12px}
 .ped dt{font:500 11px/1.9 var(--mono);color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
 .ped dd{margin:0;font-size:14.5px}
+/* mercado */
+.mk{display:grid;gap:12px}
+.mk article{border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:12px}
+.mk .n{font:500 11px var(--mono);letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
+.mk .n b{font-weight:500;color:var(--gold);margin-left:8px}
+.mk h3{font:400 22px/1.15 var(--display)}
+.mk p{font-size:14.5px}
+.mk p.why{color:var(--muted)}
+.mk p strong{font-weight:600}
+.sig{display:grid;border-top:1px solid var(--line);margin-top:2px}
+.sig a{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:13.5px}
+.sig a span{min-width:0}
+.sig a b{font-weight:600;margin-right:6px}
+.sig a em{font:500 11px var(--mono);font-style:normal;color:var(--faint);white-space:nowrap}
 .refs{display:flex;flex-wrap:wrap;gap:8px}
 .ref{display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:500;background:var(--bg)}
 .ref img{width:26px;height:26px;border-radius:50%;object-fit:cover}
@@ -240,8 +254,8 @@ function row(it, tone, keep){
     <span class="b"><b>${esc(who(it.code))}${VIEW==='time'?`<span>${it.code}</span>`:''}</b><p>${esc(it.recado)}</p></span>
     <span class="go">${ICON.go}</span></button>`;
 }
-function sec(id, title, sub, tone, body){
-  return `<section id="${id}" data-nav="${esc(title)}" data-tone="${tone||''}"><div class="sh"><h2>${tone?`<i class="${TONE[tone][0]}"></i>`:''}${esc(title)}</h2>${sub?`<p>${esc(sub)}</p>`:''}</div>${body}</section>`;
+function sec(id, title, sub, tone, body, nav){
+  return `<section id="${id}" data-nav="${esc(nav||title)}"data-tone="${tone||''}"><div class="sh"><h2>${tone?`<i class="${TONE[tone][0]}"></i>`:''}${esc(title)}</h2>${sub?`<p>${esc(sub)}</p>`:''}</div>${body}</section>`;
 }
 
 function render(){
@@ -254,6 +268,16 @@ function render(){
     `<div class="peds">${E.pedidos.map((p,i)=>`<article class="ped"><span class="n">Pedido ${String(i+1).padStart(2,'0')}</span><h3>${esc(p.titulo)}</h3>
       <dl><div><dt>Quem</dt><dd>${esc(p.quem)}</dd></div><div><dt>Manter</dt><dd>${esc(p.manter)}</dd></div><div><dt>Trocar</dt><dd>${esc(p.trocar)}</dd></div></dl>
       <div class="refs">${p.base.map(c=>`<button class="ref" data-code="${c}">${poster(c)?`<img src="${poster(c)}" alt="">`:''}${VIEW==='time'?`Ver ${c}`:`Ver vídeo · ${esc(who(c))}`}</button>`).join('')}</div></article>`).join('')}</div>`);
+
+  const M = E.mercado;
+  if (M?.itens?.length){
+    const sig = s => `<a href="${esc(s.url)}" target="_blank" rel="noopener"><span><b>${esc(s.marca)}</b>${esc(s.titulo)}</span><em>${esc(s.quando)}</em></a>`;
+    h += sec('mercado','O que o mercado está pedindo', M.sub, '',
+      `<div class="mk">${M.itens.map((m,i)=>`<article><span class="n">Mercado ${String(i+1).padStart(2,'0')}${VIEW==='time'&&m.para?`<b>${esc(m.para)}</b>`:''}</span><h3>${esc(m.titulo)}</h3>
+        <p class="why">${esc(m.porque)}</p><p><strong>${esc(m.acaoRotulo||'Como gravar')}:</strong> ${esc(m.como)}</p>
+        ${VIEW==='time'&&m.sinais?.length?`<div class="sig">${m.sinais.map(sig).join('')}</div>`:''}</article>`).join('')}
+        ${VIEW==='time'&&M.longos?.length?`<article><span class="n">Pra abrir e assistir</span><h3>${esc(M.longos.titulo||'No ar há mais tempo')}</h3><p class="why">${esc(M.longosNota||'')}</p><div class="sig">${M.longos.map(sig).join('')}</div></article>`:''}</div>`, 'Mercado');
+  }
 
   for (const s of E.secoes) h += sec(s.id, s.titulo, s.sub, s.tom, `<div class="grid">${s.itens.map(it=>card(it,s.tom)).join('')}</div>`);
 

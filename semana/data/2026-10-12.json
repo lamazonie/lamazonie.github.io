@@ -122,5 +122,25 @@
    ]
   }
  ],
- "remarketing": []
+ "remarketing": [],
+ "mercado": {
+  "sub": "Formatos que outras marcas de sérum estão rodando agora. A gente grava a nossa versão, do nosso jeito.",
+  "itens": [
+   {
+    "titulo": "Diário do tratamento",
+    "porque": "As marcas que mais anunciam estão vendendo tempo: “4 a 6 semanas”, “3 meses de constância”, “tratamento de 6 meses”. Quem pensa em comprar quer saber quando vai ver diferença.",
+    "como": "A mesma sobrancelha em 3 momentos ou mais, com a mesma luz e o mesmo ângulo. Fala a semana em voz alta em cada corte e conta o que percebeu. Sem filtro."
+   },
+   {
+    "titulo": "Primeira vez com sérum",
+    "porque": "A maior marca de sérum dos EUA abriu anúncio novo falando com quem nunca usou. Quem nunca usou tem medo de não funcionar e não sabe como passar.",
+    "como": "Fala direto pra câmera, como se respondesse uma amiga: como passa, quanto tempo leva por dia, quando começou a ver. Mostra a aplicação bem de perto. Até 30 segundos."
+   },
+   {
+    "titulo": "Eu já tinha desistido",
+    "porque": "Uma marca americana está com 8 versões no ar do mesmo começo: “achei que minha sobrancelha não tinha mais jeito”. Tanta versão ao mesmo tempo é sinal de que está vendendo.",
+    "como": "Abre contando o que você já tentou e não resolveu: lápis, henna, design. Depois mostra a sobrancelha hoje. A virada aparece antes dos 5 segundos."
+   }
+  ]
+ }
 }
