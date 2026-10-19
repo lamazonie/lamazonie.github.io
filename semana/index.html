@@ -64,6 +64,26 @@ h1 em{font-style:normal;color:var(--gold)}
 .recado li{display:grid;grid-template-columns:28px 1fr;gap:6px;font-size:16.5px;line-height:1.5}
 .recado li::before{counter-increment:r;content:"0" counter(r);font:500 12px/2.2 var(--mono);color:var(--gold)}
 .lesson{font:400 17px/1.5 var(--sans);color:var(--ink);border-left:2px solid var(--gold);padding:2px 0 2px 16px}
+.headline{font:400 25px/1.25 var(--display);letter-spacing:.005em;max-width:30ch}
+.keys{display:flex;flex-wrap:wrap;gap:8px}
+.keys span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--ok-bg);color:var(--ok)}
+details.more{border-top:1px solid var(--line);padding-top:10px}
+details.more summary{cursor:pointer;list-style:none;font-size:13px;font-weight:500;color:var(--muted);display:flex;justify-content:space-between}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+";font-family:var(--mono);color:var(--faint)}
+details.more[open] summary::after{content:"–"}
+details.more > div{display:grid;gap:10px;margin-top:12px;font-size:14px;color:var(--muted)}
+.tiles{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+.tiles::-webkit-scrollbar{display:none}
+.tile{flex:none;width:84px;display:grid;gap:6px;text-align:left}
+.tile .ph{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--na-bg)}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile .ph i{position:absolute;right:6px;bottom:6px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#111}
+.tile .ph i svg{width:8px;height:8px;margin-left:1px}
+.tile b{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ped .one,.mk .one{font-size:15.5px;line-height:1.45}
+.badge{justify-self:start;font:500 11.5px var(--mono);padding:4px 10px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
+.row .b p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* nav */
 nav.chips{position:sticky;top:0;z-index:5;background:color-mix(in oklab,var(--bg) 88%,transparent);
@@ -240,7 +260,7 @@ const VIEW = document.documentElement.dataset.view || 'creators', BASE = documen
 const fmt = (k,v)=> v==null ? '' : k==='cpm' ? 'R$ '+v.toFixed(2).replace('.',',') : k==='freq' ? v.toFixed(2).replace('.',',') : k==='chamada' ? v.toFixed(2).replace('.',',')+'%' : v.toFixed(1).replace('.',',')+'%';
 
 const poster = c => C[c]?.semImagem ? null : `${BASE}media/${c}.jpg`;
-const who = c => C[c]?.gravou || C[c]?.editou || '';
+const who = c => { const g = C[c]?.gravou; if (g==='A confirmar') return VIEW==='time' ? 'A confirmar' : 'Creator'; return g || C[c]?.editou || ''; };
 
 function card(it, tone){
   const c = C[it.code]; const p = poster(it.code);
@@ -250,7 +270,6 @@ function card(it, tone){
       ${it.flag&&VIEW==='time'?`<span class="flag">${esc(it.flag)}</span>`:''}
       ${c.tipo==='video'?`<span class="play" aria-hidden="true">${ICON.play}</span>`:''}</div>
     <div class="who"><b>${esc(who(it.code))}</b>${VIEW==='time'?`<span>${it.code}</span>`:''}</div>
-    <p class="msg">${esc(it.recado)}</p>
     ${VIEW==='time'?`<span class="offer">${esc(c.oferta)}</span>`:''}
   </button>`;
 }
@@ -269,23 +288,31 @@ function sec(id, title, sub, tone, body, nav){
 function render(){
   INDEX = {};
   document.getElementById('periodo').textContent = `${E.periodo} · Edição ${String(E.edicao).padStart(2,'0')}`;
-  document.getElementById('recado').innerHTML = `<ol>${E.recado.map(r=>`<li><span>${esc(r)}</span></li>`).join('')}</ol><p class="lesson">${esc(E.aprendizado)}</p>`;
+  document.getElementById('recado').innerHTML = E.manchete
+    ? `<p class="headline">${esc(E.manchete)}</p>${E.chaves?.length?`<div class="keys">${E.chaves.map(k=>`<span>${esc(k)}</span>`).join('')}</div>`:''}
+       <details class="more"><summary>Resumo completo</summary><div>${E.recado.map(r=>`<p>${esc(r)}</p>`).join('')}<p class="lesson">${esc(E.aprendizado)}</p></div></details>`
+    : `<ol>${E.recado.map(r=>`<li><span>${esc(r)}</span></li>`).join('')}</ol><p class="lesson">${esc(E.aprendizado)}</p>`;
 
   let h = '';
-  h += sec('pedidos','Pedidos da semana','O que produzir agora, a partir do que funcionou.','',
+  const tile = c => `<button class="tile" data-code="${c}"><span class="ph">${poster(c)?`<img src="${poster(c)}" alt="" loading="lazy">`:''}<i>${ICON.play}</i></span><b>${VIEW==='time'?c:esc(who(c))}</b></button>`;
+  h += sec('pedidos','Pedidos da semana', E.pedidosSub||'O que gravar agora.','',
     `<div class="peds">${E.pedidos.map((p,i)=>`<article class="ped"><span class="n">Pedido ${String(i+1).padStart(2,'0')}</span><h3>${esc(p.titulo)}</h3>
-      <dl><div><dt>Quem</dt><dd>${esc(p.quem)}</dd></div><div><dt>Manter</dt><dd>${esc(p.manter)}</dd></div><div><dt>Trocar</dt><dd>${esc(p.trocar)}</dd></div></dl>
-      <div class="refs">${p.base.map(c=>`<button class="ref" data-code="${c}">${poster(c)?`<img src="${poster(c)}" alt="">`:''}${VIEW==='time'?`Ver ${c}`:`Ver vídeo · ${esc(who(c))}`}</button>`).join('')}</div></article>`).join('')}</div>`);
+      ${p.resumo?`<p class="one">${esc(p.resumo)}</p>`:''}
+      <div class="tiles">${p.base.map(tile).join('')}</div>
+      <details class="more"><summary>Como fazer</summary><div><dl><div><dt>Quem</dt><dd>${esc(p.quem)}</dd></div><div><dt>Manter</dt><dd>${esc(p.manter)}</dd></div><div><dt>Trocar</dt><dd>${esc(p.trocar)}</dd></div></dl></div></details></article>`).join('')}</div>`);
 
   const M = E.mercado;
   if (M?.itens?.length){
     const sig = s => `<a href="${esc(s.url)}" target="_blank" rel="noopener"><span><b>${esc(s.marca)}</b>${esc(s.titulo)}</span><em>${esc(s.quando)}</em></a>`;
+    const badge = m => m.refs?.[0]?.numero ? `${m.refs[0].numero} no TikTok` : (m.sinais?.length ? `${m.sinais.length} anúncio${m.sinais.length>1?'s':''} lá fora` : '');
     h += sec('mercado','O que o mercado está pedindo', M.sub, '',
       `<div class="mk">${M.itens.map((m,i)=>`<article><span class="n">Mercado ${String(i+1).padStart(2,'0')}${VIEW==='time'&&m.para?`<b>${esc(m.para)}</b>`:''}</span><h3>${esc(m.titulo)}</h3>
-        <p class="why">${esc(m.porque)}</p><p><strong>${esc(m.acaoRotulo||'Como gravar')}:</strong> ${esc(m.como)}</p>
-        ${m.refs?.length?`<div class="lk">${m.refs.map(r=>`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.rotulo)} <em>${esc(r.numero||'')}</em></a>`).join('')}</div>`:''}
-        ${VIEW==='time'&&m.sinais?.length?`<div class="sig">${m.sinais.map(sig).join('')}</div>`:''}</article>`).join('')}
-        ${VIEW==='time'&&M.longos?.length?`<article><span class="n">Pra abrir e assistir</span><h3>${esc(M.longos.titulo||'No ar há mais tempo')}</h3><p class="why">${esc(M.longosNota||'')}</p><div class="sig">${M.longos.map(sig).join('')}</div></article>`:''}</div>`, 'Mercado');
+        ${badge(m)?`<span class="badge">${esc(badge(m))}</span>`:''}
+        <p class="one">${esc(m.curto||m.como)}</p>
+        ${m.refs?.length?`<div class="lk">${m.refs.map(r=>`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.rotulo)}</a>`).join('')}</div>`:''}
+        <details class="more"><summary>Por quê${VIEW==='time'&&m.sinais?.length?' e anúncios':''}</summary><div><p>${esc(m.porque)}</p><p><strong>${esc(m.acaoRotulo||'Como gravar')}:</strong> ${esc(m.como)}</p>
+        ${VIEW==='time'&&m.sinais?.length?`<div class="sig">${m.sinais.map(sig).join('')}</div>`:''}</div></details></article>`).join('')}
+        ${VIEW==='time'&&M.longos?.length?`<article><span class="n">Pra abrir e assistir</span><h3>No ar há mais tempo</h3><p class="one">${esc(M.longosNota||'')}</p><div class="sig">${M.longos.map(sig).join('')}</div></article>`:''}</div>`, 'Mercado');
   }
 
   for (const s of E.secoes) h += sec(s.id, s.titulo, s.sub, s.tom, `<div class="grid">${s.itens.map(it=>card(it,s.tom)).join('')}</div>`);

@@ -18,7 +18,8 @@
    ],
    "quem": "Qualquer creator · 3 versões novas",
    "manter": "Vídeo curto, cerca de 11 segundos. Sua sobrancelha bem perto da câmera. A frase de meme no topo.",
-   "trocar": "Seu rosto, seu cenário e a sua frase. Ex.: “Eu depois de aposentar o lápis de sobrancelha”."
+   "trocar": "Seu rosto, seu cenário e a sua frase. Ex.: “Eu depois de aposentar o lápis de sobrancelha”.",
+   "resumo": "11 segundos, sobrancelha perto da câmera e a sua frase de meme no topo."
   },
   {
    "titulo": "Dia 0 × Dia 30 com gente nova",
@@ -28,7 +29,8 @@
    ],
    "quem": "Quem já usa o sérum há 30 dias",
    "manter": "Mostrar o Dia 0 e o Dia 30 lado a lado já no primeiro segundo.",
-   "trocar": "Outra pessoa, outra luz, outro ângulo de câmera."
+   "trocar": "Outra pessoa, outra luz, outro ângulo de câmera.",
+   "resumo": "Dia 0 e Dia 30 lado a lado no primeiro segundo. Pessoa nova."
   },
   {
    "titulo": "Comece pela falha, sem maquiagem",
@@ -37,14 +39,15 @@
    ],
    "quem": "Emily Beatriz e quem quiser testar",
    "manter": "Os 2 primeiros segundos: close na sobrancelha sem maquiagem.",
-   "trocar": "Logo depois, mostrar antes e depois. Não ficar só falando."
+   "trocar": "Logo depois, mostrar antes e depois. Não ficar só falando.",
+   "resumo": "Close sem maquiagem nos 2 primeiros segundos, depois o antes e depois."
   }
  ],
  "secoes": [
   {
    "id": "campeoes",
    "titulo": "Campeões",
-   "sub": "Venderam acima do ideal. O modelo a copiar.",
+   "sub": "O modelo a copiar.",
    "tom": "ok",
    "estilo": "grade",
    "itens": [
@@ -89,7 +92,7 @@
   {
    "id": "cansando",
    "titulo": "Cansando",
-   "sub": "Já foi campeão e está caindo. O ângulo funciona, façam versão nova.",
+   "sub": "Funciona, mas precisa de versão nova.",
    "tom": "warn",
    "estilo": "grade",
    "itens": [
@@ -108,7 +111,7 @@
  "naoRepetir": [
   {
    "titulo": "Tier list / ranking em vídeo",
-   "texto": "Duas versões e nenhuma vendeu bem. A gravação foi boa, o formato é que não funciona.",
+   "texto": "2 versões, nenhuma vendeu.",
    "itens": [
     {
      "code": "LA0006",
@@ -124,7 +127,7 @@
  ],
  "remarketing": [],
  "mercado": {
-  "sub": "O que está bombando no TikTok e nos anúncios de fora. A gente grava a nossa versão, do nosso jeito.",
+  "sub": "Bombando lá fora. A gente grava a nossa versão.",
   "itens": [
    {
     "titulo": "A fase feia de crescer",
@@ -132,16 +135,17 @@
     "como": "10 segundos, tom de meme. Mostra a sobrancelha no pior momento com uma frase na tela tipo “crescer sobrancelha é humilhante”. Fecha mostrando o sérum. É o mesmo jeito dos nossos vídeos de 11 segundos que mais vendem.",
     "refs": [
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver o viral",
       "numero": "1,7 mi curtidas",
       "url": "https://www.tiktok.com/@livelife69_hello/video/7669664147734301982"
      },
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver outro",
       "numero": "107 mil",
       "url": "https://www.tiktok.com/@mariselaspammy/video/7695102990511918367"
      }
-    ]
+    ],
+    "curto": "10 segundos rindo da sobrancelha crescendo. Fecha no sérum."
    },
    {
     "titulo": "Antes de afinar a sobrancelha",
@@ -149,16 +153,17 @@
     "como": "Começa no assunto da sobrancelha fina, pode ser com o filtro. Corta pra você contando quanto tempo levou pra sua voltar, ou mostrando a sua cheia hoje. Tom de amiga avisando, sem sermão.",
     "refs": [
      {
-      "rotulo": "Ver a trend",
+      "rotulo": "Ver o viral",
       "numero": "1,1 mi curtidas",
       "url": "https://www.tiktok.com/@svetlaaaaaaaaaaana/video/7631117741348408596"
      },
      {
-      "rotulo": "Ver a trend",
+      "rotulo": "Ver outro",
       "numero": "480 mil",
       "url": "https://www.tiktok.com/@carlaswan15/video/7643753142420573447"
      }
-    ]
+    ],
+    "curto": "Entra no assunto da sobrancelha fina e mostra quanto tempo a sua levou pra voltar."
    },
    {
     "titulo": "Série com o dia na tela",
@@ -166,17 +171,25 @@
     "como": "Mesma luz, mesmo ângulo e “Dia 1”, “Dia 15”, “Dia 30” escrito na tela. Posta como partes de uma série e conta o que mudou em cada uma. Sem filtro.",
     "refs": [
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver o viral",
       "numero": "202 mil curtidas",
       "url": "https://www.tiktok.com/@thainadoitbest/video/7574561658023005454"
      },
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver outro",
       "numero": "96 mil",
       "url": "https://www.tiktok.com/@fuzzylumpagus/video/7516586018754104619"
      }
-    ]
+    ],
+    "curto": "Dia 1, Dia 15, Dia 30 escrito na tela. Mesma luz, mesmo ângulo."
    }
   ]
- }
+ },
+ "manchete": "O que vende: vídeo de 11 segundos, frase de meme e a falha logo no primeiro segundo.",
+ "chaves": [
+  "11 segundos",
+  "Frase de meme",
+  "Falha no 1º segundo",
+  "Preço na tela no final"
+ ]
 }

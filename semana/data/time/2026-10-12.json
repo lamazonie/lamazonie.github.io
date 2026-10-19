@@ -17,7 +17,8 @@
    ],
    "quem": "Creators · 3 versões novas",
    "manter": "11 segundos. Frase de meme no topo. Painel com preço riscado e cupom na tela. Rosto da creator.",
-   "trocar": "A creator, o cenário e a frase. Ex.: “Eu depois de aposentar o lápis de sobrancelha”."
+   "trocar": "A creator, o cenário e a frase. Ex.: “Eu depois de aposentar o lápis de sobrancelha”.",
+   "resumo": "11 segundos, meme no topo e painel de preço com cupom. 3 versões."
   },
   {
    "titulo": "IA que fecha a venda",
@@ -28,7 +29,8 @@
    ],
    "quem": "Daniel Design",
    "manter": "A história animada e o primeiro segundo, os melhores da conta.",
-   "trocar": "Terminar com o mesmo painel de preço e cupom dos campeões. Testar também uma versão de 30 segundos."
+   "trocar": "Terminar com o mesmo painel de preço e cupom dos campeões. Testar também uma versão de 30 segundos.",
+   "resumo": "Mesma história animada, final com o painel de preço dos campeões."
   },
   {
    "titulo": "Dia 0 × Dia 30 com gente nova",
@@ -38,7 +40,8 @@
    ],
    "quem": "Creators com 30 dias de uso",
    "manter": "Tela dividida Dia 0 × Dia 30 já no primeiro segundo.",
-   "trocar": "Outra pessoa, outro ângulo de câmera e o preço com cupom no final."
+   "trocar": "Outra pessoa, outro ângulo de câmera e o preço com cupom no final.",
+   "resumo": "Tela dividida no 1º segundo, pessoa nova e cupom no final."
   },
   {
    "titulo": "Reaproveitar o melhor gancho da conta",
@@ -47,14 +50,15 @@
    ],
    "quem": "Emily Beatriz + Daniel Design",
    "manter": "Os 2 primeiros segundos: close na sobrancelha sem maquiagem.",
-   "trocar": "Logo depois do gancho, antes e depois. Fechar com preço e cupom na tela."
+   "trocar": "Logo depois do gancho, antes e depois. Fechar com preço e cupom na tela.",
+   "resumo": "Gancho sem maquiagem, antes e depois, preço na tela."
   }
  ],
  "secoes": [
   {
    "id": "campeoes",
    "titulo": "Campeões",
-   "sub": "Venderam acima do ideal. O modelo a copiar.",
+   "sub": "O modelo a copiar.",
    "tom": "ok",
    "estilo": "grade",
    "itens": [
@@ -108,7 +112,7 @@
   {
    "id": "abre-porta",
    "titulo": "Abre-porta",
-   "sub": "Trazem cliente nova, a venda fecha depois. Mantenham o gancho, reforcem o final.",
+   "sub": "Trazem cliente nova. Reforcem o final.",
    "tom": "door",
    "estilo": "grade",
    "itens": [
@@ -139,7 +143,7 @@
   {
    "id": "cansando",
    "titulo": "Cansando",
-   "sub": "Já foram campeões e estão caindo. O ângulo funciona, façam versão nova.",
+   "sub": "Funciona, mas precisa de versão nova.",
    "tom": "warn",
    "estilo": "grade",
    "itens": [
@@ -171,7 +175,7 @@
  "naoRepetir": [
   {
    "titulo": "Tier list / ranking em vídeo",
-   "texto": "Duas versões em 5 semanas e nenhuma chegou ao ideal de venda. A execução foi boa: prende e gera clique. O formato é que não vende.",
+   "texto": "2 versões, nenhuma vendeu.",
    "itens": [
     {
      "code": "LA0006",
@@ -313,7 +317,7 @@
  },
  "visao": "time",
  "mercado": {
-  "sub": "TikTok (orgânico) e Biblioteca de Anúncios do Meta (EUA, Reino Unido e Austrália), lidos em 19/10. Copiamos só a estrutura, nunca o vídeo, o texto ou a marca.",
+  "sub": "TikTok e anúncios dos EUA, Reino Unido e Austrália. Só a estrutura, nunca o vídeo.",
   "itens": [
    {
     "titulo": "A fase feia de crescer",
@@ -322,16 +326,17 @@
     "como": "10 segundos, tom de meme. Mostra a sobrancelha no pior momento com uma frase na tela tipo “crescer sobrancelha é humilhante”. Fecha mostrando o sérum. É o mesmo jeito dos nossos vídeos de 11 segundos que mais vendem.",
     "refs": [
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver o viral",
       "numero": "1,7 mi curtidas",
       "url": "https://www.tiktok.com/@livelife69_hello/video/7669664147734301982"
      },
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver outro",
       "numero": "107 mil",
       "url": "https://www.tiktok.com/@mariselaspammy/video/7695102990511918367"
      }
-    ]
+    ],
+    "curto": "10 segundos rindo da sobrancelha crescendo. Fecha no sérum."
    },
    {
     "titulo": "Antes de afinar a sobrancelha",
@@ -340,16 +345,17 @@
     "como": "Começa no assunto da sobrancelha fina, pode ser com o filtro. Corta pra você contando quanto tempo levou pra sua voltar, ou mostrando a sua cheia hoje. Tom de amiga avisando, sem sermão.",
     "refs": [
      {
-      "rotulo": "Ver a trend",
+      "rotulo": "Ver o viral",
       "numero": "1,1 mi curtidas",
       "url": "https://www.tiktok.com/@svetlaaaaaaaaaaana/video/7631117741348408596"
      },
      {
-      "rotulo": "Ver a trend",
+      "rotulo": "Ver outro",
       "numero": "480 mil",
       "url": "https://www.tiktok.com/@carlaswan15/video/7643753142420573447"
      }
-    ]
+    ],
+    "curto": "Entra no assunto da sobrancelha fina e mostra quanto tempo a sua levou pra voltar."
    },
    {
     "titulo": "Série com o dia na tela",
@@ -358,12 +364,12 @@
     "como": "Mesma luz, mesmo ângulo e “Dia 1”, “Dia 15”, “Dia 30” escrito na tela. Posta como partes de uma série e conta o que mudou em cada uma. Sem filtro.",
     "refs": [
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver o viral",
       "numero": "202 mil curtidas",
       "url": "https://www.tiktok.com/@thainadoitbest/video/7574561658023005454"
      },
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver outro",
       "numero": "96 mil",
       "url": "https://www.tiktok.com/@fuzzylumpagus/video/7516586018754104619"
      }
@@ -381,7 +387,8 @@
       "quando": "desde 16/10/2026",
       "url": "https://www.facebook.com/ads/library/?id=1979342713184615"
      }
-    ]
+    ],
+    "curto": "Dia 1, Dia 15, Dia 30 escrito na tela. Mesma luz, mesmo ângulo."
    },
    {
     "titulo": "Respondendo um comentário",
@@ -391,11 +398,12 @@
     "como": "Juntar 3 dúvidas reais do direct ou do SAC (nossos anúncios não têm comentário visível) e pedir pra uma creator responder cada uma em vídeo curto.",
     "refs": [
      {
-      "rotulo": "Ver no TikTok",
+      "rotulo": "Ver o viral",
       "numero": "101 mil curtidas",
       "url": "https://www.tiktok.com/@bishuwish/video/7535519534866795806"
      }
-    ]
+    ],
+    "curto": "3 dúvidas reais do direct, uma resposta em vídeo pra cada."
    },
    {
     "titulo": "Primeira vez com sérum",
@@ -428,7 +436,8 @@
       "quando": "desde 20/09/2026",
       "url": "https://www.facebook.com/ads/library/?id=2143937226519724"
      }
-    ]
+    ],
+    "curto": "Como passa, quanto tempo leva, quando vê diferença. Até 30 segundos."
    },
    {
     "titulo": "Garantia no título",
@@ -455,7 +464,8 @@
       "quando": "desde 10/10/2026",
       "url": "https://www.facebook.com/ads/library/?id=1789599122072524"
      }
-    ]
+    ],
+    "curto": "Testar garantia no título, se a gente oferecer."
    },
    {
     "titulo": "Mulher 40+ com sobrancelha rala",
@@ -482,7 +492,8 @@
       "quando": "desde 14/10/2026",
       "url": "https://www.facebook.com/ads/library/?id=2194662497929422"
      }
-    ]
+    ],
+    "curto": "Testar um estático e um vídeo falando com a mulher de 40+."
    },
    {
     "titulo": "Leve 2, pague 1",
@@ -503,7 +514,8 @@
       "quando": "desde 19/10/2026",
       "url": "https://www.facebook.com/ads/library/?id=2300196834155905"
      }
-    ]
+    ],
+    "curto": "Levar pro Alex se a margem do kit de 2 aguentar."
    }
   ],
   "longos": [
@@ -538,6 +550,13 @@
     "url": "https://www.facebook.com/ads/library/?id=2098580374078274"
    }
   ],
-  "longosNota": "Anúncio que fica meses no ar quase sempre está vendendo. A biblioteca não mostra o vídeo por aqui: Daniel Design, abre cada um e me diz o formato pra eu colocar na próxima edição."
- }
+  "longosNota": "Meses no ar quase sempre é sinal de venda. Daniel Design, abre e me diz o formato."
+ },
+ "manchete": "Vendeu: creator, 11 segundos, meme e preço com cupom na tela. A IA para o scroll, mas não fecha.",
+ "chaves": [
+  "11 segundos",
+  "Painel de preço e cupom",
+  "IA sem fechamento",
+  "Dia 0 × Dia 30 cansando"
+ ]
 }
