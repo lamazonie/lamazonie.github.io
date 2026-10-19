@@ -10,30 +10,30 @@
 <meta name="theme-color" content="#0b0f0d" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Roboto+Condensed:wght@300;400;500&display=swap">
 <style>
 /* Uma coluna calma. Cor só no status. O vídeo é o protagonista. */
 :root{
   color-scheme: light dark;
-  --bg:#f7f7f4; --surface:#ffffff; --ink:#111814; --muted:#66716a; --faint:#9aa39d; --line:#e7e9e5;
-  --brand:#16402f; --gold:#a5823f;
+  --bg:#faf8f3; --surface:#ffffff; --ink:#0e2a25; --muted:#5e6f69; --faint:#98a49f; --line:#e8e6df;
+  --brand:#0e423a; --gold:#a5823f;
   --ok:#1f8a55; --door:#2f6ed1; --warn:#b7791f; --bad:#c2453a; --neutral:#8a948e;
   --ok-bg:#e6f4ec; --warn-bg:#f8efdc; --bad-bg:#f9e7e4; --na-bg:#eef0ed;
-  --display:"Instrument Serif", ui-serif, Georgia, serif;
-  --sans:"Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"Geist Mono", ui-monospace, Menlo, monospace;
+  --display:"Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
+  --sans:"Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
   --r:14px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 @media (prefers-color-scheme: dark){:root{
-  --bg:#0b0f0d; --surface:#131916; --ink:#eaf0ec; --muted:#97a69d; --faint:#5f6c65; --line:#1f2823;
-  --brand:#9ad5b3; --gold:#d8b46e;
+  --bg:#08130f; --surface:#0f1d18; --ink:#f2ecdd; --muted:#a3b1aa; --faint:#61716a; --line:#1c2b25;
+  --brand:#b9d8c8; --gold:#d8b46e;
   --ok:#62d394; --door:#7aa8f2; --warn:#e7b25a; --bad:#f08c80; --neutral:#7d8a83;
   --ok-bg:#12291d; --warn-bg:#2d2412; --bad-bg:#311a17; --na-bg:#1a211d;
 }}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased;
+body{background:var(--bg);color:var(--ink);font:300 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased;
   padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
 img,video{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -43,10 +43,13 @@ a{color:inherit}
 
 /* topo */
 header.top .wrap{padding-block:40px 28px;display:grid;gap:14px}
-.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{font:400 12px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .eyebrow a{text-decoration:none}
-h1{font:400 clamp(44px,12vw,68px)/.95 var(--display);letter-spacing:-.01em}
-h1 em{font-style:italic;color:var(--brand)}
+h1{font:300 clamp(40px,11vw,60px)/1 var(--display);letter-spacing:-.005em;text-transform:uppercase}
+.logo{height:34px;width:auto}
+.logo.dark{display:none}
+@media (prefers-color-scheme: dark){.logo.light{display:none}.logo.dark{display:block;height:24px}}
+h1 em{font-style:normal;color:var(--gold)}
 .period{display:flex;gap:10px;align-items:center;font:500 12px var(--mono);color:var(--muted)}
 .period select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
 
@@ -55,7 +58,7 @@ h1 em{font-style:italic;color:var(--brand)}
 .recado ol{list-style:none;padding:0;display:grid;gap:14px;counter-reset:r}
 .recado li{display:grid;grid-template-columns:28px 1fr;gap:6px;font-size:16.5px;line-height:1.5}
 .recado li::before{counter-increment:r;content:"0" counter(r);font:500 12px/2.2 var(--mono);color:var(--gold)}
-.lesson{font:italic 400 21px/1.35 var(--display);color:var(--ink);border-left:2px solid var(--gold);padding:2px 0 2px 16px}
+.lesson{font:400 17px/1.5 var(--sans);color:var(--ink);border-left:2px solid var(--gold);padding:2px 0 2px 16px}
 
 /* nav */
 nav.chips{position:sticky;top:0;z-index:5;background:color-mix(in oklab,var(--bg) 88%,transparent);
@@ -69,7 +72,7 @@ nav.chips a i{display:inline-block;width:7px;height:7px;border-radius:50%;margin
 main .wrap{display:grid;gap:56px;padding-block:32px 72px}
 section{display:grid;gap:18px;scroll-margin-top:72px}
 .sh{display:grid;gap:4px}
-.sh h2{font:400 34px/1.05 var(--display);display:flex;align-items:center;gap:12px}
+.sh h2{font:400 28px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:12px}
 .sh h2 i{width:10px;height:10px;border-radius:50%;flex:none}
 .sh p{color:var(--muted);font-size:14px;max-width:52ch}
 
@@ -85,11 +88,11 @@ section{display:grid;gap:18px;scroll-margin-top:72px}
 .cr .play svg{width:13px;height:13px;margin-left:2px}
 .cr .flag{position:absolute;left:10px;top:10px;font:500 10.5px var(--mono);letter-spacing:.04em;background:rgba(17,24,20,.72);color:#fff;padding:4px 8px;border-radius:999px}
 .cr .who{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
-.cr .who b{font-weight:600;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr .who b{font-weight:500;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr .who span{font:500 11px var(--mono);color:var(--faint)}
 .cr .msg{font-size:13.5px;line-height:1.45;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .offer{justify-self:start;font:500 11px var(--mono);color:var(--brand);border:1px solid color-mix(in oklab,var(--brand) 30%,transparent);padding:3px 8px;border-radius:999px}
-.noimg{display:grid;place-items:center;height:100%;padding:16px;text-align:center;font:400 20px/1.15 var(--display);color:var(--muted)}
+.noimg{display:grid;place-items:center;height:100%;padding:16px;text-align:center;font:400 18px/1.2 var(--display);color:var(--muted)}
 
 /* linhas compactas */
 .rows{display:grid;border-top:1px solid var(--line)}
@@ -97,7 +100,7 @@ section{display:grid;gap:18px;scroll-margin-top:72px}
 .row .t{width:52px;aspect-ratio:4/5;border-radius:9px;overflow:hidden;background:var(--na-bg)}
 .row .t img{width:100%;height:100%;object-fit:cover}
 .row .b{min-width:0;display:grid;gap:2px}
-.row .b b{font-weight:600;font-size:14px}
+.row .b b{font-weight:500;font-size:14px}
 .row .b b span{font:500 11px var(--mono);color:var(--faint);margin-left:6px}
 .row .b p{font-size:13px;color:var(--muted);line-height:1.4}
 .row .go{color:var(--faint)}
@@ -107,7 +110,7 @@ section{display:grid;gap:18px;scroll-margin-top:72px}
 .peds{display:grid;gap:12px}
 .ped{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:14px}
 .ped .n{font:500 11px var(--mono);letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
-.ped h3{font:400 25px/1.1 var(--display)}
+.ped h3{font:400 22px/1.15 var(--display)}
 .ped dl{display:grid;gap:10px}
 .ped dl div{display:grid;grid-template-columns:72px 1fr;gap:12px}
 .ped dt{font:500 11px/1.9 var(--mono);color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
@@ -147,7 +150,7 @@ dialog::backdrop{background:rgba(5,8,6,.72);backdrop-filter:blur(10px);-webkit-b
 .pill i{width:7px;height:7px;border-radius:50%}
 .x{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line)}
 .x svg{width:14px;height:14px}
-.pl h3{font:400 30px/1.05 var(--display)}
+.pl h3{font:400 28px/1.05 var(--display);text-transform:uppercase;letter-spacing:.02em}
 .pl .tela{font-size:15px}
 .meta{display:grid;gap:8px;font-size:13.5px}
 .meta div{display:grid;grid-template-columns:78px 1fr;gap:10px}
@@ -162,7 +165,7 @@ dialog::backdrop{background:rgba(5,8,6,.72);backdrop-filter:blur(10px);-webkit-b
 .sc.bom{background:var(--warn-bg)} .sc.bom b{color:var(--warn)}
 .sc.fraco{background:var(--bad-bg)} .sc.fraco b{color:var(--bad)}
 .sc.na b{color:var(--faint)}
-.pl .why{font:italic 400 20px/1.35 var(--display)}
+.pl .why{font:400 17px/1.5 var(--sans)}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-weight:500;font-size:14px;text-decoration:none;border:1px solid var(--line)}
 .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -185,7 +188,8 @@ dialog::backdrop{background:rgba(5,8,6,.72);backdrop-filter:blur(10px);-webkit-b
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <span class="eyebrow">L'Amazonie · marketing e edição</span>
+  <a href="../" aria-label="L'Amazonie Studio"><img class="logo light" src="../brand/logo-verde.png" alt="L'Amazonie"><img class="logo dark" src="../brand/logo-creme.png" alt="L'Amazonie"></a>
+  <span class="eyebrow">Marketing e edição</span>
   <h1>Criativos <em>da semana</em></h1>
   <div class="period"><span id="periodo">carregando…</span><select id="ed" aria-label="Escolher semana" hidden></select></div>
 </div></header>
@@ -204,7 +208,7 @@ const ICON = {
   dl:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1v10M3.5 6.5L8 11l4.5-4.5M2 14.5h12"/></svg>',
   go:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg>'
 };
-const TONE = {ok:['c-ok','p-ok','Campeão'],door:['c-door','p-door','Abre-porta'],warn:['c-warn','p-warn','Cansando'],bad:['c-bad','p-bad','Não repetir'],neutral:['c-neutral','p-neutral','Abaixo do ideal'],rmkt:['c-neutral','p-neutral','Remarketing']};
+const TONE = {ok:['c-ok','p-ok','Campeão'],door:['c-door','p-door','Abre-porta'],warn:['c-warn','p-warn','Cansando'],bad:['c-bad','p-bad','Não repetir'],neutral:['c-neutral','p-neutral','Abaixo do ideal'],rmkt:['c-neutral','p-neutral','Remarketing'],ref:['c-neutral','p-neutral','Referência']};
 const RANGES = {gancho:[35,25],historia:[40,25],chamada:[1.5,1]};
 const LBL = {otimo:'Ótimo',bom:'Bom',fraco:'Fraco'};
 const tier = (k,v)=> v==null ? null : k==='cpm' ? (v<=30?'otimo':v<=50?'bom':'fraco') : k==='freq' ? (v<2?'otimo':v<=3?'bom':'fraco') : v>=RANGES[k][0] ? 'otimo' : v>=RANGES[k][1] ? 'bom' : 'fraco';
@@ -221,11 +225,11 @@ function card(it, tone){
   INDEX[it.code] = {it, tone};
   return `<button class="cr" data-code="${it.code}">
     <div class="ph">${p?`<img src="${p}" alt="" loading="lazy" decoding="async">`:`<div class="noimg">${esc(c.tela)}</div>`}
-      ${it.flag?`<span class="flag">${esc(it.flag)}</span>`:''}
+      ${it.flag&&VIEW==='time'?`<span class="flag">${esc(it.flag)}</span>`:''}
       ${c.tipo==='video'?`<span class="play" aria-hidden="true">${ICON.play}</span>`:''}</div>
-    <div class="who"><b>${esc(who(it.code))}</b><span>${it.code}</span></div>
+    <div class="who"><b>${esc(who(it.code))}</b>${VIEW==='time'?`<span>${it.code}</span>`:''}</div>
     <p class="msg">${esc(it.recado)}</p>
-    <span class="offer">${esc(c.oferta)}</span>
+    ${VIEW==='time'?`<span class="offer">${esc(c.oferta)}</span>`:''}
   </button>`;
 }
 function row(it, tone, keep){
@@ -233,7 +237,7 @@ function row(it, tone, keep){
   if (!keep || !INDEX[it.code]) INDEX[it.code] = {it, tone};
   return `<button class="row" data-code="${it.code}">
     <span class="t">${p?`<img src="${p}" alt="" loading="lazy" decoding="async">`:''}</span>
-    <span class="b"><b>${esc(who(it.code))}<span>${it.code}</span></b><p>${esc(it.recado)}</p></span>
+    <span class="b"><b>${esc(who(it.code))}${VIEW==='time'?`<span>${it.code}</span>`:''}</b><p>${esc(it.recado)}</p></span>
     <span class="go">${ICON.go}</span></button>`;
 }
 function sec(id, title, sub, tone, body){
@@ -249,28 +253,28 @@ function render(){
   h += sec('pedidos','Pedidos da semana','O que produzir agora, a partir do que funcionou.','',
     `<div class="peds">${E.pedidos.map((p,i)=>`<article class="ped"><span class="n">Pedido ${String(i+1).padStart(2,'0')}</span><h3>${esc(p.titulo)}</h3>
       <dl><div><dt>Quem</dt><dd>${esc(p.quem)}</dd></div><div><dt>Manter</dt><dd>${esc(p.manter)}</dd></div><div><dt>Trocar</dt><dd>${esc(p.trocar)}</dd></div></dl>
-      <div class="refs">${p.base.map(c=>`<button class="ref" data-code="${c}">${poster(c)?`<img src="${poster(c)}" alt="">`:''}Ver ${c}</button>`).join('')}</div></article>`).join('')}</div>`);
+      <div class="refs">${p.base.map(c=>`<button class="ref" data-code="${c}">${poster(c)?`<img src="${poster(c)}" alt="">`:''}${VIEW==='time'?`Ver ${c}`:`Ver vídeo · ${esc(who(c))}`}</button>`).join('')}</div></article>`).join('')}</div>`);
 
   for (const s of E.secoes) h += sec(s.id, s.titulo, s.sub, s.tom, `<div class="grid">${s.itens.map(it=>card(it,s.tom)).join('')}</div>`);
 
   h += sec('nao-repetir','Não repetir','Formatos que falharam mais de uma vez na venda.','bad',
     E.naoRepetir.map(n=>`<div class="note"><b>${esc(n.titulo)}</b><p>${esc(n.texto)}</p></div><div class="rows">${n.itens.map(it=>row(it,'bad')).join('')}</div>`).join(''));
 
-  h += sec('abaixo','Abaixo do ideal','Para aprender, não para copiar. Cada um com o que dá pra aproveitar.','neutral',
+  if (E.abaixo?.length) h += sec('abaixo','Abaixo do ideal','Para aprender, não para copiar. Cada um com o que dá pra aproveitar.','neutral',
     `<div class="rows">${E.abaixo.map(it=>row(it,'neutral')).join('')}</div>`);
 
   if (E.remarketing?.length) h += sec('remarketing','Remarketing','Só referência. Fala com quem já quase comprou. Não copiar para público novo.','rmkt',
     `<div class="rows">${E.remarketing.map(it=>row(it,'rmkt')).join('')}</div>`);
 
   const mes = E.mesAnterior;
-  h += sec('arquivo','Arquivo',`Venceram no mês anterior (${mes.periodo}). As edições passadas ficam no seletor do topo.`,'',
-    `<div class="rows">${mes.codes.map(c=>row({code:c,recado:`${C[c].formato} · ${C[c].angulo}`},'ok',true)).join('')}</div>
+  h += sec('arquivo', mes ? 'Arquivo' : 'Como ler', mes ? `Venceram no mês anterior (${mes.periodo}). As edições passadas ficam no seletor do topo.` : '','',
+    `${mes?`<div class="rows">${mes.codes.map(c=>row({code:c,recado:`${C[c].formato} · ${C[c].angulo}`},'ok',true)).join('')}</div>`:''}
      <details class="legend"><summary>Como ler as notas</summary><div class="lg">
        <div><b>Gancho</b><span>Parou o scroll? Ótimo ≥ 35% · Bom 25–35% · Fraco &lt; 25%</span></div>
        <div><b>História</b><span>Assistiu até o fim? Ótimo ≥ 40% · Bom 25–40% · Fraco &lt; 25%</span></div>
        <div><b>Chamada</b><span>Clicou? Ótimo ≥ 1,5% · Bom 1–1,5% · Fraco &lt; 1%</span></div>
        ${VIEW==='time'?`<div><b>CPM</b><span>Custo de mil impressões, já com imposto. Ótimo ≤ R$ 30 · Bom R$ 30–50 · Fraco &gt; R$ 50</span></div><div><b>Frequência</b><span>Vezes que a mesma pessoa viu na semana. Ótimo &lt; 2 · Bom 2–3 · Fraco &gt; 3</span></div>`:''}
-       <div><b>Categoria</b><span>Vem da venda real de cada anúncio. Imagem não tem gancho nem história.</span></div></div></details>`);
+       ${VIEW==='time'?`<div><b>Categoria</b><span>Vem da venda real de cada anúncio (Solomon). Imagem não tem gancho nem história.</span></div>`:''}</div></details>`);
 
   document.getElementById('app').innerHTML = h;
   document.getElementById('nav').innerHTML = [...document.querySelectorAll('section[data-nav]')].map(s=>{
@@ -279,7 +283,7 @@ function render(){
 }
 
 function open(code){
-  const c = C[code]; const {it, tone} = INDEX[code] || {it:{code,notas:{}},tone:'neutral'};
+  const c = C[code]; const {it, tone} = INDEX[code] || {it:{code,notas:null},tone:'ref'};
   const t = TONE[tone] || TONE.neutral; const n = it.notas || {};
   const sc = (k,label)=>{ const v=n[k]; const tr=tier(k,v); return `<div class="sc ${tr||'na'}"><span>${label}</span><b>${tr?LBL[tr]:'n/a'}</b>${VIEW==='time'&&v!=null?`<em>${fmt(k,v)}</em>`:''}</div>`; };
   const media = c.tipo==='video'
@@ -293,11 +297,10 @@ function open(code){
     <div><h3>${esc(c.gravou||'Imagem')}</h3><p class="tela">${esc(c.tela)}</p></div>
     ${it.recado?`<p class="why">${esc(it.recado)}</p>`:''}
     <dl class="meta">
-      <div><dt>Código</dt><dd style="font-family:var(--mono)">${code}</dd></div>
+      ${VIEW==='time'?`<div><dt>Código</dt><dd>${code}</dd></div>`:''}
       <div><dt>Formato</dt><dd>${esc(c.formato)}${c.dur?` · ${c.dur}s`:''}</dd></div>
       <div><dt>Ângulo</dt><dd>${esc(c.angulo)}</dd></div>
-      <div><dt>Oferta</dt><dd>${esc(c.oferta)}</dd></div>
-      <div><dt>Edição</dt><dd>${esc(c.editou)}</dd></div>
+      ${VIEW==='time'?`<div><dt>Oferta</dt><dd>${esc(c.oferta)}</dd></div><div><dt>Edição</dt><dd>${esc(c.editou)}</dd></div>`:''}
     </dl>
     ${it.notas?`<div class="scores">${sc('gancho','Gancho')}${sc('historia','História')}${sc('chamada','Chamada')}${VIEW==='time'?sc('cpm','CPM')+sc('freq','Frequência'):''}</div>`:''}
     <div class="actions">${file?`<a class="btn primary" href="${file}" download="${name}${c.tipo==='video'?'.mp4':'.jpg'}">${ICON.dl}Baixar ${c.tipo==='video'?'vídeo':'imagem'}</a>`:''}

@@ -50,7 +50,7 @@
    "itens": [
     {
      "code": "LA0010",
-     "recado": "Modelo da semana. Curto, direto, com a frase de meme. Quem parou, comprou.",
+     "recado": "Modelo da semana. Curto, direto, com a frase de meme no topo.",
      "notas": {
       "gancho": 20.4,
       "historia": 26.3,
@@ -77,13 +77,12 @@
     },
     {
      "code": "LA0019",
-     "recado": "Vende muito bem toda vez que aparece. Pode virar o próximo modelo.",
+     "recado": "Antes e depois com uma frase que quebra a crença: “ela achava que não tinha jeito”. Vale gravar a sua versão.",
      "notas": {
       "gancho": 27.6,
       "historia": 8.1,
       "chamada": 0.79
-     },
-     "flag": "pouca verba ainda"
+     }
     }
    ]
   },
@@ -96,7 +95,7 @@
    "itens": [
     {
      "code": "LA0014",
-     "recado": "Foi o melhor do mês passado. Agora o público já viu demais. Hora de outra pessoa gravar o mesmo ângulo.",
+     "recado": "Foi o melhor do mês passado e agora cansou. O ângulo funciona: hora de outra pessoa gravar.",
      "notas": {
       "gancho": 28.7,
       "historia": 18.2,
@@ -109,11 +108,11 @@
  "naoRepetir": [
   {
    "titulo": "Tier list / ranking em vídeo",
-   "texto": "Duas versões em 5 semanas e nenhuma chegou ao ideal de venda. A gravação foi boa: prende e gera clique. O formato é que não vende.",
+   "texto": "Duas versões e nenhuma vendeu bem. A gravação foi boa, o formato é que não funciona.",
    "itens": [
     {
      "code": "LA0006",
-     "recado": "Prende e gera clique, mas não vende.",
+     "recado": "Boa gravação, formato que não vende.",
      "notas": {
       "gancho": 33.7,
       "historia": 39.2,
@@ -123,70 +122,5 @@
    ]
   }
  ],
- "abaixo": [
-  {
-   "code": "LA0005",
-   "recado": "Melhor começo de vídeo da semana, mas quase todo mundo sai logo depois. Ver pedido 3.",
-   "notas": {
-    "gancho": 47.3,
-    "historia": 12.2,
-    "chamada": 0.88
-   }
-  },
-  {
-   "code": "LA0007",
-   "recado": "Vendeu bem no mês passado e está caindo devagar.",
-   "notas": {
-    "gancho": 14.2,
-    "historia": 19.4,
-    "chamada": 0.73
-   }
-  },
-  {
-   "code": "LA0004",
-   "recado": "Gera clique, mas está há 5 semanas abaixo do ideal na venda.",
-   "notas": {
-    "gancho": 27.1,
-    "historia": 23.7,
-    "chamada": 1.86
-   }
-  },
-  {
-   "code": "LA0009",
-   "recado": "Clique ótimo, mas a visita não vira compra.",
-   "notas": {
-    "gancho": 22.7,
-    "historia": 26.3,
-    "chamada": 2.31
-   }
-  },
-  {
-   "code": "LA0008",
-   "recado": "Começa devagar. Falta mostrar a sobrancelha logo no primeiro segundo.",
-   "notas": {
-    "gancho": 15.1,
-    "historia": 16.6,
-    "chamada": 0.94
-   }
-  },
-  {
-   "code": "LA0020",
-   "recado": "Quase não vendeu com a verba que recebeu.",
-   "notas": {
-    "gancho": 34.9,
-    "historia": 26.3,
-    "chamada": 0.74
-   }
-  }
- ],
- "remarketing": [],
- "mesAnterior": {
-  "periodo": "14 set – 11 out",
-  "codes": [
-   "LA0014",
-   "LA0019",
-   "LA0010",
-   "LA0007"
-  ]
- }
+ "remarketing": []
 }
