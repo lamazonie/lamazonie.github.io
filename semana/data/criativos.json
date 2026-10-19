@@ -1,0 +1,189 @@
+{
+ "LA0001": {
+  "tipo": "imagem",
+  "formato": "Estático",
+  "angulo": "Falha na raiz",
+  "oferta": "10% + 15% cashback",
+  "gravou": null,
+  "editou": "Daniel Design",
+  "tela": "Precisando recuperar a sua sobrancelha?"
+ },
+ "LA0002": {
+  "tipo": "video",
+  "dur": 82,
+  "formato": "Vídeo IA",
+  "angulo": "História no espelho",
+  "oferta": "10% OFF",
+  "gravou": "IA",
+  "editou": "Daniel Design",
+  "tela": "Animação: mulher no espelho, “Tem uma falha”"
+ },
+ "LA0003": {
+  "tipo": "video",
+  "dur": 60,
+  "formato": "Vídeo IA",
+  "angulo": "Dentro do folículo",
+  "oferta": "10% OFF",
+  "gravou": "IA",
+  "editou": "Daniel Design",
+  "tela": "Animação dentro do folículo, com personagem"
+ },
+ "LA0004": {
+  "tipo": "video",
+  "dur": 35,
+  "formato": "Conversa / podcast",
+  "angulo": "Queda ao lavar",
+  "oferta": "10% + 15% cashback",
+  "gravou": "Haniele",
+  "editou": "Daniel Design",
+  "tela": "De toalha no rosto, “lavar cai muito”"
+ },
+ "LA0005": {
+  "tipo": "video",
+  "dur": 11,
+  "formato": "UGC curto",
+  "angulo": "Sem maquiagem",
+  "oferta": "10% OFF",
+  "gravou": "Emily Beatriz",
+  "editou": "Daniel Design",
+  "tela": "“Quando não preciso usar maquiagem na sobrancelha porque uso o sérum”"
+ },
+ "LA0006": {
+  "tipo": "video",
+  "dur": 56,
+  "formato": "Tier list",
+  "angulo": "Ranking de produtos",
+  "oferta": "10% OFF",
+  "gravou": "Gabi Dorow",
+  "editou": "Daniel Design",
+  "tela": "“Melhores produtos pra crescimento das sobrancelhas”"
+ },
+ "LA0007": {
+  "tipo": "video",
+  "dur": 12,
+  "formato": "POV + antes e depois",
+  "angulo": "Achei o sérum certo",
+  "oferta": "10% OFF",
+  "gravou": "Giulia",
+  "editou": "Daniel Design",
+  "tela": "“POV: você encontrou o sérum perfeito”"
+ },
+ "LA0008": {
+  "tipo": "video",
+  "dur": 20,
+  "formato": "Depoimento",
+  "angulo": "Eu tinha falhas",
+  "oferta": "10% + 15% cashback",
+  "gravou": "Embaixadora",
+  "editou": "Daniel Design",
+  "tela": "Aplicando, “eu tinha falhas na sobrancelha”"
+ },
+ "LA0009": {
+  "tipo": "video",
+  "dur": 25,
+  "formato": "UGC aplicando",
+  "angulo": "Fio sem estímulo",
+  "oferta": "10% + 15% cashback",
+  "gravou": "Haniele",
+  "editou": "Daniel Design",
+  "tela": "Aplicando o sérum, antes e depois no canto"
+ },
+ "LA0010": {
+  "tipo": "video",
+  "dur": 11,
+  "formato": "Meme + oferta na tela",
+  "angulo": "Não preciso mais preencher",
+  "oferta": "10% OFF · QUERO10",
+  "gravou": "Monique",
+  "editou": "Daniel Design",
+  "tela": "“Eu e as que não precisam mais preencher as sobrancelhas”"
+ },
+ "LA0011": {
+  "tipo": "video",
+  "dur": 11,
+  "formato": "Meme + oferta na tela",
+  "angulo": "Não preciso mais preencher",
+  "oferta": "10% OFF · QUERO10",
+  "gravou": "Emily Beatriz",
+  "editou": "Daniel Design",
+  "tela": "“Eu e as que não precisam mais preencher as sobrancelhas”"
+ },
+ "LA0012": {
+  "tipo": "video",
+  "dur": 36,
+  "formato": "Dia 0 × Dia 30",
+  "angulo": "Prova de resultado",
+  "oferta": "20% OFF",
+  "gravou": "Keilany",
+  "editou": "Daniel Design",
+  "tela": "Tela dividida: Dia 0 × Dia 30"
+ },
+ "LA0013": {
+  "tipo": "video",
+  "dur": 48,
+  "formato": "Vídeo IA",
+  "angulo": "Sobrancelha que fala",
+  "oferta": "Frete grátis + 10%",
+  "gravou": "IA",
+  "editou": "Daniel Design",
+  "tela": "Sobrancelha falante, “Me rabiscar com…”"
+ },
+ "LA0014": {
+  "tipo": "video",
+  "dur": 41,
+  "formato": "Dia 0 × Dia 30",
+  "angulo": "Prova de resultado",
+  "oferta": "20% OFF",
+  "gravou": "Keilany",
+  "editou": "Daniel Design",
+  "tela": "Tela dividida: Dia 0 × Dia 30"
+ },
+ "LA0015": {
+  "tipo": "imagem",
+  "formato": "Estático",
+  "angulo": "Problema e solução",
+  "oferta": "Sem cupom",
+  "gravou": null,
+  "editou": "Daniel Design",
+  "tela": "Problemas × Solução"
+ },
+ "LA0016": {
+  "tipo": "imagem",
+  "formato": "Estático",
+  "angulo": "Carrinho abandonado",
+  "oferta": "R$30 OFF · CARRINHO30",
+  "gravou": null,
+  "editou": "Daniel Design",
+  "tela": "“Sobrancelhas com falhas têm solução”, R$129"
+ },
+ "LA0018": {
+  "tipo": "imagem",
+  "formato": "Estático",
+  "angulo": "Lista de antes e depois",
+  "oferta": "—",
+  "gravou": null,
+  "editou": "Daniel Design",
+  "tela": "Lista de antes e depois",
+  "semImagem": true
+ },
+ "LA0019": {
+  "tipo": "video",
+  "dur": 16,
+  "formato": "Antes e depois",
+  "angulo": "Achava que não tinha jeito",
+  "oferta": "10% OFF",
+  "gravou": "A confirmar",
+  "editou": "Daniel Design",
+  "tela": "“Ela achava que sobrancelha falhada não tinha jeito…”"
+ },
+ "LA0020": {
+  "tipo": "video",
+  "dur": 8,
+  "formato": "Vídeo curto",
+  "angulo": "Ranking",
+  "oferta": "10% OFF",
+  "gravou": "A confirmar",
+  "editou": "Daniel Design",
+  "tela": "Vídeo curto do ranking"
+ }
+}
