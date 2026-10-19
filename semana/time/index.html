@@ -124,6 +124,9 @@ section{display:grid;gap:18px;scroll-margin-top:72px}
 .mk p{font-size:14.5px}
 .mk p.why{color:var(--muted)}
 .mk p strong{font-weight:600}
+.mk .lk{display:flex;flex-wrap:wrap;gap:8px}
+.mk .lk a{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;background:var(--bg)}
+.mk .lk a em{font:500 11px var(--mono);font-style:normal;color:var(--faint)}
 .sig{display:grid;border-top:1px solid var(--line);margin-top:2px}
 .sig a{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:13.5px}
 .sig a span{min-width:0}
@@ -275,6 +278,7 @@ function render(){
     h += sec('mercado','O que o mercado está pedindo', M.sub, '',
       `<div class="mk">${M.itens.map((m,i)=>`<article><span class="n">Mercado ${String(i+1).padStart(2,'0')}${VIEW==='time'&&m.para?`<b>${esc(m.para)}</b>`:''}</span><h3>${esc(m.titulo)}</h3>
         <p class="why">${esc(m.porque)}</p><p><strong>${esc(m.acaoRotulo||'Como gravar')}:</strong> ${esc(m.como)}</p>
+        ${m.refs?.length?`<div class="lk">${m.refs.map(r=>`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.rotulo)} <em>${esc(r.numero||'')}</em></a>`).join('')}</div>`:''}
         ${VIEW==='time'&&m.sinais?.length?`<div class="sig">${m.sinais.map(sig).join('')}</div>`:''}</article>`).join('')}
         ${VIEW==='time'&&M.longos?.length?`<article><span class="n">Pra abrir e assistir</span><h3>${esc(M.longos.titulo||'No ar há mais tempo')}</h3><p class="why">${esc(M.longosNota||'')}</p><div class="sig">${M.longos.map(sig).join('')}</div></article>`:''}</div>`, 'Mercado');
   }

@@ -313,44 +313,96 @@
  },
  "visao": "time",
  "mercado": {
-  "sub": "Lido na Biblioteca de Anúncios do Meta em 19/10. Copiamos só a estrutura, nunca o vídeo, o texto ou a marca.",
+  "sub": "TikTok (orgânico) e Biblioteca de Anúncios do Meta (EUA, Reino Unido e Austrália), lidos em 19/10. Copiamos só a estrutura, nunca o vídeo, o texto ou a marca.",
   "itens": [
    {
-    "titulo": "Diário do tratamento",
-    "porque": "As marcas que mais anunciam estão vendendo tempo: “4 a 6 semanas”, “3 meses de constância”, “tratamento de 6 meses”. Quem pensa em comprar quer saber quando vai ver diferença.",
-    "como": "A mesma sobrancelha em 3 momentos ou mais, com a mesma luz e o mesmo ângulo. Fala a semana em voz alta em cada corte e conta o que percebeu. Sem filtro.",
-    "sinais": [
+    "titulo": "A fase feia de crescer",
+    "para": "Creators",
+    "porque": "O vídeo de sobrancelha mais curtido do TikTok nos últimos meses tem 10 segundos e 1,7 milhão de curtidas: uma menina rindo da própria sobrancelha crescendo. Quem está na fase feia se reconhece e manda pra amiga.",
+    "como": "10 segundos, tom de meme. Mostra a sobrancelha no pior momento com uma frase na tela tipo “crescer sobrancelha é humilhante”. Fecha mostrando o sérum. É o mesmo jeito dos nossos vídeos de 11 segundos que mais vendem.",
+    "refs": [
      {
-      "marca": "Lagai",
-      "titulo": "“Tratamento completo de 6 meses” (4 versões)",
-      "quando": "desde 14/10/2026",
-      "url": "https://www.facebook.com/ads/library/?id=1927552911539666"
+      "rotulo": "Ver no TikTok",
+      "numero": "1,7 mi curtidas",
+      "url": "https://www.tiktok.com/@livelife69_hello/video/7669664147734301982"
      },
      {
-      "marca": "Lagai",
-      "titulo": "“3 meses de constância”",
-      "quando": "desde 14/10/2026",
-      "url": "https://www.facebook.com/ads/library/?id=1089729583904610"
+      "rotulo": "Ver no TikTok",
+      "numero": "107 mil",
+      "url": "https://www.tiktok.com/@mariselaspammy/video/7695102990511918367"
+     }
+    ]
+   },
+   {
+    "titulo": "Antes de afinar a sobrancelha",
+    "para": "Creators",
+    "porque": "A trend da sobrancelha fina explodiu lá fora e já chegou aqui: vídeos com 1,1 milhão, 625 mil e 480 mil curtidas. Daqui a uns meses muita gente vai querer o fio de volta.",
+    "como": "Começa no assunto da sobrancelha fina, pode ser com o filtro. Corta pra você contando quanto tempo levou pra sua voltar, ou mostrando a sua cheia hoje. Tom de amiga avisando, sem sermão.",
+    "refs": [
+     {
+      "rotulo": "Ver a trend",
+      "numero": "1,1 mi curtidas",
+      "url": "https://www.tiktok.com/@svetlaaaaaaaaaaana/video/7631117741348408596"
+     },
+     {
+      "rotulo": "Ver a trend",
+      "numero": "480 mil",
+      "url": "https://www.tiktok.com/@carlaswan15/video/7643753142420573447"
+     }
+    ]
+   },
+   {
+    "titulo": "Série com o dia na tela",
+    "para": "Creators",
+    "porque": "Vídeo de “vou testar e mostro o resultado” prende a pessoa por semanas: 202 mil curtidas no “olha o progresso”, 96 mil no “aguardem”. Os anúncios gringos que mais estão testando agora também falam em dia 1 contra dia 90.",
+    "como": "Mesma luz, mesmo ângulo e “Dia 1”, “Dia 15”, “Dia 30” escrito na tela. Posta como partes de uma série e conta o que mudou em cada uma. Sem filtro.",
+    "refs": [
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "202 mil curtidas",
+      "url": "https://www.tiktok.com/@thainadoitbest/video/7574561658023005454"
+     },
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "96 mil",
+      "url": "https://www.tiktok.com/@fuzzylumpagus/video/7516586018754104619"
+     }
+    ],
+    "sinais": [
+     {
+      "marca": "Origin Hair Co. (EUA)",
+      "titulo": "“Take a photo on day 1, compare on day 90”",
+      "quando": "desde 16/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=3381360022043169"
      },
      {
       "marca": "Grande (EUA)",
       "titulo": "“Real Results in 4-6 Weeks”",
       "quando": "desde 16/10/2026",
       "url": "https://www.facebook.com/ads/library/?id=1979342713184615"
-     },
-     {
-      "marca": "AIAMI",
-      "titulo": "“Resultados em menos de 30 dias!”",
-      "quando": "desde 14/10/2026",
-      "url": "https://www.facebook.com/ads/library/?id=1804129027510335"
      }
-    ],
-    "para": "Creators"
+    ]
+   },
+   {
+    "titulo": "Respondendo um comentário",
+    "para": "Daniel Design + creators",
+    "acaoRotulo": "O que fazer",
+    "porque": "No TikTok, o vídeo “respondendo @fulana” que desmente um mito sobre sobrancelha passou de 100 mil curtidas. Responder dúvida real gera confiança e comentário novo.",
+    "como": "Juntar 3 dúvidas reais do direct ou do SAC (nossos anúncios não têm comentário visível) e pedir pra uma creator responder cada uma em vídeo curto.",
+    "refs": [
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "101 mil curtidas",
+      "url": "https://www.tiktok.com/@bishuwish/video/7535519534866795806"
+     }
+    ]
    },
    {
     "titulo": "Primeira vez com sérum",
-    "porque": "A maior marca de sérum dos EUA abriu anúncio novo falando com quem nunca usou. Quem nunca usou tem medo de não funcionar e não sabe como passar.",
-    "como": "Fala direto pra câmera, como se respondesse uma amiga: como passa, quanto tempo leva por dia, quando começou a ver. Mostra a aplicação bem de perto. Até 30 segundos.",
+    "para": "Creators (próxima semana)",
+    "acaoRotulo": "Como gravar",
+    "porque": "As marcas de fora estão abrindo anúncio novo falando com quem nunca usou: como passa, quanto tempo leva, quando vê diferença.",
+    "como": "Fala direto pra câmera, como quem responde uma amiga. Mostra a aplicação bem de perto. Até 30 segundos.",
     "sinais": [
      {
       "marca": "Grande (EUA)",
@@ -359,40 +411,43 @@
       "url": "https://www.facebook.com/ads/library/?id=2721792148266648"
      },
      {
+      "marca": "Origin Hair Co. (EUA)",
+      "titulo": "“20 seconds a day, after you wash your face”",
+      "quando": "desde 17/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1653324249738602"
+     },
+     {
+      "marca": "Origin Hair Co. (EUA)",
+      "titulo": "“How it works, in plain English”",
+      "quando": "desde 18/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1366304968909586"
+     },
+     {
       "marca": "Grande (EUA)",
       "titulo": "“Like Clear Mascara, But Better”",
       "quando": "desde 20/09/2026",
       "url": "https://www.facebook.com/ads/library/?id=2143937226519724"
      }
-    ],
-    "para": "Creators"
-   },
-   {
-    "titulo": "Eu já tinha desistido",
-    "porque": "Uma marca americana está com 8 versões no ar do mesmo começo: “achei que minha sobrancelha não tinha mais jeito”. Tanta versão ao mesmo tempo é sinal de que está vendendo.",
-    "como": "Abre contando o que você já tentou e não resolveu: lápis, henna, design. Depois mostra a sobrancelha hoje. A virada aparece antes dos 5 segundos.",
-    "sinais": [
-     {
-      "marca": "Nelux (EUA)",
-      "titulo": "“I Thought My Brows Were Gone for Good” (8 versões)",
-      "quando": "desde 10/10/2026",
-      "url": "https://www.facebook.com/ads/library/?id=1403327655201979"
-     }
-    ],
-    "para": "Creators"
+    ]
    },
    {
     "titulo": "Garantia no título",
     "para": "Pedro + Daniel Design",
     "acaoRotulo": "O que fazer",
-    "porque": "Duas marcas estão usando garantia como argumento principal, uma no Brasil e uma nos EUA.",
-    "como": "Se a gente oferece garantia, testar um estático e um título com ela na semana que vem. Se não oferece, fica a decisão com o Pedro.",
+    "porque": "Duas marcas americanas colocaram a garantia como argumento principal, com várias versões no ar ao mesmo tempo.",
+    "como": "Se a gente oferece garantia, testar um estático e um título com ela. Se não oferece, fica a decisão com o Pedro.",
     "sinais": [
      {
-      "marca": "Lagai",
-      "titulo": "“30 dias de garantia ou seu dinheiro de volta”",
-      "quando": "desde 30/09/2026",
-      "url": "https://www.facebook.com/ads/library/?id=2142106079753442"
+      "marca": "Origin Hair Co. (EUA)",
+      "titulo": "“8 to 12 weeks, with a 90-day guarantee”",
+      "quando": "desde 16/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=27968594142815956"
+     },
+     {
+      "marca": "Origin Hair Co. (EUA)",
+      "titulo": "“Try it for 90 days or get your money back”",
+      "quando": "desde 16/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1865808791445652"
      },
      {
       "marca": "Nelux (EUA)",
@@ -403,45 +458,60 @@
     ]
    },
    {
-    "titulo": "Cílios + sobrancelha juntos",
-    "para": "Pedro",
+    "titulo": "Mulher 40+ com sobrancelha rala",
+    "para": "Pedro + Daniel Design",
     "acaoRotulo": "O que fazer",
-    "porque": "AIAMI, Femme9 e Grande vendem cílios e sobrancelha no mesmo anúncio ou em kit. A mais antiga desse tema está no ar desde agosto.",
-    "como": "Só vale se a gente tiver produto pra cílios. Se não tiver, ignorar.",
+    "porque": "Páginas com cara de revista feminina, não de marca, estão anunciando sobrancelha para mulher madura. É um público que a gente ainda não fala direto.",
+    "como": "Testar um estático e um vídeo falando com a mulher de 40+ que viu a sobrancelha afinar com o tempo.",
     "sinais": [
      {
-      "marca": "Grande (EUA)",
-      "titulo": "“Transform your lashes and brows”",
-      "quando": "desde 26/08/2026",
-      "url": "https://www.facebook.com/ads/library/?id=4611896749021818"
+      "marca": "Pro-Age Beauty Insider (EUA)",
+      "titulo": "“Brows That Wow at Any Age”",
+      "quando": "desde 19/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=1636118901341772"
      },
      {
-      "marca": "AIAMI",
-      "titulo": "“Cílios e sobrancelhas fortes” (4 versões)",
-      "quando": "desde 14/10/2026",
-      "url": "https://www.facebook.com/ads/library/?id=2201560690394327"
+      "marca": "Rumi Cosmetiques (EUA)",
+      "titulo": "“The Thinning Brow Fix Nobody Is Talking About”",
+      "quando": "desde 19/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2360739741132070"
      },
      {
-      "marca": "Femme9",
-      "titulo": "Kit Therapy Brows + Therapy Lashes",
+      "marca": "Thefortyforward (EUA)",
+      "titulo": "“Always Sparse Is a Different Story”",
       "quando": "desde 14/10/2026",
-      "url": "https://www.facebook.com/ads/library/?id=1444465884310307"
+      "url": "https://www.facebook.com/ads/library/?id=2194662497929422"
+     }
+    ]
+   },
+   {
+    "titulo": "Leve 2, pague 1",
+    "para": "Pedro",
+    "acaoRotulo": "O que fazer",
+    "porque": "Oferta de “compre 1, leve outro grátis” e kit chamado de “o viral” estão rodando em marcas de sobrancelha lá fora.",
+    "como": "Decisão de oferta. Vale levar pro Alex se a margem do kit de 2 aguentar.",
+    "sinais": [
+     {
+      "marca": "Trending In Korea (EUA)",
+      "titulo": "“Buy 1 Get 1 FREE” (3 versões)",
+      "quando": "desde 22/09/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2098580374078274"
+     },
+     {
+      "marca": "Glow For It (Reino Unido)",
+      "titulo": "“THE VIRAL BUNDLE” (4 versões)",
+      "quando": "desde 19/10/2026",
+      "url": "https://www.facebook.com/ads/library/?id=2300196834155905"
      }
     ]
    }
   ],
   "longos": [
    {
-    "marca": "Lagai",
-    "titulo": "Anúncio sem título",
-    "quando": "desde 27/09/2025",
-    "url": "https://www.facebook.com/ads/library/?id=1333367235086278"
-   },
-   {
-    "marca": "Lagai",
-    "titulo": "Anúncio sem título",
-    "quando": "desde 12/10/2025",
-    "url": "https://www.facebook.com/ads/library/?id=736643206095870"
+    "marca": "Babe Original (EUA)",
+    "titulo": "Anúncio de catálogo",
+    "quando": "desde 10/04/2026",
+    "url": "https://www.facebook.com/ads/library/?id=2116425882542447"
    },
    {
     "marca": "Grande (EUA)",
@@ -450,22 +520,22 @@
     "url": "https://www.facebook.com/ads/library/?id=2491839237938307"
    },
    {
-    "marca": "AIAMI",
-    "titulo": "Anúncio sem título (4 no ar desde a mesma data)",
-    "quando": "desde 06/07/2026",
-    "url": "https://www.facebook.com/ads/library/?id=1046822237684606"
+    "marca": "Grande (EUA)",
+    "titulo": "“Transform your lashes and brows”",
+    "quando": "desde 26/08/2026",
+    "url": "https://www.facebook.com/ads/library/?id=4611896749021818"
    },
    {
-    "marca": "Femme9",
-    "titulo": "Anúncio sem título",
-    "quando": "desde 06/08/2026",
-    "url": "https://www.facebook.com/ads/library/?id=1973104293646694"
+    "marca": "Grande (EUA)",
+    "titulo": "“Like Clear Mascara, But Better”",
+    "quando": "desde 20/09/2026",
+    "url": "https://www.facebook.com/ads/library/?id=2143937226519724"
    },
    {
-    "marca": "AIAMI",
-    "titulo": "Anúncio sem título",
-    "quando": "desde 12/08/2026",
-    "url": "https://www.facebook.com/ads/library/?id=1593265692200631"
+    "marca": "Trending In Korea (EUA)",
+    "titulo": "“Buy 1 Get 1 FREE”",
+    "quando": "desde 22/09/2026",
+    "url": "https://www.facebook.com/ads/library/?id=2098580374078274"
    }
   ],
   "longosNota": "Anúncio que fica meses no ar quase sempre está vendendo. A biblioteca não mostra o vídeo por aqui: Daniel Design, abre cada um e me diz o formato pra eu colocar na próxima edição."

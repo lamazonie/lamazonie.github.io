@@ -124,22 +124,58 @@
  ],
  "remarketing": [],
  "mercado": {
-  "sub": "Formatos que outras marcas de sérum estão rodando agora. A gente grava a nossa versão, do nosso jeito.",
+  "sub": "O que está bombando no TikTok e nos anúncios de fora. A gente grava a nossa versão, do nosso jeito.",
   "itens": [
    {
-    "titulo": "Diário do tratamento",
-    "porque": "As marcas que mais anunciam estão vendendo tempo: “4 a 6 semanas”, “3 meses de constância”, “tratamento de 6 meses”. Quem pensa em comprar quer saber quando vai ver diferença.",
-    "como": "A mesma sobrancelha em 3 momentos ou mais, com a mesma luz e o mesmo ângulo. Fala a semana em voz alta em cada corte e conta o que percebeu. Sem filtro."
+    "titulo": "A fase feia de crescer",
+    "porque": "O vídeo de sobrancelha mais curtido do TikTok nos últimos meses tem 10 segundos e 1,7 milhão de curtidas: uma menina rindo da própria sobrancelha crescendo. Quem está na fase feia se reconhece e manda pra amiga.",
+    "como": "10 segundos, tom de meme. Mostra a sobrancelha no pior momento com uma frase na tela tipo “crescer sobrancelha é humilhante”. Fecha mostrando o sérum. É o mesmo jeito dos nossos vídeos de 11 segundos que mais vendem.",
+    "refs": [
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "1,7 mi curtidas",
+      "url": "https://www.tiktok.com/@livelife69_hello/video/7669664147734301982"
+     },
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "107 mil",
+      "url": "https://www.tiktok.com/@mariselaspammy/video/7695102990511918367"
+     }
+    ]
    },
    {
-    "titulo": "Primeira vez com sérum",
-    "porque": "A maior marca de sérum dos EUA abriu anúncio novo falando com quem nunca usou. Quem nunca usou tem medo de não funcionar e não sabe como passar.",
-    "como": "Fala direto pra câmera, como se respondesse uma amiga: como passa, quanto tempo leva por dia, quando começou a ver. Mostra a aplicação bem de perto. Até 30 segundos."
+    "titulo": "Antes de afinar a sobrancelha",
+    "porque": "A trend da sobrancelha fina explodiu lá fora e já chegou aqui: vídeos com 1,1 milhão, 625 mil e 480 mil curtidas. Daqui a uns meses muita gente vai querer o fio de volta.",
+    "como": "Começa no assunto da sobrancelha fina, pode ser com o filtro. Corta pra você contando quanto tempo levou pra sua voltar, ou mostrando a sua cheia hoje. Tom de amiga avisando, sem sermão.",
+    "refs": [
+     {
+      "rotulo": "Ver a trend",
+      "numero": "1,1 mi curtidas",
+      "url": "https://www.tiktok.com/@svetlaaaaaaaaaaana/video/7631117741348408596"
+     },
+     {
+      "rotulo": "Ver a trend",
+      "numero": "480 mil",
+      "url": "https://www.tiktok.com/@carlaswan15/video/7643753142420573447"
+     }
+    ]
    },
    {
-    "titulo": "Eu já tinha desistido",
-    "porque": "Uma marca americana está com 8 versões no ar do mesmo começo: “achei que minha sobrancelha não tinha mais jeito”. Tanta versão ao mesmo tempo é sinal de que está vendendo.",
-    "como": "Abre contando o que você já tentou e não resolveu: lápis, henna, design. Depois mostra a sobrancelha hoje. A virada aparece antes dos 5 segundos."
+    "titulo": "Série com o dia na tela",
+    "porque": "Vídeo de “vou testar e mostro o resultado” prende a pessoa por semanas: 202 mil curtidas no “olha o progresso”, 96 mil no “aguardem”. Os anúncios gringos que mais estão testando agora também falam em dia 1 contra dia 90.",
+    "como": "Mesma luz, mesmo ângulo e “Dia 1”, “Dia 15”, “Dia 30” escrito na tela. Posta como partes de uma série e conta o que mudou em cada uma. Sem filtro.",
+    "refs": [
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "202 mil curtidas",
+      "url": "https://www.tiktok.com/@thainadoitbest/video/7574561658023005454"
+     },
+     {
+      "rotulo": "Ver no TikTok",
+      "numero": "96 mil",
+      "url": "https://www.tiktok.com/@fuzzylumpagus/video/7516586018754104619"
+     }
+    ]
    }
   ]
  }
