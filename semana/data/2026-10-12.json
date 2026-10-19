@@ -2,12 +2,13 @@
  "id": "2026-10-12",
  "periodo": "12 – 18 out 2026",
  "edicao": 1,
+ "visao": "creators",
  "recado": [
-  "O que mais vendeu: vídeos curtos de 11 segundos, com uma frase de meme e o preço com cupom aparecendo na tela. Duas creators diferentes, mesmo modelo, mesmo resultado.",
-  "Os vídeos de IA são os que mais param o scroll e trazem cliente nova, mas não fecham a venda sozinhos. O pedido da semana junta o começo da IA com o final de oferta dos campeões.",
-  "Antes e depois “Dia 0 × Dia 30” vende, mas cansa rápido. Precisamos de versões novas, com pessoas novas."
+  "O que mais vendeu: vídeos curtos de 11 segundos com uma frase de meme, “Eu e as que não precisam mais preencher as sobrancelhas”. Monique e Emily Beatriz, mesmo modelo, mesmo resultado.",
+  "Prova de resultado vende: o Dia 0 × Dia 30 da Keilany. Mas cansa rápido, então precisamos de versões novas com outras pessoas.",
+  "Mostre a falha logo no primeiro segundo. Os vídeos que mais prenderam atenção nesta semana abriram direto no problema."
  ],
- "aprendizado": "Parar o scroll não basta. Os campeões desta semana têm gancho fraco e mesmo assim venderam mais, porque mostram a oferta e o resultado.",
+ "aprendizado": "O preço com cupom que a edição coloca na tela faz parte do resultado. Gravem já pensando que ele entra no final do vídeo.",
  "pedidos": [
   {
    "titulo": "Mais “Eu e as que não precisam mais preencher”",
@@ -15,20 +16,9 @@
     "LA0010",
     "LA0011"
    ],
-   "quem": "Creators · 3 versões novas",
-   "manter": "11 segundos. Frase de meme no topo. Painel com preço riscado e cupom na tela. Rosto da creator.",
-   "trocar": "A creator, o cenário e a frase. Ex.: “Eu depois de aposentar o lápis de sobrancelha”."
-  },
-  {
-   "titulo": "IA que fecha a venda",
-   "base": [
-    "LA0002",
-    "LA0003",
-    "LA0013"
-   ],
-   "quem": "Daniel Design",
-   "manter": "A história animada e o primeiro segundo, os melhores da conta.",
-   "trocar": "Terminar com o mesmo painel de preço e cupom dos campeões. Testar também uma versão de 30 segundos."
+   "quem": "Qualquer creator · 3 versões novas",
+   "manter": "Vídeo curto, cerca de 11 segundos. Sua sobrancelha bem perto da câmera. A frase de meme no topo.",
+   "trocar": "Seu rosto, seu cenário e a sua frase. Ex.: “Eu depois de aposentar o lápis de sobrancelha”."
   },
   {
    "titulo": "Dia 0 × Dia 30 com gente nova",
@@ -36,18 +26,18 @@
     "LA0012",
     "LA0014"
    ],
-   "quem": "Creators com 30 dias de uso",
-   "manter": "Tela dividida Dia 0 × Dia 30 já no primeiro segundo.",
-   "trocar": "Outra pessoa, outro ângulo de câmera e o preço com cupom no final."
+   "quem": "Quem já usa o sérum há 30 dias",
+   "manter": "Mostrar o Dia 0 e o Dia 30 lado a lado já no primeiro segundo.",
+   "trocar": "Outra pessoa, outra luz, outro ângulo de câmera."
   },
   {
-   "titulo": "Reaproveitar o melhor gancho da conta",
+   "titulo": "Comece pela falha, sem maquiagem",
    "base": [
     "LA0005"
    ],
-   "quem": "Emily Beatriz + Daniel Design",
+   "quem": "Emily Beatriz e quem quiser testar",
    "manter": "Os 2 primeiros segundos: close na sobrancelha sem maquiagem.",
-   "trocar": "Logo depois do gancho, antes e depois. Fechar com preço e cupom na tela."
+   "trocar": "Logo depois, mostrar antes e depois. Não ficar só falando."
   }
  ],
  "secoes": [
@@ -60,7 +50,7 @@
    "itens": [
     {
      "code": "LA0010",
-     "recado": "Modelo da semana. Gancho fraco, mas quem para compra: o preço com cupom na tela faz o trabalho.",
+     "recado": "Modelo da semana. Curto, direto, com a frase de meme. Quem parou, comprou.",
      "notas": {
       "gancho": 20.4,
       "historia": 26.3,
@@ -87,7 +77,7 @@
     },
     {
      "code": "LA0019",
-     "recado": "Vende muito bem toda vez que aparece, mas recebeu pouca entrega. Pode virar o próximo modelo.",
+     "recado": "Vende muito bem toda vez que aparece. Pode virar o próximo modelo.",
      "notas": {
       "gancho": 27.6,
       "historia": 8.1,
@@ -98,55 +88,19 @@
    ]
   },
   {
-   "id": "abre-porta",
-   "titulo": "Abre-porta",
-   "sub": "Trazem cliente nova, a venda fecha depois. Mantenham o gancho, reforcem o final.",
-   "tom": "door",
-   "estilo": "grade",
-   "itens": [
-    {
-     "code": "LA0002",
-     "recado": "O melhor em parar o scroll e trazer gente nova. O final precisa mostrar a oferta.",
-     "notas": {
-      "gancho": 42.0,
-      "historia": 43.0,
-      "chamada": 3.62
-     }
-    },
-    {
-     "code": "LA0003",
-     "recado": "Segura a atenção melhor que qualquer vídeo da conta. Mesmo pedido: final com preço e cupom.",
-     "notas": {
-      "gancho": 43.6,
-      "historia": 46.6,
-      "chamada": 2.6
-     }
-    }
-   ]
-  },
-  {
    "id": "cansando",
    "titulo": "Cansando",
-   "sub": "Já foram campeões e estão caindo. O ângulo funciona, façam versão nova.",
+   "sub": "Já foi campeão e está caindo. O ângulo funciona, façam versão nova.",
    "tom": "warn",
    "estilo": "grade",
    "itens": [
     {
      "code": "LA0014",
-     "recado": "Foi o melhor do mês passado. Nesta semana vendeu menos da metade e ficou mais caro aparecer.",
+     "recado": "Foi o melhor do mês passado. Agora o público já viu demais. Hora de outra pessoa gravar o mesmo ângulo.",
      "notas": {
       "gancho": 28.7,
       "historia": 18.2,
       "chamada": 1.39
-     }
-    },
-    {
-     "code": "LA0018",
-     "recado": "Ia bem no mês passado. Agora menos clique e menos venda. Fazer uma lista nova, com fotos novas.",
-     "notas": {
-      "gancho": null,
-      "historia": null,
-      "chamada": 0.79
      }
     }
    ]
@@ -155,7 +109,7 @@
  "naoRepetir": [
   {
    "titulo": "Tier list / ranking em vídeo",
-   "texto": "Duas versões em 5 semanas e nenhuma chegou ao ideal de venda. A execução foi boa: prende e gera clique. O formato é que não vende.",
+   "texto": "Duas versões em 5 semanas e nenhuma chegou ao ideal de venda. A gravação foi boa: prende e gera clique. O formato é que não vende.",
    "itens": [
     {
      "code": "LA0006",
@@ -171,26 +125,8 @@
  ],
  "abaixo": [
   {
-   "code": "LA0001",
-   "recado": "Foi o que mais recebeu verba e vende abaixo do ideal. Não usar como modelo.",
-   "notas": {
-    "gancho": null,
-    "historia": null,
-    "chamada": 1.06
-   }
-  },
-  {
-   "code": "LA0013",
-   "recado": "Gancho e clique ótimos, venda quase lá. Ganha o final com oferta do pedido 2.",
-   "notas": {
-    "gancho": 39.3,
-    "historia": 30.3,
-    "chamada": 2.24
-   }
-  },
-  {
    "code": "LA0005",
-   "recado": "Melhor gancho da conta, mas quase todo mundo sai logo depois. Ver pedido 4.",
+   "recado": "Melhor começo de vídeo da semana, mas quase todo mundo sai logo depois. Ver pedido 3.",
    "notas": {
     "gancho": 47.3,
     "historia": 12.2,
@@ -199,7 +135,7 @@
   },
   {
    "code": "LA0007",
-   "recado": "Vendeu bem no mês passado e está caindo devagar. Em observação.",
+   "recado": "Vendeu bem no mês passado e está caindo devagar.",
    "notas": {
     "gancho": 14.2,
     "historia": 19.4,
@@ -216,30 +152,21 @@
    }
   },
   {
-   "code": "LA0015",
-   "recado": "Vende perto do ideal, mas pouca gente clica.",
-   "notas": {
-    "gancho": null,
-    "historia": null,
-    "chamada": 0.87
-   }
-  },
-  {
-   "code": "LA0008",
-   "recado": "Gancho, história e chamada fracos. Falta prova visual logo no começo.",
-   "notas": {
-    "gancho": 15.1,
-    "historia": 16.6,
-    "chamada": 0.94
-   }
-  },
-  {
    "code": "LA0009",
    "recado": "Clique ótimo, mas a visita não vira compra.",
    "notas": {
     "gancho": 22.7,
     "historia": 26.3,
     "chamada": 2.31
+   }
+  },
+  {
+   "code": "LA0008",
+   "recado": "Começa devagar. Falta mostrar a sobrancelha logo no primeiro segundo.",
+   "notas": {
+    "gancho": 15.1,
+    "historia": 16.6,
+    "chamada": 0.94
    }
   },
   {
@@ -252,24 +179,13 @@
    }
   }
  ],
- "remarketing": [
-  {
-   "code": "LA0016",
-   "recado": "Funciona muito bem pra quem abandonou o carrinho. Não serve de modelo pra público novo.",
-   "notas": {
-    "gancho": null,
-    "historia": null,
-    "chamada": 2.58
-   }
-  }
- ],
+ "remarketing": [],
  "mesAnterior": {
   "periodo": "14 set – 11 out",
   "codes": [
    "LA0014",
    "LA0019",
    "LA0010",
-   "LA0018",
    "LA0007"
   ]
  }

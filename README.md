@@ -3,6 +3,6 @@
 Site estático publicado no GitHub Pages em https://lamazonie.github.io
 
 - `/teste-falha/` — teste interativo "Que tipo de falha é a sua?" (12 perguntas, três perfis) e download do ebook em PDF (`/teste-falha/ebook/`).
-- `/semana/` — "Criativos da semana": relatório semanal para o time de creators e edição (o que vendeu, o que cansou, pedidos de produção, vídeos para assistir e baixar). Dados em `semana/data/` (uma edição por arquivo, `edicoes.json` lista as semanas, `criativos.json` é o catálogo). Mídia em `semana/media/`. Sem números de venda nos arquivos públicos.
+- `/semana/` — "Criativos da semana": relatório semanal para o time de creators e edição (o que vendeu, o que cansou, pedidos de produção, vídeos para assistir e baixar). Dados em `semana/data/` (uma edição por arquivo, `edicoes.json` lista as semanas, `criativos.json` é o catálogo). Mídia em `semana/media/`. Duas visões: `/semana/` (creators: só vídeos gravados por creators, notas simples) e `/semana/time/` (marketing e edição: tudo, inclusive IA, estáticos e remarketing, com números de gancho, história, chamada, CPM e frequência; dados em `semana/data/time/`). Sem números de venda nos arquivos públicos.
 
 Para publicar: Settings → Pages → Source: *Deploy from a branch* → Branch `main`, pasta `/ (root)`.

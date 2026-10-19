@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-view="creators" data-base="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -162,6 +162,7 @@ dialog::backdrop{background:rgba(5,8,6,.72);backdrop-filter:blur(10px);-webkit-b
 .sc{border-radius:12px;padding:10px 12px;display:grid;gap:2px;background:var(--na-bg)}
 .sc span{font:500 10.5px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .sc b{font-weight:600;font-size:14px}
+.sc em{font:500 12px var(--mono);font-style:normal;color:var(--muted)}
 .sc.otimo{background:var(--ok-bg)} .sc.otimo b{color:var(--ok)}
 .sc.bom{background:var(--warn-bg)} .sc.bom b{color:var(--warn)}
 .sc.fraco{background:var(--bad-bg)} .sc.fraco b{color:var(--bad)}
@@ -211,11 +212,13 @@ const ICON = {
 const TONE = {ok:['c-ok','p-ok','Campeão'],door:['c-door','p-door','Abre-porta'],warn:['c-warn','p-warn','Cansando'],bad:['c-bad','p-bad','Não repetir'],neutral:['c-neutral','p-neutral','Abaixo do ideal'],rmkt:['c-neutral','p-neutral','Remarketing']};
 const RANGES = {gancho:[35,25],historia:[40,25],chamada:[1.5,1]};
 const LBL = {otimo:'Ótimo',bom:'Bom',fraco:'Fraco'};
-const tier = (k,v)=> v==null ? null : v>=RANGES[k][0] ? 'otimo' : v>=RANGES[k][1] ? 'bom' : 'fraco';
+const tier = (k,v)=> v==null ? null : k==='cpm' ? (v<=30?'otimo':v<=50?'bom':'fraco') : k==='freq' ? (v<2?'otimo':v<=3?'bom':'fraco') : v>=RANGES[k][0] ? 'otimo' : v>=RANGES[k][1] ? 'bom' : 'fraco';
 const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let C = {}, E = null, INDEX = {};
+const VIEW = document.documentElement.dataset.view || 'creators', BASE = document.documentElement.dataset.base || '';
+const fmt = (k,v)=> v==null ? '' : k==='cpm' ? 'R$ '+v.toFixed(2).replace('.',',') : k==='freq' ? v.toFixed(2).replace('.',',') : k==='chamada' ? v.toFixed(2).replace('.',',')+'%' : v.toFixed(1).replace('.',',')+'%';
 
-const poster = c => C[c]?.semImagem ? null : `media/${c}.jpg`;
+const poster = c => C[c]?.semImagem ? null : `${BASE}media/${c}.jpg`;
 const who = c => C[c]?.gravou || C[c]?.editou || '';
 
 function card(it, tone){
@@ -261,7 +264,7 @@ function render(){
   h += sec('abaixo','Abaixo do ideal','Para aprender, não para copiar. Cada um com o que dá pra aproveitar.','neutral',
     `<div class="rows">${E.abaixo.map(it=>row(it,'neutral')).join('')}</div>`);
 
-  h += sec('remarketing','Remarketing','Só referência. Fala com quem já quase comprou. Não copiar para público novo.','rmkt',
+  if (E.remarketing?.length) h += sec('remarketing','Remarketing','Só referência. Fala com quem já quase comprou. Não copiar para público novo.','rmkt',
     `<div class="rows">${E.remarketing.map(it=>row(it,'rmkt')).join('')}</div>`);
 
   const mes = E.mesAnterior;
@@ -271,6 +274,7 @@ function render(){
        <div><b>Gancho</b><span>Parou o scroll? Ótimo ≥ 35% · Bom 25–35% · Fraco &lt; 25%</span></div>
        <div><b>História</b><span>Assistiu até o fim? Ótimo ≥ 40% · Bom 25–40% · Fraco &lt; 25%</span></div>
        <div><b>Chamada</b><span>Clicou? Ótimo ≥ 1,5% · Bom 1–1,5% · Fraco &lt; 1%</span></div>
+       ${VIEW==='time'?`<div><b>CPM</b><span>Custo de mil impressões, já com imposto. Ótimo ≤ R$ 30 · Bom R$ 30–50 · Fraco &gt; R$ 50</span></div><div><b>Frequência</b><span>Vezes que a mesma pessoa viu na semana. Ótimo &lt; 2 · Bom 2–3 · Fraco &gt; 3</span></div>`:''}
        <div><b>Categoria</b><span>Vem da venda real de cada anúncio. Imagem não tem gancho nem história.</span></div></div></details>`);
 
   document.getElementById('app').innerHTML = h;
@@ -282,11 +286,11 @@ function render(){
 function open(code){
   const c = C[code]; const {it, tone} = INDEX[code] || {it:{code,notas:{}},tone:'neutral'};
   const t = TONE[tone] || TONE.neutral; const n = it.notas || {};
-  const sc = (k,label)=>{ const v=n[k]; const tr=tier(k,v); return `<div class="sc ${tr||'na'}"><span>${label}</span><b>${tr?LBL[tr]:'n/a'}</b></div>`; };
+  const sc = (k,label)=>{ const v=n[k]; const tr=tier(k,v); return `<div class="sc ${tr||'na'}"><span>${label}</span><b>${tr?LBL[tr]:'n/a'}</b>${VIEW==='time'&&v!=null?`<em>${fmt(k,v)}</em>`:''}</div>`; };
   const media = c.tipo==='video'
-    ? `<video src="media/${code}.mp4" poster="media/${code}.jpg" controls playsinline autoplay preload="metadata"></video>`
+    ? `<video src="${BASE}media/${code}.mp4" poster="${BASE}media/${code}.jpg" controls playsinline autoplay preload="metadata"></video>`
     : (poster(code)?`<img src="${poster(code)}" alt="${esc(c.tela)}">`:`<div class="noimg" style="color:#ccc">${esc(c.tela)}</div>`);
-  const file = c.tipo==='video' ? `media/${code}.mp4` : (poster(code)||'');
+  const file = c.tipo==='video' ? `${BASE}media/${code}.mp4` : (poster(code)||'');
   const name = `${code}-${(c.gravou||c.editou||'').replace(/\s+/g,'-')}`;
   const dlg = document.getElementById('dlg');
   dlg.innerHTML = `<div class="pl"><div class="media">${media}</div><div class="info">
@@ -300,7 +304,7 @@ function open(code){
       <div><dt>Oferta</dt><dd>${esc(c.oferta)}</dd></div>
       <div><dt>Edição</dt><dd>${esc(c.editou)}</dd></div>
     </dl>
-    ${it.notas?`<div class="scores">${sc('gancho','Gancho')}${sc('historia','História')}${sc('chamada','Chamada')}</div>`:''}
+    ${it.notas?`<div class="scores">${sc('gancho','Gancho')}${sc('historia','História')}${sc('chamada','Chamada')}${VIEW==='time'?sc('cpm','CPM')+sc('freq','Frequência'):''}</div>`:''}
     <div class="actions">${file?`<a class="btn primary" href="${file}" download="${name}${c.tipo==='video'?'.mp4':'.jpg'}">${ICON.dl}Baixar ${c.tipo==='video'?'vídeo':'imagem'}</a>`:''}
       <button class="btn" data-close>Fechar</button></div>
   </div></div>`;
@@ -321,10 +325,10 @@ function spy(){
 }
 
 async function boot(){
-  const [idx, cat] = await Promise.all([fetch('data/edicoes.json').then(r=>r.json()), fetch('data/criativos.json').then(r=>r.json())]);
+  const [idx, cat] = await Promise.all([fetch(`${BASE}data/edicoes.json`).then(r=>r.json()), fetch(`${BASE}data/criativos.json`).then(r=>r.json())]);
   C = cat;
   const want = new URLSearchParams(location.search).get('e') || idx.edicoes[0].id;
-  E = await fetch(`data/${want}.json`).then(r=>r.json());
+  E = await fetch(`${BASE}data/${VIEW==='time'?'time/':''}${want}.json`).then(r=>r.json());
   const sel = document.getElementById('ed');
   if (idx.edicoes.length > 1){ sel.hidden = false; sel.innerHTML = idx.edicoes.map(x=>`<option value="${x.id}" ${x.id===want?'selected':''}>${x.periodo}</option>`).join(''); sel.onchange = ()=>{ location.search = '?e='+sel.value; }; }
   render();
