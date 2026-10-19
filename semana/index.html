@@ -84,6 +84,11 @@ details.more > div{display:grid;gap:10px;margin-top:12px;font-size:14px;color:va
 .ped .one,.mk .one{font-size:15.5px;line-height:1.45}
 .badge{justify-self:start;font:500 11.5px var(--mono);padding:4px 10px;border-radius:999px;background:var(--warn-bg);color:var(--warn)}
 .row .b p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dots{display:flex;gap:10px;font:500 11px var(--mono);color:var(--muted)}
+.dots span{display:inline-flex;align-items:center;gap:4px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots i.otimo{background:var(--ok)} .dots i.bom{background:var(--warn)} .dots i.fraco{background:var(--bad)}
+.row .b .dots{margin-top:3px}
 
 /* nav */
 nav.chips{position:sticky;top:0;z-index:5;background:color-mix(in oklab,var(--bg) 88%,transparent);
@@ -259,6 +264,7 @@ let C = {}, E = null, INDEX = {};
 const VIEW = document.documentElement.dataset.view || 'creators', BASE = document.documentElement.dataset.base || '';
 const fmt = (k,v)=> v==null ? '' : k==='cpm' ? 'R$ '+v.toFixed(2).replace('.',',') : k==='freq' ? v.toFixed(2).replace('.',',') : k==='chamada' ? v.toFixed(2).replace('.',',')+'%' : v.toFixed(1).replace('.',',')+'%';
 
+const dots = it => VIEW!=='time' || !it.notas ? '' : `<span class="dots">${[['gancho','G','Gancho'],['historia','H','História'],['chamada','C','Chamada']].map(([k,l,t])=>{const v=tier(k,it.notas[k]);return `<span title="${t}: ${v?LBL[v]:'sem dado'}"><i class="${v||''}"></i>${l}</span>`}).join('')}</span>`;
 const poster = c => C[c]?.semImagem ? null : `${BASE}media/${c}.jpg`;
 const who = c => { const g = C[c]?.gravou; if (g==='A confirmar') return VIEW==='time' ? 'A confirmar' : 'Creator'; return g || C[c]?.editou || ''; };
 
@@ -270,6 +276,7 @@ function card(it, tone){
       ${it.flag&&VIEW==='time'?`<span class="flag">${esc(it.flag)}</span>`:''}
       ${c.tipo==='video'?`<span class="play" aria-hidden="true">${ICON.play}</span>`:''}</div>
     <div class="who"><b>${esc(who(it.code))}</b>${VIEW==='time'?`<span>${it.code}</span>`:''}</div>
+    ${dots(it)}
     ${VIEW==='time'?`<span class="offer">${esc(c.oferta)}</span>`:''}
   </button>`;
 }
@@ -278,7 +285,7 @@ function row(it, tone, keep){
   if (!keep || !INDEX[it.code]) INDEX[it.code] = {it, tone};
   return `<button class="row" data-code="${it.code}">
     <span class="t">${p?`<img src="${p}" alt="" loading="lazy" decoding="async">`:''}</span>
-    <span class="b"><b>${esc(who(it.code))}${VIEW==='time'?`<span>${it.code}</span>`:''}</b><p>${esc(it.recado)}</p></span>
+    <span class="b"><b>${esc(who(it.code))}${VIEW==='time'?`<span>${it.code}</span>`:''}</b><p>${esc(it.recado)}</p>${dots(it)}</span>
     <span class="go">${ICON.go}</span></button>`;
 }
 function sec(id, title, sub, tone, body, nav){
@@ -334,6 +341,7 @@ function render(){
        <div><b>História</b><span>Assistiu até o fim? Ótimo ≥ 40% · Bom 25–40% · Fraco &lt; 25%</span></div>
        <div><b>Chamada</b><span>Clicou? Ótimo ≥ 1,5% · Bom 1–1,5% · Fraco &lt; 1%</span></div>
        ${VIEW==='time'?`<div><b>CPM</b><span>Custo de mil impressões, já com imposto. Ótimo ≤ R$ 30 · Bom R$ 30–50 · Fraco &gt; R$ 50</span></div><div><b>Frequência</b><span>Vezes que a mesma pessoa viu na semana. Ótimo &lt; 2 · Bom 2–3 · Fraco &gt; 3</span></div>`:''}
+       ${VIEW==='time'?`<div><b>Bolinhas</b><span>Embaixo de cada capa: G gancho, H história, C chamada. Verde ótimo · amarelo bom · vermelho fraco · cinza sem dado (imagem)</span></div>`:''}
        ${VIEW==='time'?`<div><b>Categoria</b><span>Vem da venda real de cada anúncio (Solomon). Imagem não tem gancho nem história.</span></div>`:''}</div></details>`);
 
   document.getElementById('app').innerHTML = h;
