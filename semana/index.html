@@ -334,7 +334,7 @@ const ICON = {
   share:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 10V1.5M4.5 5L8 1.5 11.5 5M2.5 8.5v6h11v-6"/></svg>',
   go:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg>'
 };
-const TONE = {ok:['c-ok','p-ok','Campeão'],door:['c-door','p-door','Abre-porta'],warn:['c-warn','p-warn','Cansando'],bad:['c-bad','p-bad','Não repetir'],neutral:['c-neutral','p-neutral','Abaixo do ideal'],rmkt:['c-neutral','p-neutral','Remarketing'],ref:['c-neutral','p-neutral','Referência']};
+const TONE = {ok:['c-ok','p-ok','Campeão'],door:['c-door','p-door','Abre-porta'],warn:['c-warn','p-warn','Cansando'],bad:['c-bad','p-bad','Não repetir'],neutral:['c-neutral','p-neutral','Abaixo do ideal'],rmkt:['c-neutral','p-neutral','Remarketing'],ref:['c-neutral','p-neutral','Referência'],new:['c-neutral','p-neutral','Estreia']};
 const RANGES = {gancho:[35,25],historia:[40,25],chamada:[1.5,1]};
 const LBL = {otimo:'Ótimo',bom:'Bom',fraco:'Fraco'};
 const tier = (k,v)=> v==null ? null : k==='cpm' ? (v<=30?'otimo':v<=50?'bom':'fraco') : k==='freq' ? (v<2?'otimo':v<=3?'bom':'fraco') : v>=RANGES[k][0] ? 'otimo' : v>=RANGES[k][1] ? 'bom' : 'fraco';
@@ -420,6 +420,9 @@ function render(){
 
   if (E.abaixo?.length) h += sec('abaixo','Abaixo do ideal','Para aprender, não para copiar. Cada um com o que dá pra aproveitar.','neutral',
     `<div class="rows">${E.abaixo.map(it=>row(it,'neutral')).join('')}</div>`);
+
+  if (VIEW==='time' && E.estreias?.length) h += sec('estreias','Estreias','Subiram há pouco e o Meta quase não entregou. Sem veredito ainda: voltam na próxima edição.','new',
+    `<div class="rows">${E.estreias.map(it=>row(it,'new')).join('')}</div>`);
 
   if (E.remarketing?.length) h += sec('remarketing','Remarketing','Só referência. Fala com quem já quase comprou. Não copiar para público novo.','rmkt',
     `<div class="rows">${E.remarketing.map(it=>row(it,'rmkt')).join('')}</div>`);
