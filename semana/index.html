@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://lamazonie.github.io/semana/og.jpg">
 <meta property="og:url" content="https://lamazonie.github.io/semana/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#faf8f3">
+<meta name="theme-color" content="#0e423a">
 <meta name="color-scheme" content="light only">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -304,19 +304,119 @@ dialog::backdrop{background:rgba(5,8,6,.72);backdrop-filter:blur(10px);-webkit-b
 .c-ok{background:var(--ok)} .c-door{background:var(--door)} .c-warn{background:var(--warn)} .c-bad{background:var(--bad)} .c-neutral{background:var(--neutral)}
 .p-ok{background:var(--ok-bg);color:var(--ok-ink)} .p-door{background:color-mix(in oklab,var(--door) 14%,transparent);color:var(--door)}
 .p-warn{background:var(--warn-bg);color:var(--warn-ink)} .p-bad{background:var(--bad-bg);color:var(--bad)} .p-neutral{background:var(--na-bg);color:var(--muted)}
-.loading #recado,.loading nav.chips,.loading main{visibility:hidden}
+.loading #recado,.loading #rules,.loading nav.chips,.loading main{visibility:hidden}
 .skeleton{min-height:100vh;display:grid;place-items:center;color:var(--faint);font:500 12px var(--mono)}
+
+/* ===== v3 · visual (Iris, 30/out): topo verde da marca, regras em cartões, modelo da semana em destaque ===== */
+:root{--bg:#f6f2e9;--surface:#fff;--line:#e8e2d4;--na-bg:#efeadf;--creme:#f2ecdd;--brand:#0e423a;
+  --ok-chip:#17704a;--warn-chip:#94600f;--bad-chip:#b23b31;
+  --shadow:0 1px 2px rgba(14,42,37,.05),0 10px 28px -14px rgba(14,42,37,.22)}
+body{background:var(--bg);padding-top:0}
+.hero{background:var(--brand);color:var(--creme);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-140px;top:-160px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(242,236,221,.11),transparent);pointer-events:none}
+.hero .wrap{position:relative;padding-block:calc(12px + env(safe-area-inset-top)) 72px;display:grid;gap:0}
+.hbar{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px}
+.hbar a{display:inline-flex;align-items:center;min-height:44px}
+.hero .logo{height:19px;width:auto}
+.kicker{margin-top:28px;display:flex;flex-wrap:wrap;gap:6px 14px;font:500 12px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#dcc89c}
+.hero .eyebrow{color:rgba(242,236,221,.72);letter-spacing:.2em}
+:root[data-view=creators] .hero .eyebrow{display:none}
+.hero h1{margin-top:10px;font:400 14px/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:rgba(242,236,221,.72)}
+.hero .headline{margin-top:14px;font:300 30px/1.12 var(--display);letter-spacing:-.005em;color:var(--creme);max-width:21ch;text-wrap:balance}
+@media (min-width:560px){.hero .headline{font-size:40px}}
+#ed{appearance:none;-webkit-appearance:none;font:500 14px var(--sans);color:var(--creme);min-height:40px;padding:0 34px 0 14px;border-radius:999px;
+  border:1px solid rgba(242,236,221,.28);background:rgba(242,236,221,.08) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23f2ecdd' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 13px center/10px}
+#ed option{color:#111;background:#fff}
+/* regras da semana */
+.rules{position:relative;z-index:2;margin-top:-44px;display:grid;gap:10px}
+.keys2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.keys2 div{background:var(--surface);border-radius:18px;padding:14px 14px 16px;box-shadow:var(--shadow);display:grid;gap:10px;align-content:start}
+.keys2 div:last-child:nth-child(odd){grid-column:1/-1}
+.keys2 i{font:500 12px/1 var(--mono);font-style:normal;letter-spacing:.14em;color:var(--gold)}
+.keys2 b{font:500 16px/1.3 var(--sans)}
+.rules details.more{border:0;background:var(--surface);border-radius:18px;padding:0 16px;box-shadow:var(--shadow)}
+.rules details.more > div{font-size:16px;color:var(--ink);gap:12px;padding-bottom:12px}
+.rules details.more > div p:not(.lesson){color:var(--muted)}
+/* navegação */
+nav.chips{margin-top:20px;border-bottom:0;background:color-mix(in oklab,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
+nav.chips .wrap{gap:6px;padding-block:10px}
+nav.chips a{border:0;background:rgba(14,42,37,.06);color:var(--ink);padding:11px 16px}
+nav.chips a.on{background:var(--brand);color:var(--creme)}
+/* seções */
+main .wrap{gap:64px;padding-block:28px 88px}
+section{gap:20px}
+.sh{gap:6px}
+.sh h2{font:400 28px/1 var(--display);letter-spacing:.02em}
+.sh h2 i{width:10px;height:10px}
+.sh p{font-size:16px}
+/* cards */
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+@media (min-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cr{gap:10px}
+.cr .ph{border-radius:18px;box-shadow:var(--shadow)}
+.cr .play{width:38px;height:38px;background:rgba(255,255,255,.96);box-shadow:0 4px 14px rgba(0,0,0,.22)}
+.cr .flag{background:rgba(14,42,37,.8);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);letter-spacing:.02em}
+.cr .who b{font-size:16px}
+.offer{border:0;padding:0;border-radius:0;font:400 12px/1.3 var(--sans);color:var(--muted);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr.feat{grid-column:1/-1}
+.cr.feat .ph{aspect-ratio:4/5;max-height:560px;border-radius:22px}
+.cr.feat .ov{position:absolute;inset:auto 0 0 0;padding:80px 20px 20px;display:grid;gap:8px;color:#fff;
+  background:linear-gradient(180deg,transparent 0%,rgba(4,22,18,.55) 35%,rgba(4,22,18,.92) 100%)}
+.cr.feat .ov small{font:500 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#e9d6a8}
+.cr.feat .ov strong{font:400 28px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.cr.feat .ov span{font-size:16px;line-height:1.45;color:rgba(255,255,255,.9);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cr.feat .play{width:56px;height:56px;top:16px;right:16px;bottom:auto}
+.cr.feat .play svg{width:16px;height:16px}
+.cr.feat .who b{display:none}
+/* notas G · H · C (página do time) */
+.sco{display:flex;gap:4px}
+.sco i{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font:600 12px/1 var(--sans);font-style:normal;color:#fff;background:transparent;box-shadow:inset 0 0 0 1px var(--line);color:var(--faint)}
+.sco i.otimo{background:var(--ok-chip);color:#fff;box-shadow:none}
+.sco i.bom{background:var(--warn-chip);color:#fff;box-shadow:none}
+.sco i.fraco{background:var(--bad-chip);color:#fff;box-shadow:none}
+.row .b .sco{margin-top:4px}
+/* listas */
+.rows{border:0;background:var(--surface);border-radius:20px;box-shadow:var(--shadow);padding:2px 16px}
+.row{grid-template-columns:56px 1fr auto;padding:14px 0}
+.row:last-child{border-bottom:0}
+.row .t{width:56px;border-radius:12px}
+.row .b b{font-size:16px}
+.note{border:0;background:#f8e9e5;border-radius:20px;padding:18px 20px}
+.note b{font:500 16px var(--sans)}
+.note p{color:#6b4a45}
+.note + .rows{margin-top:-8px}
+/* pedidos */
+.peds{gap:14px}
+.ped{border:0;border-radius:22px;padding:20px 18px 4px;box-shadow:var(--shadow);gap:14px}
+.ped h3{display:flex;gap:12px;align-items:flex-start;font:400 20px/1.2 var(--display)}
+.ped h3 .num{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:var(--creme);font:500 14px/1 var(--sans);margin-top:-3px}
+.ped .top2{grid-template-columns:112px 1fr;gap:16px}
+.ped .big{border-radius:16px;box-shadow:none}
+.ped .more-refs button{border:0;background:var(--bg)}
+/* mercado */
+.reel .tv{border-radius:18px;box-shadow:var(--shadow)}
+.reel .ph0{background:linear-gradient(165deg,#1f5f53 0%,#0c2c26 78%)}
+.ad{border:0;box-shadow:var(--shadow);border-radius:18px}
+.seg{background:rgba(14,42,37,.07)}
+/* legenda e rodapé */
+details.legend{border-top:0;background:var(--surface);border-radius:18px;padding:0 16px;box-shadow:var(--shadow)}
+details.legend .lg{padding-bottom:16px}
+footer .wrap{border-top:0}
+.row .b p{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.row .t:empty{display:grid;place-items:center}
+.row .t:empty::after{content:"IMG";font:500 12px var(--mono);letter-spacing:.1em;color:var(--faint)}
+.cr.feat .ov{background:linear-gradient(180deg,transparent 0%,rgba(4,22,18,.72) 38%,rgba(4,22,18,.94) 100%)}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a href="../creators.html" aria-label="L'Amazonie Studio"><img class="logo light" src="brand/logo-verde.png" width="90" height="26" alt="L'Amazonie"><img class="logo dark" src="brand/logo-creme.png" width="127" height="19" alt="L'Amazonie"></a>
-  <span class="eyebrow">Studio · time de criação</span>
-  <h1>Criativos <em>da semana</em></h1>
-  <div class="period"><span id="periodo">carregando…</span><select id="ed" aria-label="Escolher semana" hidden></select></div>
+<header class="hero"><div class="wrap">
+  <div class="hbar"><a href="../creators.html" aria-label="L'Amazonie Studio"><img class="logo" src="brand/logo-creme.png" width="127" height="19" alt="L'Amazonie"></a><select id="ed" aria-label="Escolher semana" hidden></select></div>
+  <p class="kicker"><span id="periodo">carregando…</span><span class="eyebrow">Studio · time de criação</span></p>
+  <h1>Criativos da semana</h1>
+  <div id="recado"></div>
 </div></header>
-
-<div class="wrap"><div class="recado" id="recado"></div></div>
+<div class="wrap"><div class="rules" id="rules"></div></div>
 <nav class="chips" aria-label="Seções"><div class="wrap" id="nav"></div></nav>
 <main><div class="wrap" id="app"><div class="skeleton">carregando a semana…</div></div></main>
 <footer><div class="wrap"><span>Atualizado toda segunda pelo Daniel · Meta Ads</span><a href="../creators.html">Voltar ao Studio</a></div></footer>
@@ -349,15 +449,16 @@ const toggleSaved = t => { const id=ttId(t.url); let a=getSaved(); a = a.include
 const VIEW = document.documentElement.dataset.view || 'creators', BASE = document.documentElement.dataset.base || '';
 const fmt = (k,v)=> v==null ? '' : k==='cpm' ? 'R$ '+v.toFixed(2).replace('.',',') : k==='freq' ? v.toFixed(2).replace('.',',') : k==='chamada' ? v.toFixed(2).replace('.',',')+'%' : v.toFixed(1).replace('.',',')+'%';
 
-const dots = it => VIEW!=='time' || !it.notas ? '' : `<span class="dots">${[['gancho','G','Gancho'],['historia','H','História'],['chamada','C','Chamada']].map(([k,l,t])=>{const v=tier(k,it.notas[k]);return `<span title="${t}: ${v?LBL[v]:'sem dado'}"><i class="${v||''}"></i>${l}</span>`}).join('')}</span>`;
+const dots = it => VIEW!=='time' || !it.notas ? '' : `<span class="sco">${[['gancho','G','Gancho'],['historia','H','História'],['chamada','C','Chamada']].map(([k,l,t])=>{const v=tier(k,it.notas[k]);return `<i class="${v||''}" title="${t}: ${v?LBL[v]:'sem dado'}" aria-label="${t}: ${v?LBL[v]:'sem dado'}">${l}</i>`}).join('')}</span>`;
 const poster = c => C[c]?.semImagem ? null : `${BASE}media/${c}.jpg`;
 const who = c => { const g = C[c]?.gravou; if (g==='A confirmar') return VIEW==='time' ? 'A confirmar' : 'Creator'; return g || C[c]?.editou || ''; };
 
-function card(it, tone){
+function card(it, tone, feat){
   const c = C[it.code]; const p = poster(it.code);
   INDEX[it.code] = {it, tone};
-  return `<button class="cr" data-code="${it.code}">
-    <div class="ph">${p?`<img src="${p}" alt="" loading="lazy" decoding="async">`:`<div class="noimg">${esc(c.tela)}</div>`}
+  return `<button class="cr${feat?' feat':''}" data-code="${it.code}">
+    <div class="ph">${p?`<img src="${p}" alt="" ${feat?'fetchpriority="high"':'loading="lazy"'} decoding="async">`:`<div class="noimg">${esc(c.tela)}</div>`}
+      ${feat?`<span class="ov"><small>Modelo da semana</small><strong>${esc(who(it.code))}</strong>${it.recado?`<span>${esc(it.recado)}</span>`:''}</span>`:''}
       ${it.flag&&VIEW==='time'?`<span class="flag">${esc(it.flag)}</span>`:''}
       ${c.tipo==='video'?`<span class="play" aria-hidden="true">${ICON.play}</span>`:''}</div>
     <div class="who"><b>${esc(who(it.code))}</b>${VIEW==='time'?`<span>${it.code}</span>`:''}</div>
@@ -379,17 +480,17 @@ function sec(id, title, sub, tone, body, nav){
 
 function render(){
   INDEX = {};
-  document.getElementById('periodo').textContent = `${E.periodo} · Edição ${String(E.edicao).padStart(2,'0')}`;
-  document.getElementById('recado').innerHTML = E.manchete
-    ? `<p class="headline">${esc(E.manchete)}</p>${E.chaves?.length?`<div class="keys">${E.chaves.map(k=>`<span>${esc(k)}</span>`).join('')}</div>`:''}
-       <details class="more"><summary>Resumo completo</summary><div>${E.recado.map(r=>`<p>${esc(r)}</p>`).join('')}<p class="lesson">${esc(E.aprendizado)}</p></div></details>`
-    : `<ol>${E.recado.map(r=>`<li><span>${esc(r)}</span></li>`).join('')}</ol><p class="lesson">${esc(E.aprendizado)}</p>`;
+  const ed = `Edição ${String(E.edicao).padStart(2,'0')}`;
+  document.getElementById('periodo').textContent = document.getElementById('ed').hidden ? `${ed} · ${E.periodo}` : ed;
+  const resumo = `<details class="more"><summary>Resumo completo da semana</summary><div>${E.recado.map(r=>`<p>${esc(r)}</p>`).join('')}<p class="lesson">${esc(E.aprendizado)}</p></div></details>`;
+  document.getElementById('recado').innerHTML = `<p class="headline">${esc(E.manchete || E.aprendizado)}</p>`;
+  document.getElementById('rules').innerHTML = (E.chaves?.length ? `<div class="keys2" role="list">${E.chaves.map((k,i)=>`<div role="listitem"><i>${String(i+1).padStart(2,'0')}</i><b>${esc(k)}</b></div>`).join('')}</div>` : '') + resumo;
 
   let h = '';
   const thumb = c => poster(c)?`<img src="${poster(c)}" alt="" width="96" height="120" loading="lazy" decoding="async">`:'';
   h += sec('pedidos','Pedidos da semana', E.pedidosSub||'O que gravar agora.','',
-    `<div class="peds">${E.pedidos.map(p=>{ const [b0,...bs]=p.base; return `<article class="ped">
-      <h3>${esc(p.titulo)}</h3>
+    `<div class="peds">${E.pedidos.map((p,pi)=>{ const [b0,...bs]=p.base; return `<article class="ped">
+      <h3><span class="num">${pi+1}</span>${esc(p.titulo)}</h3>
       <div class="top2"><button class="big" data-code="${b0}" aria-label="Ver vídeo de referência">${thumb(b0)}<i>${ICON.play}</i></button>
         <div class="pt">${p.resumo?`<p class="one">${esc(p.resumo)}</p>`:''}<span class="ref1">Referência: ${VIEW==='time'?b0:esc(who(b0))}</span></div></div>
       ${bs.length?`<div class="more-refs">${bs.map(c=>`<button data-code="${c}">${poster(c)?`<img src="${poster(c)}" alt="" width="32" height="32" loading="lazy">`:''}${VIEW==='time'?c:esc(who(c))}</button>`).join('')}</div>`:''}
@@ -413,7 +514,7 @@ function render(){
     h += sec('mercado','O que o mercado pede', M.sub, '', body, 'Mercado');
   }
 
-  for (const s of E.secoes) h += sec(s.id, s.titulo, s.sub, s.tom, `<div class="grid">${s.itens.map(it=>card(it,s.tom)).join('')}</div>`);
+  for (const s of E.secoes) h += sec(s.id, s.titulo, s.sub, s.tom, `<div class="grid">${s.itens.map((it,i)=>card(it,s.tom,s.id==='campeoes'&&i===0)).join('')}</div>`);
 
   h += sec('nao-repetir','Não repetir','Formatos que falharam mais de uma vez na venda.','bad',
     E.naoRepetir.map(n=>`<div class="note"><b>${esc(n.titulo)}</b><p>${esc(n.texto)}</p></div><div class="rows">${n.itens.map(it=>row(it,'bad')).join('')}</div>`).join(''));
@@ -433,7 +534,7 @@ function render(){
        <div><b>História</b><span>Assistiu até o fim? Ótimo ≥ 40% · Bom 25–40% · Fraco &lt; 25%</span></div>
        <div><b>Chamada</b><span>Clicou? Ótimo ≥ 1,5% · Bom 1–1,5% · Fraco &lt; 1%</span></div>
        ${VIEW==='time'?`<div><b>CPM</b><span>Custo de mil impressões, já com imposto. Ótimo ≤ R$ 30 · Bom R$ 30–50 · Fraco &gt; R$ 50</span></div><div><b>Frequência</b><span>Vezes que a mesma pessoa viu na semana. Ótimo &lt; 2 · Bom 2–3 · Fraco &gt; 3</span></div>`:''}
-       ${VIEW==='time'?`<div><b>Bolinhas</b><span>Embaixo de cada capa: G gancho, H história, C chamada. Verde ótimo · amarelo bom · vermelho fraco · cinza sem dado (imagem)</span></div>`:''}
+       ${VIEW==='time'?`<div><b>G · H · C</b><span>Embaixo de cada capa: gancho, história e chamada. Verde ótimo · amarelo bom · vermelho fraco · vazio sem dado (imagem)</span></div>`:''}
        ${VIEW==='time'?`<div><b>Categoria</b><span>Vem da venda real de cada anúncio (Solomon). Imagem não tem gancho nem história.</span></div>`:''}</div></details>`;
   h += mes
     ? sec('arquivo','Arquivo',`Venceram no mês anterior (${mes.periodo}). As edições passadas ficam no seletor do topo.`,'',
