@@ -1,0 +1,108 @@
+{
+  "periodo": "31/10 a 02/11",
+  "atualizado": "05/11/2026",
+  "manchete": "Três dias de fim de semana com verba menor e visita comprando mais. Os curtos de prova fecharam; a VSL e os abridores de IA abrem a porta mas não fecham sozinhos.",
+  "nota": "Base de sexta a domingo (inclui Finados): a direção é confiável, o decimal não. Esta página é pro time de edição e design: traz entrega e criativo, sem números de venda. Categoria e decisão vêm do painel interno do mesmo período.",
+  "anuncios_sub": "Todo anúncio com entrega no período, do que mais rodou pro que menos rodou. A etiqueta é automática pelo período; a decisão segue a regra de 14 dias e só vale depois do OK do Pedro.",
+  "resumo": [
+    ["Quem vende é o curto de prova.", "ago07, set-005 e LA0026 foram os que mais fecharam venda por visita. Têm gancho fraco (15–25%) e CTR baixo, mas quem clica compra. É o molde dos próximos UGC."],
+    ["Os abridores de IA voltaram a funcionar.", "IA_0008 (folículo) e a história no espelho ficaram entre os melhores em gancho (38%) e história (~40%). O corte do folículo sai da fila; a IA de 82 s pede versão de 30 s."],
+    ["A VSL abre, mas é cara.", "Gancho 37% e CTR 2,8% com frequência baixa: ainda tem público. Só que o CPM beira R$ 80 e a visita dela compra menos que a dos curtos. Precisa de um corte de 15–20 s."],
+    ["O estático principal segue firme.", "LA0001 é o CPM mais baixo da campanha com volume (R$ 31) e o que mais entregou impressões. Pede irmãos: 3–4 estáticos novos no mesmo molde."],
+    ["Remarketing cansou.", "O estático do carrinho está em frequência 4,8 e CPM R$ 120. Precisa de uma peça nova de prova social antes de virar ruído."]
+  ],
+  "levas": [
+    ["Leva 1 · agora", "Corte da VSL", "15–20 s, mesma garantia, sem b-roll longo", "now"],
+    ["Leva 2 · em seguida", "4–6 UGC curtos", "moldes ago07, set-005, LA0026, LA0024", "next"],
+    ["Leva 3", "3–4 estáticos", "moldes LA0001, LA0041, LA0023", "next"],
+    ["Leva 4", "Falante v2 · IA 30 s · RMKT", "só depois das levas 1–3 no ar", "bf"]
+  ],
+  "anuncios": [
+    {"codigo": "LA0035", "categoria": "Abaixo do ideal", "m": {"g": 37, "h": 28, "c": 2.77, "cpm": 79.73, "f": 1.25}, "tags": ["keep", "new"], "tagx": "corte 15–20 s", "why": "Maior entrega da campanha. Gancho e CTR ótimos, frequência baixa (ainda tem gente pra ver), mas a história cai pela metade antes do fim e o CPM é o mais caro entre os abridores. A visita dela compra menos que a dos curtos. Fica no ar; ganha um corte curto com a mesma garantia na abertura."},
+    {"codigo": "LA0001", "categoria": "Campeão", "m": {"c": 1.09, "cpm": 31.14, "f": 1.46}, "tags": ["scale"], "tagx": "molde dos estáticos", "why": "Segundo em entrega e o CPM mais barato com volume. CTR bom pra estático. Quem clica compra: é o anúncio mais estável da conta. Replicar o molde (pergunta direta na tela + produto + oferta) em 3–4 variações."},
+    {"codigo": "LA0002", "categoria": "Abaixo do ideal", "pausado": true, "m": {"g": 38, "h": 40, "c": 3.19, "cpm": 66.92}, "tags": ["new"], "tagx": "versão 30 s", "why": "Melhor combinação de gancho, história e CTR do período, só que abre a jornada e não fecha: quem vê compra depois por outro anúncio. 82 segundos é longo pra esse papel. Está pausado na conta; a versão de 30 s entra na leva 4."},
+    {"codigo": "LA0003", "categoria": "Campeão", "m": {"g": 38, "h": 39, "c": 2.49, "cpm": 48.41}, "tags": ["keep"], "why": "Recuperou no período: gancho e história no topo, CTR ótimo. O corte curto que estava na fila não é mais prioridade — o original voltou a fechar."},
+    {"codigo": "LA0024", "categoria": "Abaixo do ideal", "m": {"g": 28, "h": 25, "c": 1.21, "cpm": 39.92}, "tags": ["keep"], "tagx": "molde UGC", "why": "Gancho bom, história mediana, CTR bom. A visita dela está entre as que mais compram. Fica no ar e vira molde: trend em cima + antes e depois no topo da tela, 10 s."},
+    {"codigo": "LA0010", "categoria": "Campeão", "m": {"g": 25, "h": 27, "c": 1.55, "cpm": 73.76, "f": 1.93}, "tags": ["scale"], "tagx": "molde UGC", "why": "Gancho fraco e CPM caro, e mesmo assim a visita que mais compra da campanha. O meme com a oferta na tela filtra: só clica quem já quer. Replicar o formato com outras criadoras e outras frases."},
+    {"codigo": "LA0007", "categoria": "Campeão", "m": {"g": 15, "h": 20, "c": 0.80, "cpm": 31.91, "f": 1.62}, "tags": ["scale"], "tagx": "molde UGC", "why": "Pior gancho e pior CTR da lista, melhor fechamento. CPM barato. É a prova de que o POV + antes e depois de 12 s vende sem parar o dedo. Primeiro molde das próximas gravações."},
+    {"codigo": "LA0023", "categoria": "Não repetir", "m": {"g": 20, "h": 20, "c": 0.92, "cpm": 28.09}, "tags": ["watch"], "tagx": "molde do estático em grade", "why": "CPM mais barato do período, mas caiu no fechamento em relação à semana anterior. Pela regra de 14 dias ainda não pausa. A grade de antes e depois funciona como imagem: vira molde de estático, não de vídeo."},
+    {"codigo": "LA0013", "categoria": "Não repetir", "m": {"g": 39, "h": 30, "c": 2.11, "cpm": 54.49}, "tags": ["watch", "new"], "tagx": "v2 na leva 4", "why": "Melhor gancho do período e CTR ótimo, mas a visita não fecha e o CPM é caro. Está na beira da regra de pausa. A v2 encurta pra 20–25 s e leva a oferta pra tela desde o início."},
+    {"codigo": "LA0026", "categoria": "Campeão", "m": {"g": 22, "h": 14, "c": 0.76, "cpm": 24.73}, "tags": ["scale"], "tagx": "molde UGC", "why": "A Meta começou a entregar e o CPM é o mais barato da conta. História curta e CTR baixo, fechamento alto: o círculo com o “como era” no canto converte. Replicar com outras criadoras."},
+    {"codigo": "LA0011", "categoria": "Campeão", "m": {"g": 23, "h": 27, "c": 1.62, "cpm": 62.22}, "tags": ["keep"], "why": "Irmão do set-005 com outra criadora. Mesma lógica: filtra pelo meme e vende pra quem clica. Fica; não precisa de versão nova agora."},
+    {"codigo": "LA0012", "categoria": "Não repetir", "m": {"g": 24, "h": 21, "c": 2.83, "cpm": 48.23}, "tags": ["pause"], "tagx": "proposta, aguarda OK", "why": "CTR alto e venda fraca por 14 dias seguidos: é o único anúncio abaixo da média da campanha nos três modelos de atribuição. Tela dividida Dia 0 × Dia 30 atrai curioso, não comprador. Pausa quando o Pedro aprovar."},
+    {"codigo": "LA0031", "categoria": "Campeão", "m": {"g": 37, "h": 16, "c": 2.11, "cpm": 58.62}, "tags": ["keep"], "why": "Gancho forte (“surreal o resultado”), história curta — 64 s é longo pra depoimento. Fecha bem no último clique. Fica; uma versão de 30 s pode entrar depois da leva 4."},
+    {"codigo": "LA0016", "categoria": "Remarketing", "m": {"c": 2.6, "cpm": 120.73, "f": 4.81}, "tags": ["keep", "new"], "tagx": "prova social nova", "why": "Faz o papel dele no carrinho abandonado, mas a frequência passou de 4 e o CPM dobrou: o mesmo público vê a mesma arte várias vezes. Pedido: estático de prova social (depoimento + resultado) pra alternar."},
+    {"codigo": "LA0030", "categoria": "Pouca verba", "m": {"g": 22, "h": 17, "c": 1.03, "cpm": 30}, "tags": ["keep"], "why": "Pouca entrega pra veredito, mas fechou bem o pouco que rodou. CPM barato. Deixa a Meta decidir; não mexer."},
+    {"codigo": "LA0019", "categoria": "Pouca verba", "m": {"g": 36, "h": 11, "c": 1.17, "cpm": 50}, "tags": ["watch"], "why": "Gancho alto e história muito curta: a abertura promete, o meio não segura. Quase sem entrega; fica até a limpa da semana que vem."},
+    {"codigo": "LA0022", "categoria": "Pouca verba", "m": {"g": 34, "h": 5, "c": 0.77}, "tags": ["pause"], "tagx": "tirar", "why": "Sem venda e sem entrega há duas semanas: a Meta não escolhe. Três antes e depois sem história não seguram. Sai na limpa."},
+    {"codigo": "LA0032", "categoria": "Pouca verba", "m": {"g": 17, "h": 8, "c": 0.60}, "tags": ["pause"], "tagx": "tirar", "why": "Texto na tela + close, sem gancho e sem história. Zero venda em duas semanas. Sai na limpa."},
+    {"codigo": "LA0033", "categoria": "Pouca verba", "m": {"g": 34, "h": 37, "c": 3.1}, "tags": ["pause"], "tagx": "tirar", "why": "Números bonitos em cima de 700 impressões: não significam nada. 40 s de depoimento em tela dividida sem entrega e sem venda. Sai na limpa."}
+  ],
+  "ganchos_atencao": [
+    {"codigo": "LA0013", "rank": "1º", "q": "“Me rabiscar com…” — a sobrancelha que fala", "w": "Personagem inesperado nos 2 primeiros segundos. Gancho 39%.", "m": {"g": 39, "h": 30, "c": 2.11}},
+    {"codigo": "LA0002", "rank": "2º", "q": "“Tem uma falha” — mulher no espelho", "w": "Dor mostrada antes de dita; a história segura até o fim.", "m": {"g": 38, "h": 40, "c": 3.19}},
+    {"codigo": "LA0003", "rank": "3º", "q": "Dentro do folículo", "w": "Mecanismo visual: o fio nascendo. Gancho e história no topo.", "m": {"g": 38, "h": 39, "c": 2.49}},
+    {"codigo": "LA0035", "rank": "4º", "q": "“Ou nasce fio, ou seu dinheiro de volta”", "w": "Garantia na abertura. Para o dedo, mas cansa antes do fim.", "m": {"g": 37, "h": 28, "c": 2.77}},
+    {"codigo": "LA0031", "rank": "5º", "q": "“Gente, surreal o resultado…”", "w": "Depoimento falado, cara na câmera. Gancho forte, história curta.", "m": {"g": 37, "h": 16, "c": 2.11}}
+  ],
+  "ganchos_venda": [
+    {"codigo": "LA0007", "rank": "1º", "q": "“POV: você encontrou o sérum perfeito”", "w": "12 s, antes e depois no topo. Gancho fraco, fechamento mais alto da campanha.", "m": {"g": 15, "h": 20, "c": 0.80}},
+    {"codigo": "LA0010", "rank": "2º", "q": "“Eu e as que não precisam mais preencher”", "w": "Meme com a oferta na tela. Só clica quem já quer.", "m": {"g": 25, "h": 27, "c": 1.55}},
+    {"codigo": "LA0026", "rank": "3º", "q": "“Quando você decide ter uma sobrancelha mais preenchida”", "w": "“Como era” no círculo. CPM mais barato da conta.", "m": {"g": 22, "h": 14, "c": 0.76}},
+    {"codigo": "LA0024", "rank": "4º", "q": "“Em um mundo cheio de mulheres com sobrancelhas na moda…”", "w": "Trend + antes e depois no topo, 10 s.", "m": {"g": 28, "h": 25, "c": 1.21}},
+    {"codigo": "LA0001", "rank": "5º", "q": "“Precisando recuperar a sua sobrancelha?”", "w": "Estático. Pergunta direta + produto + oferta. O mais estável da conta.", "m": {"c": 1.09, "cpm": 31.14}}
+  ],
+  "pat_atencao": "os ganchos que param o dedo mostram um mecanismo ou um personagem inesperado nos 2 primeiros segundos (folículo, espelho, sobrancelha falante, garantia). Abrem a jornada: quem vê compra depois por outro anúncio.",
+  "pat_venda": "os que vendem são curtos (10–13 s), têm o resultado na tela desde o primeiro frame e uma frase de identidade (“eu e as que…”, “quando você decide…”). CTR baixo é filtro, não defeito.",
+  "produzir_sub": "Pedidos na ordem de prioridade, com o molde que já funcionou, a especificação e os ingredientes de cada um. O porquê vem do período 31/10 a 02/11.",
+  "pedidos": [
+    {"t": "Corte da VSL em 15–20 s", "sub": "Garantia na abertura, b-roll só no meio, oferta no fim.",
+     "moldes": [["LA0035", "VSL original, 101 s"]],
+     "spec": [["duração", "15–20 s", "l1"], ["formato", "9:16", "l2"], ["abertura", "garantia em 2 s", ""], ["fim", "cupom na tela", ""], ["legenda", "queimada, 2 linhas", ""]],
+     "ing": ["Abrir com “Ou nasce fio, ou seu dinheiro de volta” falado e escrito", "Um antes e depois real nos segundos 3–8", "B-roll do produto só entre 8 e 14 s", "Oferta e cupom nos últimos 4 s", "Sem música licenciada"],
+     "why": "a VSL tem o maior gancho e o maior CTR da campanha, mas perde metade da audiência antes do fim e o CPM é o mais caro entre os abridores. O corte mantém o que abre a porta e tira o que cansa."},
+    {"t": "4 a 6 UGC curtos de prova", "sub": "10–13 s, resultado na tela desde o primeiro frame, frase de identidade.",
+     "moldes": [["LA0007", "POV + antes e depois"], ["LA0010", "meme + oferta na tela"], ["LA0026", "“como era” no círculo"], ["LA0024", "trend + antes e depois no topo"]],
+     "spec": [["duração", "10–13 s", "l1"], ["formato", "9:16", "l2"], ["abertura", "antes e depois no frame 1", ""], ["texto", "frase de identidade na tela", ""], ["oferta", "cupom na tela do segundo 6", ""]],
+     "ing": ["Criadora diferente em cada peça (Alany, Camila, Gabi, Monique, Emily)", "Antes e depois no canto ou no topo, nunca cobrindo a sobrancelha", "Uma frase só: “eu e as que…”, “quando você decide…”, “POV: …”", "Oferta 10% + PRIMEIRACOMPRA na tela", "Sem narração longa; áudio de trend ou voz natural"],
+     "why": "ago07, set-005 e LA0026 foram as visitas que mais compraram no período, mesmo com gancho fraco e CTR baixo. O formato filtra e fecha. Precisamos de mais peças iguais pra Meta ter o que girar."},
+    {"t": "3 a 4 estáticos novos", "sub": "Pergunta direta + produto + oferta, no molde do LA0001.",
+     "moldes": [["LA0001", "pergunta direta"], ["LA0041", "meme da Monique"], ["LA0023", "grade de antes e depois"]],
+     "spec": [["formato", "4:5 e 9:16", "l1"], ["texto", "1 pergunta, até 7 palavras", "l2"], ["produto", "frasco em destaque", ""], ["oferta", "10% + cashback", ""]],
+     "ing": ["Variação A: pergunta nova (“Sua sobrancelha parou de crescer?”)", "Variação B: grade de 4 antes e depois com o produto no centro", "Variação C: meme com frase de identidade (molde LA0041)", "Variação D: problema × solução em duas colunas", "Fundo claro, tipografia da marca, sem rosto cortado"],
+     "why": "LA0001 é o CPM mais barato com volume e o anúncio mais estável da conta. Estático novo é barato de fazer e a Meta já mostrou que entrega esse molde."},
+    {"t": "Sobrancelha falante v2 e IA em 30 s", "sub": "Encurtar os dois abridores de IA e levar a oferta pra tela.",
+     "moldes": [["LA0013", "falante, 48 s"], ["LA0002", "espelho, 82 s"]],
+     "spec": [["duração", "20–30 s", "l1"], ["formato", "9:16", "l2"], ["abertura", "mesmo gancho do original", ""], ["oferta", "na tela desde o segundo 3", ""]],
+     "ing": ["Manter os 3 primeiros segundos de cada original (é o que para o dedo)", "Cortar o meio: uma dor, um mecanismo, um resultado", "Cupom e preço na tela, não só no fim", "Sem trocar personagem nem voz"],
+     "why": "os dois têm os melhores ganchos do período e não fecham: abrem a jornada e a venda cai em outro anúncio. Mais curtos e com a oferta na tela, podem fechar sozinhos."},
+    {"t": "Estático de prova social pro remarketing", "sub": "Depoimento real + resultado, pra alternar com o carrinho30.",
+     "moldes": [["LA0016", "carrinho30 atual"], ["LA0038", "garantia 60 dias"]],
+     "spec": [["formato", "4:5 e 1:1", "l1"], ["texto", "depoimento de 1 linha + nome", "l2"], ["prova", "antes e depois real", ""], ["oferta", "R$ 30 OFF · CARRINHO30", ""]],
+     "ing": ["Depoimento curto de cliente real (dos comentários ou das embaixadoras)", "Antes e depois ao lado, não embaixo do texto", "Garantia em uma linha", "Mesmo cupom do carrinho30"],
+     "why": "o remarketing está em frequência 4,8 e CPM R$ 120: o mesmo público vê a mesma arte várias vezes. Uma segunda peça divide a frequência e dá motivo novo pra voltar."}
+  ],
+  "prontos": [
+    ["LEO_T1 / T1b / T2", "Cortes do Léo prontos na pasta", "aguarda claims e autorizações", "wait"],
+    ["REMIX_A / REMIX_B", "Remixes com música", "só sem música licenciada", "wait"],
+    ["REMIX_C / REMIX_D", "Remixes sem música", "pode subir", "ok"],
+    ["LA0036", "Vídeo longo", "só se cortar pra até 30 s", "wait"]
+  ],
+  "nao_repetir": [
+    ["LA0012", "Dia 0 × Dia 30 em tela dividida", "atrai curioso, não comprador"],
+    ["LA0028", "Micropigmentação", "pausado em 29/10, não fechou"],
+    ["LA0034", "UGC de cílios", "público errado pro sérum de sobrancelha"],
+    ["LA0037", "Depoimento + zoom", "37 s sem história"],
+    ["LA0027", "Humor “medo de nascer barba”", "ri, não compra"],
+    ["LA0022", "3 antes e depois seguidos", "sem entrega duas semanas"],
+    ["LA0033", "Depoimento em tela dividida", "40 s, sem entrega"]
+  ],
+  "nao_repetir_regras": [
+    ["Tier list / ranking", "comparação de produtos não vende o nosso"],
+    ["VSL acima de 60 s", "perde metade da audiência antes do fim"],
+    ["Pinça e princesa", "ângulos testados duas vezes, sem venda"],
+    ["Cópias de Advantage+", "duplicar o mesmo criativo não cria entrega nova"],
+    ["Lote de 15 de uma vez", "a Meta não distribui; subir de 4 a 6 por leva"],
+    ["Subir sem checar o dia 1", "todo anúncio novo ganha leitura no dia seguinte"]
+  ]
+}
